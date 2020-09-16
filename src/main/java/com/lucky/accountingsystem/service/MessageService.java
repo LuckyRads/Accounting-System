@@ -18,10 +18,8 @@ public class MessageService {
     }
 
     private void clearConsole() {
-        // TODO: Fix console clearing
         System.out.print("\033[H\033[2J");
         System.out.flush();
-
     }
 
 }

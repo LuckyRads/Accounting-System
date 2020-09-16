@@ -1,11 +1,12 @@
 package com.lucky.accountingsystem.model;
 
+
 import java.io.Serializable;
 
-public class User implements Serializable {
+public abstract class User implements Serializable {
 
-    private String email;
-    private String password;
+    protected String email;
+    protected String password;
 
     public String getEmail() {
         return email;

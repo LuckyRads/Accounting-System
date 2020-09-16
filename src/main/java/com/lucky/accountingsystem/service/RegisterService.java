@@ -20,7 +20,7 @@ public class RegisterService {
             passwordIsValid = enterPassword();
         }
 
-        // TODO: add user to the database
+        // TODO: Add user to the database
 
         System.out.println("You have successfully registered with email: " + email);
     }
