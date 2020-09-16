@@ -1,8 +1,8 @@
 package com.lucky.accountingsystem.exception;
 
-public class PasswordException extends Exception {
+public class InvalidPasswordException extends Exception {
 
-    public PasswordException(String message) {
+    public InvalidPasswordException(String message) {
         super(message);
     }
 
