@@ -44,7 +44,9 @@ public class MenuService {
     public static void showMenu(List<Person> people, List<Company> companies, List<SubCategory> categories) {
         String[] message = {"Choose action",
                 "cat - Categories",
-                "usr - Users"};
+                "usr - Users",
+                "ex - Export data",
+                "im - Import data"};
         MessageService.showMessage(message);
         String choice = InputService.getInput();
 
@@ -55,7 +57,12 @@ public class MenuService {
                 break;
             case "usr":
                 UserController.manageUsers(people, companies);
-//                PersonController.managePeople(people);
+                break;
+            case "ex":
+                ExportService.manageExports(people, companies, categories);
+                break;
+            case "im":
+                ImportService.manageImports(people, companies, categories);
                 break;
         }
     }
