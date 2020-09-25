@@ -2,8 +2,6 @@ package com.lucky.accountingsystem.controller;
 
 import com.lucky.accountingsystem.model.Expense;
 import com.lucky.accountingsystem.model.MoneyTransaction;
-import com.lucky.accountingsystem.model.Person;
-import com.lucky.accountingsystem.model.User;
 import com.lucky.accountingsystem.service.InputService;
 import com.lucky.accountingsystem.service.MessageService;
 import com.lucky.accountingsystem.util.DateUtil;
