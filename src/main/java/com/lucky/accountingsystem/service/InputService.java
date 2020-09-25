@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InputService {
 
-    public String getInput() {
+    public static String getInput() {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
         if (input.equals("exit")) {

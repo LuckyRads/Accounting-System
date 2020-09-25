@@ -1,17 +1,23 @@
 package com.lucky.accountingsystem.model;
 
-import java.io.Serializable;
+import java.util.List;
 
-public class Category implements Serializable {
+public interface Category {
 
-    private String name;
+    public String getName();
 
-    public String getName() {
-        return name;
-    }
+    public void setName(String name);
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getDescription();
+
+    public void setDescription(String description);
+
+    public List<Expense> getExpenses();
+
+    public void setExpenses(List<Expense> expenses);
+
+    public List<SubCategory> getSubCategories();
+
+    public void setSubCategories(List<SubCategory> subCategories);
 
 }

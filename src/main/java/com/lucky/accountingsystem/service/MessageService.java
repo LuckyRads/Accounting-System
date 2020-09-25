@@ -2,22 +2,22 @@ package com.lucky.accountingsystem.service;
 
 public class MessageService {
 
-    public void showMessage(String[] message) {
+    public static void showMessage(String[] message) {
         clearConsole();
         System.out.println("To quit the program type \"exit\"");
         for (String line : message) {
-            System.out.println(line);
+            System.out.println("\t" + line);
         }
     }
 
-    public void showMessageNoCls(String[] message) {
+    public static void showMessageNoCls(String[] message) {
         System.out.println("To quit the program type \"exit\"");
         for (String line : message) {
-            System.out.println(line);
+            System.out.println("\t" + line);
         }
     }
 
-    private void clearConsole() {
+    private static void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }

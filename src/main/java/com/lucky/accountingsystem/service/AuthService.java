@@ -23,7 +23,7 @@ public class AuthService {
         LOGGED_IN_USER = loggedInUser;
     }
 
-    public boolean authenticate(String email, String password) throws BadLoginException {
+    public static boolean authenticate(String email, String password) throws BadLoginException {
         // TODO: Get details from the database
 //        if (false) { // TODO: Throw BadLoginException if the password is wrong
 //            throw new BadLoginException("The login details were incorrect!");

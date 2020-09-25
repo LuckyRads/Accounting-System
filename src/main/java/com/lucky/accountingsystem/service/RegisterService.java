@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 public class RegisterService {
 
-    public void register() {
+    public static void register() {
         MessageService messageService = new MessageService();
-        InputService input = new InputService();
+        InputService inputService = new InputService();
         Scanner scanner = new Scanner(System.in);
 
         String[] messages = { "Register to the system", "Please enter your email:" };
         messageService.showMessage(messages);
-        String email = input.getInput();
+        String email = inputService.getInput();
 
         boolean passwordIsValid = false;
         while (passwordIsValid != true) {
@@ -25,16 +25,16 @@ public class RegisterService {
         System.out.println("You have successfully registered with email: " + email);
     }
 
-    private boolean enterPassword() {
-        InputService input = new InputService();
-        MessageService  messages = new MessageService();
+    private static boolean enterPassword() {
+        InputService inputService = new InputService();
+        MessageService  messageService = new MessageService();
         PasswordService passwordService = new PasswordService();
 
-        messages.showMessage(new String[] { "Please enter your password:" });
-        String password = input.getInput();
+        messageService.showMessage(new String[] { "Please enter your password:" });
+        String password = inputService.getInput();
 
-        messages.showMessage(new String[] { "Please confirm your password" });
-        String confirmPassword = input.getInput();
+        messageService.showMessage(new String[] { "Please confirm your password" });
+        String confirmPassword = inputService.getInput();
 
         try {
             passwordService.isValid(password, confirmPassword);

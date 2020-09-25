@@ -4,14 +4,28 @@ import java.io.Serializable;
 
 public class Expense implements Serializable {
 
-    private double amount;
+    private String name;
+    private MoneyTransaction moneyTransaction;
 
-    public double getAmount() {
-        return amount;
+    public Expense(String name, MoneyTransaction moneyTransaction) {
+        this.name = name;
+        this.moneyTransaction = moneyTransaction;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public MoneyTransaction getMoneyTransaction() {
+        return moneyTransaction;
+    }
+
+    public void setMoneyTransaction(MoneyTransaction moneyTransaction) {
+        this.moneyTransaction = moneyTransaction;
     }
 
 }

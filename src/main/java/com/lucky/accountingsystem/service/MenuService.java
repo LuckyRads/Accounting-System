@@ -1,36 +1,62 @@
 package com.lucky.accountingsystem.service;
 
+import com.lucky.accountingsystem.controller.CategoryController;
+import com.lucky.accountingsystem.controller.ExpenseController;
+import com.lucky.accountingsystem.controller.PersonController;
+import com.lucky.accountingsystem.controller.UserController;
+import com.lucky.accountingsystem.model.Expense;
+import com.lucky.accountingsystem.model.Person;
+import com.lucky.accountingsystem.model.SubCategory;
+import com.lucky.accountingsystem.model.User;
+
+import java.util.List;
+
 public class MenuService {
 
-    public void showStartupScreen () {
-        InputService input = new InputService();
-        MessageService messages = new MessageService();
+    /**
+     * Shows startup login screen
+     */
+    public static void showStartupScreen() {
+        InputService inputService = new InputService();
 
-        String[] message = { "Choose an action", "1 - login", "2 - register" };
-        messages.showMessage(message);
+        String[] message = {"Choose an action",
+                "log - login",
+                "reg - register"};
+        MessageService.showMessage(message);
 
-        String choice = input.getInput();
+        String choice = inputService.getInput();
 
-        if (choice.equals("1")) {
-            LoginService loginService = new LoginService();
-            loginService.login();
-        } else if (choice.equals("2")) {
-            RegisterService registerService = new RegisterService();
-            registerService.register();
+        switch (choice) {
+            case "log":
+                LoginService.login();
+                break;
+            case "reg":
+                RegisterService.register();
+                break;
         }
     }
 
-    public void showMenu() {
-        MessageService messages = new MessageService();
-        InputService input = new InputService();
 
-        String[] message = { "Choose action", "1 - Categories" };
-        messages.showMessage(message);
-        String choice = input.getInput();
+    /**
+     * Shows the main program menu
+     * @param people
+     * @param categories
+     */
+    public static void showMenu(List<Person> people, List<SubCategory> categories) {
+        String[] message = {"Choose action",
+                "cat - Categories",
+                "usr - Users"};
+        MessageService.showMessage(message);
+        String choice = InputService.getInput();
 
         // TODO: Add functionality from laboras 2
-        if (choice.equals("1")) {
-            messages.showMessage(new String [] { "show categories" });
+        switch (choice) {
+            case "cat":
+                CategoryController.manageCategories(categories);
+                break;
+            case "usr":
+                PersonController.managePeople(people);
+                break;
         }
     }
 
