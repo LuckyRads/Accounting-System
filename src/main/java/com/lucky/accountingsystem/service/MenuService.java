@@ -1,13 +1,11 @@
 package com.lucky.accountingsystem.service;
 
 import com.lucky.accountingsystem.controller.CategoryController;
-import com.lucky.accountingsystem.controller.ExpenseController;
 import com.lucky.accountingsystem.controller.PersonController;
 import com.lucky.accountingsystem.controller.UserController;
-import com.lucky.accountingsystem.model.Expense;
+import com.lucky.accountingsystem.model.Company;
 import com.lucky.accountingsystem.model.Person;
 import com.lucky.accountingsystem.model.SubCategory;
-import com.lucky.accountingsystem.model.User;
 
 import java.util.List;
 
@@ -39,10 +37,11 @@ public class MenuService {
 
     /**
      * Shows the main program menu
+     *
      * @param people
      * @param categories
      */
-    public static void showMenu(List<Person> people, List<SubCategory> categories) {
+    public static void showMenu(List<Person> people, List<Company> companies, List<SubCategory> categories) {
         String[] message = {"Choose action",
                 "cat - Categories",
                 "usr - Users"};
@@ -55,7 +54,8 @@ public class MenuService {
                 CategoryController.manageCategories(categories);
                 break;
             case "usr":
-                PersonController.managePeople(people);
+                UserController.manageUsers(people, companies);
+//                PersonController.managePeople(people);
                 break;
         }
     }

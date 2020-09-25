@@ -10,24 +10,21 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
-//        List<User> users = new ArrayList<User>();
-//        users.add(new Person("matas@mail.com", "password", "matas", "malickas", "+37061234567"));
-
         List<Person> people = new ArrayList<Person>();
-        people.add(new Person("matas@mail.com", "password", "matas", "malickas", "+37061234567"));
-
+        List<Company> companies = new ArrayList<Company>();
         List<SubCategory> categories = new ArrayList<SubCategory>();
-        categories.add(new SubCategory("cars", "cars are cool", new ArrayList<Expense>(), new ArrayList<SubCategory>()));
+        
+//        categories.add(new SubCategory("cars", "cars are cool", new ArrayList<Expense>(), new ArrayList<SubCategory>()));
+//       people.add(new Person("matas@mail.com", "password", "matas", "malickas", "+37061234567"));
 
-        // Program loop
+//         Program loop
         // TODO: Authentication
 //        while (!AuthService.isLoggedIn()) {
 //            MenuService.showStartupScreen();
 //        }
         // Main menu loop
         while (true) {
-            MenuService.showMenu(people, categories);
+            MenuService.showMenu(people, companies, categories);
         }
     }
 

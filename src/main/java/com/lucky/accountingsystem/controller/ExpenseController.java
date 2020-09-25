@@ -119,6 +119,7 @@ public class ExpenseController {
         for (Expense expense : expenses) {
             if (choseExpense.equals(expense.getName())) {
                 expenses.remove(expense);
+                return;
             }
         }
     }

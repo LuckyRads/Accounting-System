@@ -28,7 +28,7 @@ public class CategoryController {
                     showCategories(categories);
                     break;
                 case "cre":
-                    categories.add(createCategory(categories));
+                    categories.add(createCategory());
                     break;
                 case "desc":
                     describeCategory(categories);
@@ -43,7 +43,6 @@ public class CategoryController {
                     return;
             }
         }
-
     }
 
     public static void showCategories(List<SubCategory> categories) {
@@ -53,7 +52,7 @@ public class CategoryController {
         }
     }
 
-    public static SubCategory createCategory(List<SubCategory> categories) {
+    public static SubCategory createCategory() {
         System.out.println("Category creation");
 
         System.out.println("Enter name:");
@@ -97,10 +96,21 @@ public class CategoryController {
     }
 
     public static void removeCategory(List<SubCategory> categories) {
+        MessageService.showMessage(new String[]{"Choose which category you would like to remove:"});
 
+        showCategories(categories);
+
+        String chosenCategory = InputService.getInput();
+
+        for (Category category : categories) {
+            if (chosenCategory.equals(category.getName())) {
+                categories.remove(category);
+                return;
+            }
+        }
     }
 
-    private static void describeCategory(Category category) {
+    private static void describeCategory(SubCategory category) {
         String expensesString = "";
         String subCategoryString = "";
 
@@ -118,6 +128,24 @@ public class CategoryController {
                 "expenses: " + expensesString,
                 "subcategories: " + subCategoryString});
 
+        chooseManageExpenses(category);
+        chooseManageSubCategories(category);
+    }
+
+    private static SubCategory updateCategory(SubCategory category) {
+        MessageService.showMessage(new String[]{"Edit category's info",
+                "Enter new category's info in format:",
+                "name;description"});
+
+        String categoryInfo[] = InputService.getInput().split(";");
+
+        chooseManageExpenses(category);
+        chooseManageSubCategories(category);
+
+        return new SubCategory(categoryInfo[0], categoryInfo[1], category.getExpenses(), category.getSubCategories());
+    }
+
+    private static void chooseManageExpenses(SubCategory category) {
         MessageService.showMessage(new String[]{"Would you like to manage expenses of this category? (y/n)"});
         switch (InputService.getInput()) {
             case "y":
@@ -126,7 +154,9 @@ public class CategoryController {
             case "n":
                 break;
         }
+    }
 
+    private static void chooseManageSubCategories(SubCategory category) {
         MessageService.showMessage(new String[]{"Would you like to manage subcategories of this category? (y/n)"});
         switch (InputService.getInput()) {
             case "y":
@@ -135,16 +165,6 @@ public class CategoryController {
             case "n":
                 break;
         }
-    }
-
-    private static SubCategory updateCategory(SubCategory subCategory) {
-        MessageService.showMessage(new String[]{"Edit category's info",
-                "Enter new category's info in format:",
-                "name;description"});
-
-        String categoryInfo[] = InputService.getInput().split(";");
-
-        return new SubCategory(categoryInfo[0], categoryInfo[1], subCategory.getExpenses(), subCategory.getSubCategories());
     }
 
 }

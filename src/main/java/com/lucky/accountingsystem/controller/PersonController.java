@@ -97,7 +97,7 @@ public class PersonController {
         for (Person person : people) {
             if (username.equals(person.getEmail())) {
                 people.remove(person);
-                person = updatePerson(person);
+                person = updatePerson();
                 people.add(person);
             }
         }
@@ -113,6 +113,7 @@ public class PersonController {
         for (Person person : people) {
             if (username.equals(person.getEmail())) {
                 people.remove(person);
+                return;
             }
         }
     }
@@ -125,7 +126,7 @@ public class PersonController {
                 "phone number: " + person.getPhoneNumber()});
     }
 
-    private static Person updatePerson(Person person) {
+    private static Person updatePerson() {
         MessageService.showMessage(new String[]{"Edit person's info",
                 "Enter new person's info in format:",
                 "email;password;name;surname;phone_number"});
@@ -133,6 +134,22 @@ public class PersonController {
         String personInfo[] = InputService.getInput().split(";");
 
         return new Person(personInfo[0], personInfo[1], personInfo[2], personInfo[3], personInfo[4]);
+    }
+
+    public static Person choosePerson(List<Person> people) {
+        Person chosenPerson = null;
+        MessageService.showMessage(new String[]{"Choose a person:"});
+
+        showPeople(people);
+
+        String username = InputService.getInput();
+
+        for (Person person : people) {
+            if (username.equals(person.getEmail())) {
+                chosenPerson = person;
+            }
+        }
+        return chosenPerson;
     }
 
 }
