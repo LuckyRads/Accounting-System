@@ -13,4 +13,4 @@ Year 3 semester 1 of VGTU bachelor studies.
 - <code>src/</code> contains all Java project files
 - <code>target/</code> contains Maven build files
 
-<b>Developed by Matas Malickas</b>
+<b>Developed by Matas M</b>
