@@ -2,6 +2,7 @@ package com.lucky.accountingsystem.service;
 
 import com.lucky.accountingsystem.controller.CategoryController;
 import com.lucky.accountingsystem.controller.UserController;
+import com.lucky.accountingsystem.model.AccountingSystem;
 import com.lucky.accountingsystem.model.Company;
 import com.lucky.accountingsystem.model.Person;
 import com.lucky.accountingsystem.model.SubCategory;
@@ -37,10 +38,9 @@ public class MenuService {
     /**
      * Shows the main program menu
      *
-     * @param people
-     * @param categories
+     * @param accountingSystem
      */
-    public static void showMenu(List<Person> people, List<Company> companies, List<SubCategory> categories) {
+    public static void showMenu(AccountingSystem accountingSystem) {
         String[] message = {"Choose action",
                 "cat - Categories",
                 "usr - Users",
@@ -51,16 +51,16 @@ public class MenuService {
 
         switch (choice) {
             case "cat":
-                CategoryController.manageCategories(categories, people);
+                CategoryController.manageCategories(accountingSystem.getSubCategories(), accountingSystem.getPeople());
                 break;
             case "usr":
-                UserController.manageUsers(people, companies);
+                UserController.manageUsers(accountingSystem.getPeople(), accountingSystem.getCompanies());
                 break;
             case "ex":
-                ExportService.manageExports(people, companies, categories);
+                ExportService.manageExports(accountingSystem);
                 break;
             case "im":
-                ImportService.manageImports(people, companies, categories);
+                ImportService.manageImports(accountingSystem);
                 break;
         }
     }

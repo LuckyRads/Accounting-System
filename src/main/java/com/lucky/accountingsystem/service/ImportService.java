@@ -3,6 +3,7 @@ package com.lucky.accountingsystem.service;
 import com.lucky.accountingsystem.controller.CategoryController;
 import com.lucky.accountingsystem.controller.CompanyController;
 import com.lucky.accountingsystem.controller.PersonController;
+import com.lucky.accountingsystem.model.AccountingSystem;
 import com.lucky.accountingsystem.model.Company;
 import com.lucky.accountingsystem.model.Person;
 import com.lucky.accountingsystem.model.SubCategory;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class ImportService {
 
-    public static void manageImports(List<Person> people, List<Company> companies, List<SubCategory> categories) {
+    public static void manageImports(AccountingSystem accountingSystem) {
         String message[] = {"Choose action",
                 "all - import all available data",
                 "cat - import all category data",
@@ -26,13 +27,13 @@ public class ImportService {
 
             switch (choice) {
                 case "all":
-                    importAllData(people, companies, categories);
+                    importAllData(accountingSystem);
                     break;
                 case "cat":
-                    importCategoryData(categories);
+                    importCategoryData(accountingSystem.getSubCategories());
                     break;
                 case "usr":
-                    manageUserImports(people, companies);
+                    manageUserImports(accountingSystem.getPeople(), accountingSystem.getCompanies());
                     break;
                 case "back":
                     return;
@@ -64,7 +65,7 @@ public class ImportService {
         }
     }
 
-    public static void importAllData(List<Person> people, List<Company> companies, List<SubCategory> categories) {
+    public static void importAllData(AccountingSystem accountingSystem) {
         MessageService.showMessage(new String[]{"Import data",
                 "To import all data from current directory, type default",
                 "Please put in destination file path of the file which contains all serialized data"});
@@ -83,10 +84,10 @@ public class ImportService {
                     Object object = objectInputStream.readObject();
                     try {
                         PersonController.addReplacePerson((Person) object,
-                                people);
+                                accountingSystem.getPeople());
                     } catch (ClassCastException e) {
                         CategoryController.addReplaceCategory((SubCategory) object,
-                                categories);
+                                accountingSystem.getSubCategories());
                     }
                 } catch (EOFException e) {
                     allPeopleRead = true;
@@ -97,7 +98,7 @@ public class ImportService {
             while (!allCompaniesRead) {
                 try {
                     CompanyController.addReplaceCompany((Company) objectInputStream.readObject(),
-                            companies);
+                            accountingSystem.getCompanies());
                 } catch (EOFException e) {
                     allCompaniesRead = true;
                 }
@@ -107,7 +108,7 @@ public class ImportService {
             while (!allCategoriesRead) {
                 try {
                     CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
-                            categories);
+                            accountingSystem.getSubCategories());
                 } catch (EOFException e) {
                     allCategoriesRead = true;
                 }
@@ -119,7 +120,7 @@ public class ImportService {
             System.out.println("Error! Something went wrong while importing data." +
                     "Please check if the destination path is correct");
             e.printStackTrace();
-            importCategoryData(categories);
+            importAllData(accountingSystem);
             return;
         }
     }

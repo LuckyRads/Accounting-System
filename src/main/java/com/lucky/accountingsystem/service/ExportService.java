@@ -1,5 +1,6 @@
 package com.lucky.accountingsystem.service;
 
+import com.lucky.accountingsystem.model.AccountingSystem;
 import com.lucky.accountingsystem.model.Company;
 import com.lucky.accountingsystem.model.Person;
 import com.lucky.accountingsystem.model.SubCategory;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class ExportService {
 
-    public static void manageExports(List<Person> people, List<Company> companies, List<SubCategory> categories) {
+    public static void manageExports(AccountingSystem accountingSystem) {
         String message[] = {"Choose action",
                 "all - export all available data",
                 "cat - export all category data",
@@ -23,13 +24,13 @@ public class ExportService {
 
             switch (choice) {
                 case "all":
-                    exportAllData(people, companies, categories);
+                    exportAllData(accountingSystem);
                     break;
                 case "cat":
-                    exportCategoryData(categories);
+                    exportCategoryData(accountingSystem.getSubCategories());
                     break;
                 case "usr":
-                    manageUserExports(people, companies);
+                    manageUserExports(accountingSystem.getPeople(), accountingSystem.getCompanies());
                     break;
                 case "back":
                     return;
@@ -61,7 +62,7 @@ public class ExportService {
         }
     }
 
-    public static void exportAllData(List<Person> people, List<Company> companies, List<SubCategory> categories) {
+    public static void exportAllData(AccountingSystem accountingSystem) {
         MessageService.showMessage(new String[]{"Export data",
                 "To save all data in current directory, type default",
                 "To save elsewhere, please put in destination file path where to save the output file"});
@@ -74,15 +75,15 @@ public class ExportService {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-            for (Person person : people) {
+            for (Person person : accountingSystem.getPeople()) {
                 objectOutputStream.writeObject(person);
             }
 
-            for (Company company : companies) {
+            for (Company company : accountingSystem.getCompanies()) {
                 objectOutputStream.writeObject(company);
             }
 
-            for (SubCategory subCategory : categories) {
+            for (SubCategory subCategory : accountingSystem.getSubCategories()) {
                 objectOutputStream.writeObject(subCategory);
             }
 
@@ -91,7 +92,7 @@ public class ExportService {
         } catch (IOException e) {
             System.out.println("Error! Something went wrong while exporting data." +
                     "Please check if the destination path is correct");
-            exportCategoryData(categories);
+            exportAllData(accountingSystem);
             return;
         }
     }
