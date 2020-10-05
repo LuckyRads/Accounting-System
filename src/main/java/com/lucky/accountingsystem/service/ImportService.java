@@ -3,10 +3,7 @@ package com.lucky.accountingsystem.service;
 import com.lucky.accountingsystem.controller.CategoryController;
 import com.lucky.accountingsystem.controller.CompanyController;
 import com.lucky.accountingsystem.controller.PersonController;
-import com.lucky.accountingsystem.model.AccountingSystem;
-import com.lucky.accountingsystem.model.Company;
-import com.lucky.accountingsystem.model.Person;
-import com.lucky.accountingsystem.model.SubCategory;
+import com.lucky.accountingsystem.model.*;
 
 import java.io.*;
 import java.util.List;
@@ -82,44 +79,31 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            AccountingSystem accountingSystemObject = (AccountingSystem) objectInputStream.readObject();
-            accountingSystem.setCompany(accountingSystemObject.getCompany());
-            accountingSystem.setDateCreated(accountingSystemObject.getDateCreated());
-            accountingSystem.setVersion(accountingSystemObject.getVersion());
-
-            boolean allPeopleRead = false;
-            while (!allPeopleRead) {
+            boolean allDataRead = false;
+            while (!allDataRead) {
                 try {
                     Object object = objectInputStream.readObject();
-                    try {
+
+                    if (object instanceof AccountingSystem) {
+                        AccountingSystem accountingSystemObject = (AccountingSystem) object;
+                        accountingSystem.setCompany(accountingSystemObject.getCompany());
+                        accountingSystem.setDateCreated(accountingSystemObject.getDateCreated());
+                        accountingSystem.setVersion(accountingSystemObject.getVersion());
+                    }
+                    if (object instanceof Person) {
                         PersonController.addReplacePerson((Person) object,
                                 accountingSystem.getPeople());
-                    } catch (ClassCastException e) {
+                    }
+                    if (object instanceof Company) {
+                        CompanyController.addReplaceCompany((Company) object,
+                                accountingSystem.getCompanies());
+                    }
+                    if (object instanceof SubCategory) {
                         CategoryController.addReplaceCategory((SubCategory) object,
                                 accountingSystem.getCategories());
                     }
                 } catch (EOFException e) {
-                    allPeopleRead = true;
-                }
-            }
-
-            boolean allCompaniesRead = false;
-            while (!allCompaniesRead) {
-                try {
-                    CompanyController.addReplaceCompany((Company) objectInputStream.readObject(),
-                            accountingSystem.getCompanies());
-                } catch (EOFException e) {
-                    allCompaniesRead = true;
-                }
-            }
-
-            boolean allCategoriesRead = false;
-            while (!allCategoriesRead) {
-                try {
-                    CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
-                            accountingSystem.getCategories());
-                } catch (EOFException e) {
-                    allCategoriesRead = true;
+                    allDataRead = true;
                 }
             }
 
@@ -150,8 +134,11 @@ public class ImportService {
             boolean allCategoriesRead = false;
             while (!allCategoriesRead) {
                 try {
-                    CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
-                            categories);
+                    Object object = objectInputStream.readObject();
+                    if (object instanceof SubCategory) {
+                        CategoryController.addReplaceCategory((SubCategory) object,
+                                categories);
+                    }
                 } catch (EOFException e) {
                     allCategoriesRead = true;
                 }
@@ -184,8 +171,11 @@ public class ImportService {
             boolean allPeopleRead = false;
             while (!allPeopleRead) {
                 try {
-                    PersonController.addReplacePerson((Person) objectInputStream.readObject(),
-                            people);
+                    Object object = objectInputStream.readObject();
+                    if (object instanceof Person) {
+                        PersonController.addReplacePerson((Person) object,
+                                people);
+                    }
                 } catch (EOFException e) {
                     allPeopleRead = true;
                 }
@@ -218,8 +208,11 @@ public class ImportService {
             boolean allCompaniesRead = false;
             while (!allCompaniesRead) {
                 try {
-                    CompanyController.addReplaceCompany((Company) objectInputStream.readObject(),
-                            companies);
+                    Object object = objectInputStream.readObject();
+                    if (object instanceof Company) {
+                        CompanyController.addReplaceCompany((Company) object,
+                                companies);
+                    }
                 } catch (EOFException e) {
                     allCompaniesRead = true;
                 }
@@ -249,11 +242,13 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            AccountingSystem accountingSystemObject = (AccountingSystem) objectInputStream.readObject();
-
-            accountingSystem.setCompany(accountingSystemObject.getCompany());
-            accountingSystem.setDateCreated(accountingSystemObject.getDateCreated());
-            accountingSystem.setVersion(accountingSystemObject.getVersion());
+            Object object = objectInputStream.readObject();
+            if (object instanceof AccountingSystem) {
+                AccountingSystem accountingSystemObject = (AccountingSystem) object;
+                accountingSystem.setCompany(accountingSystemObject.getCompany());
+                accountingSystem.setDateCreated(accountingSystemObject.getDateCreated());
+                accountingSystem.setVersion(accountingSystemObject.getVersion());
+            }
 
             fileInputStream.close();
             objectInputStream.close();

@@ -1,7 +1,6 @@
 package com.lucky.accountingsystem.controller;
 
 import com.lucky.accountingsystem.model.Person;
-import com.lucky.accountingsystem.model.SubCategory;
 import com.lucky.accountingsystem.model.User;
 import com.lucky.accountingsystem.service.InputService;
 import com.lucky.accountingsystem.service.MessageService;
