@@ -74,9 +74,34 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            categories.add((SubCategory) objectInputStream.readObject());
-            people.add((Person) objectInputStream.readObject());
-            companies.add((Company) objectInputStream.readObject());
+            // TODO: Fix import of many objects
+
+            boolean allCategoriesRead = false;
+            while (!allCategoriesRead) {
+                try {
+                    categories.add((SubCategory) objectInputStream.readObject());
+                } catch (EOFException e) {
+                    allCategoriesRead = true;
+                }
+            }
+
+            boolean allPeopleRead = false;
+            while (!allPeopleRead) {
+                try {
+                    people.add((Person) objectInputStream.readObject());
+                } catch (EOFException e) {
+                    allPeopleRead = true;
+                }
+            }
+
+            boolean allCompaniesRead = false;
+            while (!allCompaniesRead) {
+                try {
+                    companies.add((Company) objectInputStream.readObject());
+                } catch (EOFException e) {
+                    allCompaniesRead = true;
+                }
+            }
 
             fileInputStream.close();
             objectInputStream.close();
@@ -102,7 +127,14 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            categories.add((SubCategory) objectInputStream.readObject());
+            boolean allCategoriesRead = false;
+            while (!allCategoriesRead) {
+                try {
+                    categories.add((SubCategory) objectInputStream.readObject());
+                } catch (EOFException e) {
+                    allCategoriesRead = true;
+                }
+            }
 
             fileInputStream.close();
             objectInputStream.close();
@@ -128,7 +160,14 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            people.add((Person) objectInputStream.readObject());
+            boolean allPeopleRead = false;
+            while (!allPeopleRead) {
+                try {
+                    people.add((Person) objectInputStream.readObject());
+                } catch (EOFException e) {
+                    allPeopleRead = true;
+                }
+            }
 
             fileInputStream.close();
             objectInputStream.close();
@@ -154,7 +193,14 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            companies.add((Company) objectInputStream.readObject());
+            boolean allCompaniesRead = false;
+            while (!allCompaniesRead) {
+                try {
+                    companies.add((Company) objectInputStream.readObject());
+                } catch (EOFException e) {
+                    allCompaniesRead = true;
+                }
+            }
 
             fileInputStream.close();
             objectInputStream.close();
