@@ -9,14 +9,14 @@ public class SubCategory implements Serializable, Category {
     private String description;
     private List<Transaction> transactions;
     private List<SubCategory> subCategories;
-    private List<Person> responsibleUsers;
+    private List<Person> responsiblePeople;
 
-    public SubCategory(String name, String description, List<Transaction> transactions, List<SubCategory> subCategories, List<Person> responsibleUsers) {
+    public SubCategory(String name, String description, List<Transaction> transactions, List<SubCategory> subCategories, List<Person> responsiblePeople) {
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
-        this.responsibleUsers = responsibleUsers;
+        this.responsiblePeople = responsiblePeople;
     }
 
     public String getName() {
@@ -51,16 +51,16 @@ public class SubCategory implements Serializable, Category {
         this.subCategories = subCategories;
     }
 
-    public List<Person> getResponsibleUsers() {
-        return responsibleUsers;
+    public List<Person> getResponsiblePeople() {
+        return responsiblePeople;
     }
 
-    public void setResponsibleUsers(List<Person> responsibleUsers) {
-        this.responsibleUsers = responsibleUsers;
+    public void setResponsiblePeople(List<Person> responsiblePeople) {
+        this.responsiblePeople = responsiblePeople;
     }
 
-    public void addResponsibleUser(Person person) {
-        this.responsibleUsers.add(person);
+    public void addResponsiblePerson(Person person) {
+        this.responsiblePeople.add(person);
     }
 
 }

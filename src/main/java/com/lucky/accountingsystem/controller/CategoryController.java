@@ -127,7 +127,7 @@ public class CategoryController {
             subCategoryString += subCategory.getName() + ",";
         }
 
-        for (Person person : category.getResponsibleUsers()) {
+        for (Person person : category.getResponsiblePeople()) {
             responsiblePeopleString += person.getEmail() + ",";
         }
 
@@ -150,7 +150,7 @@ public class CategoryController {
         chooseManageSubCategories(category, people);
         chooseResponsiblePeople(category, people);
 
-        return new SubCategory(categoryInfo[0], categoryInfo[1], category.getTransactions(), category.getSubCategories(), category.getResponsibleUsers());
+        return new SubCategory(categoryInfo[0], categoryInfo[1], category.getTransactions(), category.getSubCategories(), category.getResponsiblePeople());
     }
 
     private static void chooseManageTransactions(SubCategory category) {
@@ -195,7 +195,7 @@ public class CategoryController {
                         default:
                             for (Person person : people) {
                                 if (person.getEmail().equals(choice)) {
-                                    category.addResponsibleUser(person);
+                                    category.addResponsiblePerson(person);
                                 }
                             }
                     }
