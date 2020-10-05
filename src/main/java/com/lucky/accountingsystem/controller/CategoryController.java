@@ -106,7 +106,7 @@ public class CategoryController {
 
         String chosenCategory = InputService.getInput();
 
-        for (Category category : categories) {
+        for (SubCategory category : categories) {
             if (chosenCategory.equals(category.getName())) {
                 categories.remove(category);
                 return;
