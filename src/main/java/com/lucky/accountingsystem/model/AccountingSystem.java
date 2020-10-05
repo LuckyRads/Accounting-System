@@ -22,9 +22,6 @@ public class AccountingSystem implements Serializable {
         this.companies = companies;
     }
 
-    public AccountingSystem(String vgtu, Date date) {
-    }
-
     public String getCompany() {
         return company;
     }
