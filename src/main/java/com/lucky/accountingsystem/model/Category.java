@@ -4,20 +4,20 @@ import java.util.List;
 
 public interface Category {
 
-    public String getName();
+    String getName();
 
-    public void setName(String name);
+    void setName(String name);
 
-    public String getDescription();
+    String getDescription();
 
-    public void setDescription(String description);
+    void setDescription(String description);
 
-    public List<Expense> getExpenses();
+    List<Expense> getExpenses();
 
-    public void setExpenses(List<Expense> expenses);
+    void setExpenses(List<Expense> expenses);
 
-    public List<SubCategory> getSubCategories();
+    List<SubCategory> getSubCategories();
 
-    public void setSubCategories(List<SubCategory> subCategories);
+    void setSubCategories(List<SubCategory> subCategories);
 
 }

@@ -43,19 +43,25 @@ public class ImportService {
 
     public static void importCategoryData(List<SubCategory> categories) {
         MessageService.showMessage(new String[]{"Import data",
+                "To import all data from current directory, type default",
                 "Please put in destination file path of the file which contains all serialized data"});
 
-        String file = InputService.getInput();
+        String choice = InputService.getInput();
+
+        String file = choice.equals("default") ? "output.ser" : choice;
 
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            categories = (List<SubCategory>) objectInputStream.readObject();
+
+            categories.add((SubCategory) objectInputStream.readObject());
+
             fileInputStream.close();
             objectInputStream.close();
         } catch (Exception e) {
             System.out.println("Error! Something went wrong while importing data." +
                     "Please check if the destination path is correct");
+            e.printStackTrace();
             importCategoryData(categories);
             return;
         }

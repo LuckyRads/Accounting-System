@@ -1,8 +1,9 @@
 package com.lucky.accountingsystem.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class MoneyTransaction {
+public class MoneyTransaction implements Serializable {
 
     private String sender;
     private String receiver;

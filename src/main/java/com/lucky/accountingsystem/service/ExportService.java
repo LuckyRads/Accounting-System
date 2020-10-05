@@ -54,7 +54,11 @@ public class ExportService {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(categories);
+
+            for (SubCategory subCategory : categories) {
+                objectOutputStream.writeObject(subCategory);
+            }
+
             fileOutputStream.close();
             objectOutputStream.close();
         } catch (IOException e) {
