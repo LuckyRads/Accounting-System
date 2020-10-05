@@ -74,16 +74,16 @@ public class ExportService {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-            for (SubCategory subCategory : categories) {
-                objectOutputStream.writeObject(subCategory);
-            }
-
             for (Person person : people) {
                 objectOutputStream.writeObject(person);
             }
 
             for (Company company : companies) {
                 objectOutputStream.writeObject(company);
+            }
+
+            for (SubCategory subCategory : categories) {
+                objectOutputStream.writeObject(subCategory);
             }
 
             fileOutputStream.close();

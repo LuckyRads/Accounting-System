@@ -20,4 +20,8 @@ public interface Category {
 
     void setSubCategories(List<SubCategory> subCategories);
 
+    List<Person> getResponsibleUsers();
+
+    void setResponsibleUsers(List<Person> ResponsibleUsers);
+
 }

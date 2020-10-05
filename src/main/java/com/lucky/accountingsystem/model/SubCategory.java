@@ -9,12 +9,19 @@ public class SubCategory implements Serializable, Category {
     private String description;
     private List<Transaction> transactions;
     private List<SubCategory> subCategories;
+    private List<Person> responsibleUsers;
 
-    public SubCategory(String name, String description, List<Transaction> transactions, List<SubCategory> subCategories) {
+    public SubCategory(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public SubCategory(String name, String description, List<Transaction> transactions, List<SubCategory> subCategories, List<Person> responsibleUsers) {
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
+        this.responsibleUsers = responsibleUsers;
     }
 
     @Override
@@ -57,8 +64,18 @@ public class SubCategory implements Serializable, Category {
         this.subCategories = subCategories;
     }
 
-    public void addCategory(String name, String description, List<Transaction> transactions, List<SubCategory> subCategories) {
-        subCategories.add(new SubCategory(name, description, transactions, subCategories));
+    @Override
+    public List<Person> getResponsibleUsers() {
+        return this.responsibleUsers;
+    }
+
+    @Override
+    public void setResponsibleUsers(List<Person> ResponsibleUsers) {
+        this.responsibleUsers = responsibleUsers;
+    }
+
+    public void addResponsibleUser(Person person) {
+        this.responsibleUsers.add(person);
     }
 
 }

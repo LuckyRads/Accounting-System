@@ -51,7 +51,7 @@ public class MenuService {
 
         switch (choice) {
             case "cat":
-                CategoryController.manageCategories(categories);
+                CategoryController.manageCategories(categories, people);
                 break;
             case "usr":
                 UserController.manageUsers(people, companies);

@@ -77,23 +77,17 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            // TODO: Fix duplicates
-
-            boolean allCategoriesRead = false;
-            while (!allCategoriesRead) {
-                try {
-                    CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
-                            categories);
-                } catch (EOFException e) {
-                    allCategoriesRead = true;
-                }
-            }
-
             boolean allPeopleRead = false;
             while (!allPeopleRead) {
                 try {
-                    PersonController.addReplacePerson((Person) objectInputStream.readObject(),
-                            people);
+                    Object object = objectInputStream.readObject();
+                    try {
+                        PersonController.addReplacePerson((Person) object,
+                                people);
+                    } catch (ClassCastException e) {
+                        CategoryController.addReplaceCategory((SubCategory) object,
+                                categories);
+                    }
                 } catch (EOFException e) {
                     allPeopleRead = true;
                 }
@@ -106,6 +100,16 @@ public class ImportService {
                             companies);
                 } catch (EOFException e) {
                     allCompaniesRead = true;
+                }
+            }
+
+            boolean allCategoriesRead = false;
+            while (!allCategoriesRead) {
+                try {
+                    CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
+                            categories);
+                } catch (EOFException e) {
+                    allCategoriesRead = true;
                 }
             }
 
