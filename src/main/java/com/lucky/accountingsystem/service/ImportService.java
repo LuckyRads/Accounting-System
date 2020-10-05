@@ -18,6 +18,7 @@ public class ImportService {
                 "all - import all available data",
                 "cat - import all category data",
                 "usr - user data import options",
+                "sys - system data import options",
                 "back - to go back up one menu level"};
 
         String choice = "";
@@ -34,6 +35,9 @@ public class ImportService {
                     break;
                 case "usr":
                     manageUserImports(accountingSystem.getPeople(), accountingSystem.getCompanies());
+                    break;
+                case "sys":
+                    importSystemData(accountingSystem);
                     break;
                 case "back":
                     return;
@@ -77,6 +81,11 @@ public class ImportService {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+            AccountingSystem accountingSystemObject = (AccountingSystem) objectInputStream.readObject();
+            accountingSystem.setCompany(accountingSystemObject.getCompany());
+            accountingSystem.setDateCreated(accountingSystemObject.getDateCreated());
+            accountingSystem.setVersion(accountingSystemObject.getVersion());
 
             boolean allPeopleRead = false;
             while (!allPeopleRead) {
@@ -223,6 +232,36 @@ public class ImportService {
                     "Please check if the destination path is correct");
             e.printStackTrace();
             importCompaniesData(companies);
+            return;
+        }
+    }
+
+    public static void importSystemData(AccountingSystem accountingSystem) {
+        MessageService.showMessage(new String[]{"Import data",
+                "To import all data from current directory, type default",
+                "Please put in destination file path of the file which contains all serialized data"});
+
+        String choice = InputService.getInput();
+
+        String file = choice.equals("default") ? "output.ser" : choice;
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+            AccountingSystem accountingSystemObject = (AccountingSystem) objectInputStream.readObject();
+
+            accountingSystem.setCompany(accountingSystemObject.getCompany());
+            accountingSystem.setDateCreated(accountingSystemObject.getDateCreated());
+            accountingSystem.setVersion(accountingSystemObject.getVersion());
+
+            fileInputStream.close();
+            objectInputStream.close();
+        } catch (Exception e) {
+            System.out.println("Error! Something went wrong while importing data." +
+                    "Please check if the destination path is correct");
+            e.printStackTrace();
+            importSystemData(accountingSystem);
             return;
         }
     }

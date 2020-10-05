@@ -15,6 +15,7 @@ public class ExportService {
                 "all - export all available data",
                 "cat - export all category data",
                 "usr - user data export options",
+                "sys - system data export options",
                 "back - to go back up one menu level"};
 
         String choice = "";
@@ -31,6 +32,9 @@ public class ExportService {
                     break;
                 case "usr":
                     manageUserExports(accountingSystem.getPeople(), accountingSystem.getCompanies());
+                    break;
+                case "sys":
+                    exportSystemData(accountingSystem);
                     break;
                 case "back":
                     return;
@@ -74,6 +78,8 @@ public class ExportService {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            objectOutputStream.writeObject(accountingSystem);
 
             for (Person person : accountingSystem.getPeople()) {
                 objectOutputStream.writeObject(person);
@@ -174,6 +180,32 @@ public class ExportService {
             System.out.println("Error! Something went wrong while exporting data." +
                     "Please check if the destination path is correct");
             exportCompaniesData(companies);
+            return;
+        }
+    }
+
+    public static void exportSystemData(AccountingSystem accountingSystem) {
+        MessageService.showMessage(new String[]{"Export data",
+                "To save all data in current directory, type default",
+                "To save elsewhere, please put in destination file path where to save the output file"});
+
+        String choice = InputService.getInput();
+
+        String file = choice.equals("default") ? "output.ser" : choice;
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            objectOutputStream.writeObject(accountingSystem);
+
+            fileOutputStream.close();
+            objectOutputStream.close();
+        } catch (IOException e) {
+            System.out.println("Error! Something went wrong while exporting data." +
+                    "Please check if the destination path is correct");
+            e.printStackTrace();
+            exportSystemData(accountingSystem);
             return;
         }
     }

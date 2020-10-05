@@ -1,13 +1,9 @@
 package com.lucky.accountingsystem.service;
 
 import com.lucky.accountingsystem.controller.CategoryController;
+import com.lucky.accountingsystem.controller.SystemController;
 import com.lucky.accountingsystem.controller.UserController;
 import com.lucky.accountingsystem.model.AccountingSystem;
-import com.lucky.accountingsystem.model.Company;
-import com.lucky.accountingsystem.model.Person;
-import com.lucky.accountingsystem.model.SubCategory;
-
-import java.util.List;
 
 public class MenuService {
 
@@ -44,6 +40,7 @@ public class MenuService {
         String[] message = {"Choose action",
                 "cat - Categories",
                 "usr - Users",
+                "sys - System",
                 "ex - Export data",
                 "im - Import data"};
         MessageService.showMessage(message);
@@ -55,6 +52,9 @@ public class MenuService {
                 break;
             case "usr":
                 UserController.manageUsers(accountingSystem.getPeople(), accountingSystem.getCompanies());
+                break;
+            case "sys":
+                SystemController.manageSystem(accountingSystem);
                 break;
             case "ex":
                 ExportService.manageExports(accountingSystem);
