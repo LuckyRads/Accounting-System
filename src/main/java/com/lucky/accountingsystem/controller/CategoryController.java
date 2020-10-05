@@ -61,7 +61,7 @@ public class CategoryController {
         System.out.println("Enter description:");
         String description = InputService.getInput();
 
-        return new SubCategory(name, description, new ArrayList<Expense>(), new ArrayList<SubCategory>());
+        return new SubCategory(name, description, new ArrayList<Transaction>(), new ArrayList<SubCategory>());
 
     }
 
@@ -111,11 +111,11 @@ public class CategoryController {
     }
 
     private static void describeCategory(SubCategory category) {
-        String expensesString = "";
+        String transactionsString = "";
         String subCategoryString = "";
 
-        for (Expense expense : category.getExpenses()) {
-            expensesString += expense.getName() + ",";
+        for (Transaction transaction : category.getTransactions()) {
+            transactionsString += transaction.getName() + ",";
         }
 
         for (SubCategory subCategory : category.getSubCategories()) {
@@ -125,10 +125,10 @@ public class CategoryController {
         MessageService.showMessage(new String[]{"Category info",
                 "name: " + category.getName(),
                 "description: " + category.getDescription(),
-                "expenses: " + expensesString,
+                "transactions: " + transactionsString,
                 "subcategories: " + subCategoryString});
 
-        chooseManageExpenses(category);
+        chooseManageTransactions(category);
         chooseManageSubCategories(category);
     }
 
@@ -139,17 +139,17 @@ public class CategoryController {
 
         String categoryInfo[] = InputService.getInput().split(";");
 
-        chooseManageExpenses(category);
+        chooseManageTransactions(category);
         chooseManageSubCategories(category);
 
-        return new SubCategory(categoryInfo[0], categoryInfo[1], category.getExpenses(), category.getSubCategories());
+        return new SubCategory(categoryInfo[0], categoryInfo[1], category.getTransactions(), category.getSubCategories());
     }
 
-    private static void chooseManageExpenses(SubCategory category) {
-        MessageService.showMessage(new String[]{"Would you like to manage expenses of this category? (y/n)"});
+    private static void chooseManageTransactions(SubCategory category) {
+        MessageService.showMessage(new String[]{"Would you like to manage transactions of this category? (y/n)"});
         switch (InputService.getInput()) {
             case "y":
-                ExpenseController.manageExpenses(category.getExpenses());
+                TransactionController.manageTransactions(category.getTransactions());
                 break;
             case "n":
                 break;

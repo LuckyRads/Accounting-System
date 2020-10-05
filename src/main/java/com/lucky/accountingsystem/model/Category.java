@@ -12,9 +12,9 @@ public interface Category {
 
     void setDescription(String description);
 
-    List<Expense> getExpenses();
+    List<Transaction> getTransactions();
 
-    void setExpenses(List<Expense> expenses);
+    void setTransactions(List<Transaction> transactions);
 
     List<SubCategory> getSubCategories();
 
