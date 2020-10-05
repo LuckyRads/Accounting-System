@@ -28,7 +28,7 @@ public class ExportService {
                     exportAllData(accountingSystem);
                     break;
                 case "cat":
-                    exportCategoryData(accountingSystem.getSubCategories());
+                    exportCategoryData(accountingSystem.getCategories());
                     break;
                 case "usr":
                     manageUserExports(accountingSystem.getPeople(), accountingSystem.getCompanies());
@@ -89,7 +89,7 @@ public class ExportService {
                 objectOutputStream.writeObject(company);
             }
 
-            for (SubCategory subCategory : accountingSystem.getSubCategories()) {
+            for (SubCategory subCategory : accountingSystem.getCategories()) {
                 objectOutputStream.writeObject(subCategory);
             }
 

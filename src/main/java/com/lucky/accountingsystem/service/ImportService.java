@@ -31,7 +31,7 @@ public class ImportService {
                     importAllData(accountingSystem);
                     break;
                 case "cat":
-                    importCategoryData(accountingSystem.getSubCategories());
+                    importCategoryData(accountingSystem.getCategories());
                     break;
                 case "usr":
                     manageUserImports(accountingSystem.getPeople(), accountingSystem.getCompanies());
@@ -96,7 +96,7 @@ public class ImportService {
                                 accountingSystem.getPeople());
                     } catch (ClassCastException e) {
                         CategoryController.addReplaceCategory((SubCategory) object,
-                                accountingSystem.getSubCategories());
+                                accountingSystem.getCategories());
                     }
                 } catch (EOFException e) {
                     allPeopleRead = true;
@@ -117,7 +117,7 @@ public class ImportService {
             while (!allCategoriesRead) {
                 try {
                     CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
-                            accountingSystem.getSubCategories());
+                            accountingSystem.getCategories());
                 } catch (EOFException e) {
                     allCategoriesRead = true;
                 }
