@@ -167,4 +167,14 @@ public class CategoryController {
         }
     }
 
+    public static void addReplaceCategory(SubCategory categoryToAdd, List<SubCategory> subCategories) {
+        for (SubCategory subCategory : subCategories) {
+            if (categoryToAdd.getName().equals(subCategory.getName())) {
+                subCategories.remove(subCategory);
+                break;
+            }
+        }
+        subCategories.add(categoryToAdd);
+    }
+
 }

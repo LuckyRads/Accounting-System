@@ -137,4 +137,14 @@ public class CompanyController {
         return new Company(personInfo[0], personInfo[1], personInfo[2], responsiblePerson);
     }
 
+    public static void addReplaceCompany(Company companyToAdd, List<Company> companies) {
+        for (Company company : companies) {
+            if (companyToAdd.getEmail().equals(company.getEmail())) {
+                companies.remove(company);
+                break;
+            }
+        }
+        companies.add(companyToAdd);
+    }
+
 }

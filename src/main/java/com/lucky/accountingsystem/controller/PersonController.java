@@ -1,6 +1,7 @@
 package com.lucky.accountingsystem.controller;
 
 import com.lucky.accountingsystem.model.Person;
+import com.lucky.accountingsystem.model.SubCategory;
 import com.lucky.accountingsystem.model.User;
 import com.lucky.accountingsystem.service.InputService;
 import com.lucky.accountingsystem.service.MessageService;
@@ -150,6 +151,16 @@ public class PersonController {
             }
         }
         return chosenPerson;
+    }
+
+    public static void addReplacePerson(Person personToAdd, List<Person> people) {
+        for (Person person : people) {
+            if (personToAdd.getEmail().equals(person.getEmail())) {
+                people.remove(person);
+                break;
+            }
+        }
+        people.add(personToAdd);
     }
 
 }

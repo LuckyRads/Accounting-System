@@ -1,5 +1,8 @@
 package com.lucky.accountingsystem.service;
 
+import com.lucky.accountingsystem.controller.CategoryController;
+import com.lucky.accountingsystem.controller.CompanyController;
+import com.lucky.accountingsystem.controller.PersonController;
 import com.lucky.accountingsystem.model.Company;
 import com.lucky.accountingsystem.model.Person;
 import com.lucky.accountingsystem.model.SubCategory;
@@ -74,12 +77,13 @@ public class ImportService {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            // TODO: Fix import of many objects
+            // TODO: Fix duplicates
 
             boolean allCategoriesRead = false;
             while (!allCategoriesRead) {
                 try {
-                    categories.add((SubCategory) objectInputStream.readObject());
+                    CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
+                            categories);
                 } catch (EOFException e) {
                     allCategoriesRead = true;
                 }
@@ -88,7 +92,8 @@ public class ImportService {
             boolean allPeopleRead = false;
             while (!allPeopleRead) {
                 try {
-                    people.add((Person) objectInputStream.readObject());
+                    PersonController.addReplacePerson((Person) objectInputStream.readObject(),
+                            people);
                 } catch (EOFException e) {
                     allPeopleRead = true;
                 }
@@ -97,7 +102,8 @@ public class ImportService {
             boolean allCompaniesRead = false;
             while (!allCompaniesRead) {
                 try {
-                    companies.add((Company) objectInputStream.readObject());
+                    CompanyController.addReplaceCompany((Company) objectInputStream.readObject(),
+                            companies);
                 } catch (EOFException e) {
                     allCompaniesRead = true;
                 }
@@ -130,7 +136,8 @@ public class ImportService {
             boolean allCategoriesRead = false;
             while (!allCategoriesRead) {
                 try {
-                    categories.add((SubCategory) objectInputStream.readObject());
+                    CategoryController.addReplaceCategory((SubCategory) objectInputStream.readObject(),
+                            categories);
                 } catch (EOFException e) {
                     allCategoriesRead = true;
                 }
@@ -163,7 +170,8 @@ public class ImportService {
             boolean allPeopleRead = false;
             while (!allPeopleRead) {
                 try {
-                    people.add((Person) objectInputStream.readObject());
+                    PersonController.addReplacePerson((Person) objectInputStream.readObject(),
+                            people);
                 } catch (EOFException e) {
                     allPeopleRead = true;
                 }
@@ -196,7 +204,8 @@ public class ImportService {
             boolean allCompaniesRead = false;
             while (!allCompaniesRead) {
                 try {
-                    companies.add((Company) objectInputStream.readObject());
+                    CompanyController.addReplaceCompany((Company) objectInputStream.readObject(),
+                            companies);
                 } catch (EOFException e) {
                     allCompaniesRead = true;
                 }
