@@ -13,9 +13,6 @@ public class Main {
         List<Company> companies = new ArrayList<Company>();
         List<SubCategory> categories = new ArrayList<SubCategory>();
 
-//        categories.add(new SubCategory("cars", "cars are cool", new ArrayList<Expense>(), new ArrayList<SubCategory>()));
-//       people.add(new Person("matas@mail.com", "password", "matas", "malickas", "+37061234567"));
-
 //         Program loop
         // TODO: Authentication
 //        while (!AuthService.isLoggedIn()) {

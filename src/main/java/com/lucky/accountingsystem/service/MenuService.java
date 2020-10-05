@@ -1,7 +1,6 @@
 package com.lucky.accountingsystem.service;
 
 import com.lucky.accountingsystem.controller.CategoryController;
-import com.lucky.accountingsystem.controller.PersonController;
 import com.lucky.accountingsystem.controller.UserController;
 import com.lucky.accountingsystem.model.Company;
 import com.lucky.accountingsystem.model.Person;
@@ -50,7 +49,6 @@ public class MenuService {
         MessageService.showMessage(message);
         String choice = InputService.getInput();
 
-        // TODO: Add functionality from laboras 2
         switch (choice) {
             case "cat":
                 CategoryController.manageCategories(categories);
