@@ -54,7 +54,7 @@ public class MenuService {
                 UserController.manageUsers(accountingSystem.getPeople(), accountingSystem.getCompanies());
                 break;
             case "sys":
-                SystemController.manageSystem(accountingSystem);
+//                SystemController.manageSystem(accountingSystem);
                 break;
             case "ex":
                 ExportService.manageExports(accountingSystem);

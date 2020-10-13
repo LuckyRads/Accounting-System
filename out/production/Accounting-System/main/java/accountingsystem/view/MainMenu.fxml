@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.accountingsystem.controller.MainMenuController">
+   <children>
+      <ButtonBar layoutX="20.0" layoutY="356.0" prefHeight="64.0" prefWidth="560.0">
+         <buttons>
+            <Button fx:id="categoriesBtn" mnemonicParsing="false" onAction="#openCategories" prefHeight="0.0" prefWidth="242.0" text="Categories">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="systemBtn" mnemonicParsing="false" onAction="#openSystem" prefHeight="43.0" text="System">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="usersBtn" minWidth="57.0" mnemonicParsing="false" onAction="#openUsers" prefHeight="0.0" text="Users">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
