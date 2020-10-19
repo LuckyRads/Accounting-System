@@ -9,11 +9,11 @@ public class AccountingSystem implements Serializable {
     private String company;
     private Date dateCreated;
     private String version;
-    private List<SubCategory> categories;
+    private List<Category> categories;
     private List<Person> people;
     private List<Company> companies;
 
-    public AccountingSystem(String company, Date dateCreated, String version, List<SubCategory> categories, List<Person> people, List<Company> companies) {
+    public AccountingSystem(String company, Date dateCreated, String version, List<Category> categories, List<Person> people, List<Company> companies) {
         this.company = company;
         this.dateCreated = dateCreated;
         this.version = version;
@@ -46,11 +46,11 @@ public class AccountingSystem implements Serializable {
         this.version = version;
     }
 
-    public List<SubCategory> getCategories() {
+    public List<Category> getCategories() {
         return this.categories;
     }
 
-    public void setCategories(List<SubCategory> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 

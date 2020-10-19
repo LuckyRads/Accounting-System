@@ -98,8 +98,8 @@ public class ImportService {
                         CompanyController.addReplaceCompany((Company) object,
                                 accountingSystem.getCompanies());
                     }
-                    if (object instanceof SubCategory) {
-                        CategoryController.addReplaceCategory((SubCategory) object,
+                    if (object instanceof Category) {
+                        CategoryController.addReplaceCategory((Category) object,
                                 accountingSystem.getCategories());
                     }
                 } catch (EOFException e) {
@@ -118,7 +118,7 @@ public class ImportService {
         }
     }
 
-    public static void importCategoryData(List<SubCategory> categories) {
+    public static void importCategoryData(List<Category> categories) {
         MessageService.showMessage(new String[]{"Import data",
                 "To import all data from current directory, type default",
                 "Please put in destination file path of the file which contains all serialized data"});
@@ -135,8 +135,8 @@ public class ImportService {
             while (!allCategoriesRead) {
                 try {
                     Object object = objectInputStream.readObject();
-                    if (object instanceof SubCategory) {
-                        CategoryController.addReplaceCategory((SubCategory) object,
+                    if (object instanceof Category) {
+                        CategoryController.addReplaceCategory((Category) object,
                                 categories);
                     }
                 } catch (EOFException e) {

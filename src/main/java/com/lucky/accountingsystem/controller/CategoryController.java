@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CategoryController {
 
-    public static void manageCategories(List<SubCategory> categories, List<Person> people) {
+    public static void manageCategories(List<Category> categories, List<Person> people) {
         String message[] = {"Choose an action",
                 "show - show categories",
                 "cre - create category",
@@ -45,14 +45,14 @@ public class CategoryController {
         }
     }
 
-    public static void showCategories(List<SubCategory> categories) {
+    public static void showCategories(List<Category> categories) {
         System.out.println("Categories:");
-        for (SubCategory category : categories) {
+        for (Category category : categories) {
             System.out.println(category.getName());
         }
     }
 
-    public static SubCategory createCategory(List<Person> people) {
+    public static Category createCategory(List<Person> people) {
         System.out.println("Category creation");
 
         System.out.println("Enter name:");
@@ -61,52 +61,52 @@ public class CategoryController {
         System.out.println("Enter description:");
         String description = InputService.getInput();
 
-        SubCategory subCategory = new SubCategory(name, description, new ArrayList<Transaction>(), new ArrayList<SubCategory>(), new ArrayList<Person>());
+        Category category = new Category(name, description, new ArrayList<Transaction>(), new ArrayList<Category>(), new ArrayList<Person>());
 
-        chooseResponsiblePeople(subCategory, people);
+        chooseResponsiblePeople(category, people);
 
-        return subCategory;
+        return category;
 
     }
 
-    public static void describeCategory(List<SubCategory> categories, List<Person> people) {
+    public static void describeCategory(List<Category> categories, List<Person> people) {
         MessageService.showMessage(new String[]{"Choose which categories info you would like to see:"});
 
         showCategories(categories);
 
         String chosenCategory = InputService.getInput();
 
-        for (SubCategory category : categories) {
+        for (Category category : categories) {
             if (chosenCategory.equals(category.getName())) {
                 describeCategory(category, people);
             }
         }
     }
 
-    public static void updateCategory(List<SubCategory> categories, List<Person> people) {
+    public static void updateCategory(List<Category> categories, List<Person> people) {
         MessageService.showMessage(new String[]{"Choose which category's info you would like to update:"});
 
         showCategories(categories);
 
         String chosenCategory = InputService.getInput();
 
-        for (SubCategory subCategory : categories) {
-            if (chosenCategory.equals(subCategory.getName())) {
-                categories.remove(subCategory);
-                subCategory = updateCategory(subCategory, people);
-                categories.add(subCategory);
+        for (Category category : categories) {
+            if (chosenCategory.equals(category.getName())) {
+                categories.remove(category);
+                category = updateCategory(category, people);
+                categories.add(category);
             }
         }
     }
 
-    public static void removeCategory(List<SubCategory> categories) {
+    public static void removeCategory(List<Category> categories) {
         MessageService.showMessage(new String[]{"Choose which category you would like to remove:"});
 
         showCategories(categories);
 
         String chosenCategory = InputService.getInput();
 
-        for (SubCategory category : categories) {
+        for (Category category : categories) {
             if (chosenCategory.equals(category.getName())) {
                 categories.remove(category);
                 return;
@@ -114,7 +114,7 @@ public class CategoryController {
         }
     }
 
-    private static void describeCategory(SubCategory category, List<Person> people) {
+    private static void describeCategory(Category category, List<Person> people) {
         String transactionsString = "";
         String subCategoryString = "";
         String responsiblePeopleString = "";
@@ -123,7 +123,7 @@ public class CategoryController {
             transactionsString += transaction.getName() + ",";
         }
 
-        for (SubCategory subCategory : category.getSubCategories()) {
+        for (Category subCategory : category.getSubCategories()) {
             subCategoryString += subCategory.getName() + ",";
         }
 
@@ -139,7 +139,7 @@ public class CategoryController {
                 "responsible users: " + responsiblePeopleString});
     }
 
-    private static SubCategory updateCategory(SubCategory category, List<Person> people) {
+    private static Category updateCategory(Category category, List<Person> people) {
         MessageService.showMessage(new String[]{"Edit category's info",
                 "Enter new category's info in format:",
                 "name;description"});
@@ -150,10 +150,10 @@ public class CategoryController {
         chooseManageSubCategories(category, people);
         chooseResponsiblePeople(category, people);
 
-        return new SubCategory(categoryInfo[0], categoryInfo[1], category.getTransactions(), category.getSubCategories(), category.getResponsiblePeople());
+        return new Category(categoryInfo[0], categoryInfo[1], category.getTransactions(), category.getSubCategories(), category.getResponsiblePeople());
     }
 
-    private static void chooseManageTransactions(SubCategory category) {
+    private static void chooseManageTransactions(Category category) {
         MessageService.showMessage(new String[]{"Would you like to manage transactions of this category? (y/n)"});
         switch (InputService.getInput()) {
             case "y":
@@ -164,7 +164,7 @@ public class CategoryController {
         }
     }
 
-    private static void chooseManageSubCategories(SubCategory category, List<Person> people) {
+    private static void chooseManageSubCategories(Category category, List<Person> people) {
         MessageService.showMessage(new String[]{"Would you like to manage subcategories of this category? (y/n)"});
         switch (InputService.getInput()) {
             case "y":
@@ -175,7 +175,7 @@ public class CategoryController {
         }
     }
 
-    private static void chooseResponsiblePeople(SubCategory category, List<Person> people) {
+    private static void chooseResponsiblePeople(Category category, List<Person> people) {
         MessageService.showMessage(new String[]{"Would you like to manage responsible people of this category? (y/n)"});
         switch (InputService.getInput()) {
             case "y":
@@ -205,10 +205,10 @@ public class CategoryController {
         }
     }
 
-    public static void addReplaceCategory(SubCategory categoryToAdd, List<SubCategory> subCategories) {
-        for (SubCategory subCategory : subCategories) {
-            if (categoryToAdd.getName().equals(subCategory.getName())) {
-                subCategories.remove(subCategory);
+    public static void addReplaceCategory(Category categoryToAdd, List<Category> subCategories) {
+        for (Category category : subCategories) {
+            if (categoryToAdd.getName().equals(category.getName())) {
+                subCategories.remove(category);
                 break;
             }
         }

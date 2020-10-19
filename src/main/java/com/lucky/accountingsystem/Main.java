@@ -18,17 +18,11 @@ public class Main {
                 "VGTU",
                 calendar.getTime(),
                 "1.0.0",
-                new ArrayList<SubCategory>(),
+                new ArrayList<Category>(),
                 new ArrayList<Person>(),
                 new ArrayList<Company>()
         );
 
-//         Program loop
-        // TODO: Authentication
-//        while (!AuthService.isLoggedIn()) {
-//            MenuService.showStartupScreen();
-//        }
-        // Main menu loop
         while (true) {
             MenuService.showMenu(accountingSystem);
         }
