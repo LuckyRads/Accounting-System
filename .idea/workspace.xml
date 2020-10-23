@@ -5,13 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7af3e587-7351-4ae4-ab61-7b563cbc5916" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CompaniesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CompaniesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/PeopleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCompany.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Companies.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddPersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddPersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/MainMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddPerson.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/SystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/SystemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UsersController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/People.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/People.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/System.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/System.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddPersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddPersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddPerson.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/SystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/People.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/People.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/System.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/System.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -52,6 +68,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -119,69 +136,74 @@
     </state>
     <state x="-1080" y="343" width="1080" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506138388" />
     <state x="0" y="443" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475826771" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1603477948482">
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1603488667761">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-622" y="293" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476515531" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603477948482" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603488667761" />
     <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603473819857">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603473819857" />
-    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603473805967">
+    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603487157859">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-810" y="435" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602519601053" />
-    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603473805967" />
+    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603487157859" />
     <state x="583" y="507" key="FileChooserDialogImpl" timestamp="1603474075134">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-834" y="429" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602520697238" />
     <state x="583" y="507" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603474075134" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1603486626092">
+    <state width="2517" height="476" key="GridCell.Tab.0.bottom" timestamp="1603490811733">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486626092" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1603486626092">
+    <state width="2517" height="476" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811733" />
+    <state width="2517" height="476" key="GridCell.Tab.0.center" timestamp="1603490811733">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486626092" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1603486626092">
+    <state width="2517" height="476" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811733" />
+    <state width="2517" height="476" key="GridCell.Tab.0.left" timestamp="1603490811733">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486626092" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1603486626092">
+    <state width="2517" height="476" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811733" />
+    <state width="2517" height="476" key="GridCell.Tab.0.right" timestamp="1603490811733">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486626092" />
-    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1603486625983">
+    <state width="2517" height="476" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811733" />
+    <state width="2517" height="476" key="GridCell.Tab.1.bottom" timestamp="1603490811613">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486625983" />
-    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1603486625983">
+    <state width="2517" height="476" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811613" />
+    <state width="2517" height="476" key="GridCell.Tab.1.center" timestamp="1603490811613">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486625983" />
-    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1603486625983">
+    <state width="2517" height="476" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811613" />
+    <state width="2517" height="476" key="GridCell.Tab.1.left" timestamp="1603490811613">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486625983" />
-    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1603486625983">
+    <state width="2517" height="476" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811613" />
+    <state width="2517" height="476" key="GridCell.Tab.1.right" timestamp="1603490811613">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603486625983" />
-    <state x="-1060" y="262" key="SettingsEditor" timestamp="1602506465205">
-      <screen x="-1080" y="-252" width="1080" height="1880" />
+    <state width="2517" height="476" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490811613" />
+    <state x="47" y="383" key="SettingsEditor" timestamp="1603489783378">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-1060" y="262" key="SettingsEditor/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506465205" />
+    <state x="47" y="383" key="SettingsEditor/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603489783378" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603490076999">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603490076999" />
     <state x="-664" y="329" width="555" height="718" key="find.popup" timestamp="1603476641774">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>

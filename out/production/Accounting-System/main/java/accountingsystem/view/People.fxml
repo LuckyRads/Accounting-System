@@ -16,17 +16,12 @@
    <children>
       <ButtonBar layoutX="20.0" layoutY="376.0" prefHeight="64.0" prefWidth="560.0">
          <buttons>
-            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#openMenu" prefHeight="44.0" prefWidth="242.0" text="Back">
+            <Button fx:id="menuBtn" mnemonicParsing="false" onAction="#openMenu" prefHeight="44.0" prefWidth="242.0" text="Menu">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="systemBtn" mnemonicParsing="false" prefHeight="43.0" text="System">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button fx:id="usersBtn" minWidth="57.0" mnemonicParsing="false" prefHeight="0.0" text="Users">
+            <Button fx:id="usersBtn" mnemonicParsing="false" onAction="#openUsers" prefHeight="44.0" prefWidth="242.0" text="Users">
                <font>
                   <Font size="20.0" />
                </font>

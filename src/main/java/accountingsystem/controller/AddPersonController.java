@@ -45,6 +45,7 @@ public class AddPersonController implements WindowController {
         stage.close();
     }
 
+    @FXML
     public void addPerson() throws IOException {
         peopleController.getAccountingSystem().getPeople().add(new Person(emailField.getText(), passwordField.getText(), nameField.getText(),
                 surnameField.getText(), phoneNumberField.getText()));

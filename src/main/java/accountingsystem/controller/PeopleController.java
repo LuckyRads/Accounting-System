@@ -21,6 +21,12 @@ public class PeopleController {
     private ListView peopleList;
 
     @FXML
+    private Button menuBtn;
+
+    @FXML
+    private Button usersBtn;
+
+    @FXML
     private Button addPersonBtn;
 
     @FXML
@@ -55,14 +61,39 @@ public class PeopleController {
         this.accountingSystem = accountingSystem;
     }
 
+    @FXML
+    public void openMenu() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/MainMenu.fxml"));
+        Parent root = loader.load();
+
+        MainMenuController mainMenuController = loader.getController();
+        mainMenuController.setAccountingSystem(accountingSystem);
+
+        ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
+    }
+
+    @FXML
+    public void openUsers() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Users.fxml"));
+        Parent root = loader.load();
+
+        UsersController usersController = loader.getController();
+        usersController.setAccountingSystem(accountingSystem);
+
+        ViewService.openView((Stage) usersBtn.getScene().getWindow(), root);
+    }
+
+    @FXML
     public void loadPeople() {
         peopleList.getItems().clear();
+        
         for (Person person : accountingSystem.getPeople()) {
             peopleList.getItems().add(person.getEmail());
         }
         updateWindow();
     }
 
+    @FXML
     public void loadPerson() {
         if (peopleList.getSelectionModel().getSelectedItem() == null) {
             return;
@@ -87,16 +118,7 @@ public class PeopleController {
         stage.show();
     }
 
-    public void openMenu() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/MainMenu.fxml"));
-        Parent root = loader.load();
-
-        MainMenuController mainMenuController = loader.getController();
-        mainMenuController.setAccountingSystem(accountingSystem);
-
-        ViewService.openView((Stage) addPersonBtn.getScene().getWindow(), root);
-    }
-
+    @FXML
     public void addPerson() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddPerson.fxml"));
         Parent root = loader.load();
@@ -107,6 +129,7 @@ public class PeopleController {
         ViewService.newWindow(root, "Add person");
     }
 
+    @FXML
     public void removePerson() {
         String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
 
@@ -119,6 +142,7 @@ public class PeopleController {
         }
     }
 
+    @FXML
     public void updatePerson() {
         String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
 

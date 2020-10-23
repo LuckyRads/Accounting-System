@@ -15,10 +15,13 @@ public class UsersController {
     private AccountingSystem accountingSystem;
 
     @FXML
-    private Button backBtn;
+    private Button menuBtn;
 
     @FXML
     private Button peopleBtn;
+
+    @FXML
+    private Button companiesBtn;
 
     public AccountingSystem getAccountingSystem() {
         return accountingSystem;
@@ -26,12 +29,6 @@ public class UsersController {
 
     public void setAccountingSystem(AccountingSystem accountingSystem) {
         this.accountingSystem = accountingSystem;
-    }
-
-
-
-    public void loadUsers() {
-        //
     }
 
     @FXML
@@ -42,7 +39,7 @@ public class UsersController {
         MainMenuController mainMenuController = loader.getController();
         mainMenuController.setAccountingSystem(accountingSystem);
 
-        ViewService.openView((Stage) backBtn.getScene().getWindow(), root);
+        ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
     }
 
     @FXML
@@ -55,6 +52,18 @@ public class UsersController {
 
         ViewService.openView((Stage) peopleBtn.getScene().getWindow(), root);
         peopleController.loadPeople();
+    }
+
+    @FXML
+    public void openCompanies() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Companies.fxml"));
+        Parent root = loader.load();
+
+        CompaniesController companiesController = loader.getController();
+        companiesController.setAccountingSystem(accountingSystem);
+
+        ViewService.openView((Stage) companiesBtn.getScene().getWindow(), root);
+        companiesController.loadCompanies();
     }
 
 }

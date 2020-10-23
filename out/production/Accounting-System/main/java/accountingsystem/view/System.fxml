@@ -41,7 +41,7 @@
       </TextField>
       <ButtonBar layoutX="14.0" layoutY="346.0" prefHeight="64.0" prefWidth="560.0">
          <buttons>
-            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#openMenu" prefHeight="0.0" prefWidth="242.0" text="Back">
+            <Button fx:id="menuBtn" mnemonicParsing="false" onAction="#openMenu" prefHeight="0.0" prefWidth="242.0" text="Menu">
                <font>
                   <Font size="20.0" />
                </font>
