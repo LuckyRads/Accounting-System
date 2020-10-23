@@ -26,7 +26,7 @@
             </Button>
          </buttons>
       </ButtonBar>
-      <Button fx:id="peopleBtn" layoutX="77.0" layoutY="152.0" mnemonicParsing="false" onAction="#openPeople" prefHeight="0.0" prefWidth="242.0" text="Back">
+      <Button fx:id="peopleBtn" layoutX="77.0" layoutY="152.0" mnemonicParsing="false" onAction="#openPeople" prefHeight="0.0" prefWidth="242.0" text="People">
          <font>
             <Font size="20.0" />
          </font>

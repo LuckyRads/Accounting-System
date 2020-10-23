@@ -32,5 +32,6 @@
       <ListView fx:id="peopleList" editable="true" layoutX="35.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="35.0" layoutY="37.0" text="People" />
       <Button fx:id="addPersonBtn" layoutX="35.0" layoutY="268.0" mnemonicParsing="false" onAction="#addPerson" text="Add person" />
+      <Button fx:id="removePersonBtn" layoutX="135.0" layoutY="268.0" mnemonicParsing="false" onAction="#removePerson" text="Remove person" />
    </children>
 </AnchorPane>

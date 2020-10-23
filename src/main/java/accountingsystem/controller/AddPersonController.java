@@ -1,20 +1,16 @@
 package main.java.accountingsystem.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.AccountingSystem;
 import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
-public class AddPersonController {
+public class AddPersonController implements WindowController {
 
-    private AccountingSystem accountingSystem;
+    private PeopleController peopleController;
 
     @FXML
     private TextField emailField;
@@ -34,29 +30,25 @@ public class AddPersonController {
     @FXML
     private Button addPersonBtn;
 
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
+    public PeopleController getPeopleController() {
+        return peopleController;
     }
 
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
+    public void setPeopleController(PeopleController peopleController) {
+        this.peopleController = peopleController;
+    }
+
+    @Override
+    public void closeWindow() {
+        peopleController.loadPeople();
+        Stage stage = (Stage) addPersonBtn.getScene().getWindow();
+        stage.close();
     }
 
     public void addPerson() throws IOException {
-        accountingSystem.getPeople().add(new Person(emailField.getText(), passwordField.getText(), nameField.getText(),
-                surnameField.getText(),phoneNumberField.getText()));
-        openPeople();
-
+        peopleController.getAccountingSystem().getPeople().add(new Person(emailField.getText(), passwordField.getText(), nameField.getText(),
+                surnameField.getText(), phoneNumberField.getText()));
+        closeWindow();
     }
 
-    public void openPeople() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/People.fxml"));
-        Parent root = loader.load();
-
-        PeopleController peopleController = loader.getController();
-        peopleController.setAccountingSystem(accountingSystem);
-
-        ViewService.openView((Stage) addPersonBtn.getScene().getWindow(), root);
-        peopleController.loadPeople();
-    }
 }

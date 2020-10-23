@@ -1,10 +1,8 @@
 package main.java.accountingsystem.controller;
 
-import com.sun.glass.ui.View;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
@@ -24,6 +22,9 @@ public class PeopleController {
     @FXML
     private Button addPersonBtn;
 
+    @FXML
+    private Button removePersonBtn;
+
     public AccountingSystem getAccountingSystem() {
         return accountingSystem;
     }
@@ -33,6 +34,8 @@ public class PeopleController {
     }
 
     public void loadPeople() {
+        peopleList.getItems().clear();
+        System.out.println("clera");
         for (Person person : accountingSystem.getPeople()) {
             peopleList.getItems().add(person.getEmail());
         }
@@ -41,8 +44,14 @@ public class PeopleController {
     }
 
     @FXML
-    public void openMenu() {
-        //
+    public void openMenu() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/MainMenu.fxml"));
+        Parent root = loader.load();
+
+        MainMenuController mainMenuController = loader.getController();
+        mainMenuController.setAccountingSystem(accountingSystem);
+
+        ViewService.openView((Stage) addPersonBtn.getScene().getWindow(), root);
     }
 
     public void addPerson() throws IOException {
@@ -50,10 +59,21 @@ public class PeopleController {
         Parent root = loader.load();
 
         AddPersonController addPersonController = loader.getController();
-        addPersonController.setAccountingSystem(accountingSystem);
+        addPersonController.setPeopleController(this);
 
         ViewService.newWindow(root, "Add person");
-//        ViewService.openView((Stage) addPersonBtn.getScene().getWindow(), root);
+    }
+
+    public void removePerson() {
+        String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
+
+        for (Person person : accountingSystem.getPeople()) {
+            if (selectedPerson.equals(person.getEmail())) {
+                accountingSystem.getPeople().remove(person);
+                loadPeople();
+                return;
+            }
+        }
     }
 
 }
