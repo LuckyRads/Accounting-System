@@ -86,7 +86,7 @@ public class PeopleController {
     @FXML
     public void loadPeople() {
         peopleList.getItems().clear();
-        
+
         for (Person person : accountingSystem.getPeople()) {
             peopleList.getItems().add(person.getEmail());
         }
@@ -113,7 +113,7 @@ public class PeopleController {
         }
     }
 
-    public void updateWindow() {
+    private void updateWindow() {
         Stage stage = (Stage) peopleList.getScene().getWindow();
         stage.show();
     }

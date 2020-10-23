@@ -19,10 +19,16 @@ public class SystemController {
     private Button menuBtn;
 
     @FXML
+    private Button updateSystemInfoBtn;
+
+    @FXML
+    private Button resetSystemInfoBtn;
+
+    @FXML
     private TextField companyTextField;
 
     @FXML
-    private TextField createdAtTextField;
+    private TextField createdAtDatePicker;
 
     @FXML
     private TextField versionTextField;
@@ -37,7 +43,7 @@ public class SystemController {
 
     public void loadSystemInfo() {
         companyTextField.setText(this.accountingSystem.getCompany());
-        createdAtTextField.setText(this.accountingSystem.getDateCreated().toString());
+        createdAtDatePicker.setText(this.accountingSystem.getDateCreated().toString());
         versionTextField.setText(this.accountingSystem.getVersion());
     }
 
@@ -50,6 +56,19 @@ public class SystemController {
         mainMenuController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
+    }
+
+    private void updateWindow() {
+        Stage stage = (Stage) companyTextField.getScene().getWindow();
+        stage.show();
+    }
+
+    @FXML
+    public void updateSystemInfo() {
+        accountingSystem.setCompany(companyTextField.getText());
+//        accountingSystem.setDateCreated(createdAtDatePicker.getText().toString());
+        accountingSystem.setVersion(versionTextField.getText());
+        updateWindow();
     }
 
 }

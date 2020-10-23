@@ -1,8 +1,6 @@
 package main.java.accountingsystem.service;
 
-import main.java.accountingsystem.controller.CategoryController;
-import main.java.accountingsystem.controller.SystemController;
-import main.java.accountingsystem.controller.UserController;
+//import main.java.accountingsystem.controller.CategoryController;
 import main.java.accountingsystem.model.AccountingSystem;
 
 public class MenuService {
@@ -48,10 +46,10 @@ public class MenuService {
 
         switch (choice) {
             case "cat":
-                CategoryController.manageCategories(accountingSystem.getCategories(), accountingSystem.getPeople());
+//                CategoryController.manageCategories(accountingSystem.getCategories(), accountingSystem.getPeople());
                 break;
             case "usr":
-                UserController.manageUsers(accountingSystem.getPeople(), accountingSystem.getCompanies());
+//                UserController.manageUsers(accountingSystem.getPeople(), accountingSystem.getCompanies());
                 break;
             case "sys":
 //                SystemController.manageSystem(accountingSystem);
@@ -60,7 +58,7 @@ public class MenuService {
                 ExportService.manageExports(accountingSystem);
                 break;
             case "im":
-                ImportService.manageImports(accountingSystem);
+//                ImportService.manageImports(accountingSystem);
                 break;
         }
     }
