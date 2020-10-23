@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7af3e587-7351-4ae4-ab61-7b563cbc5916" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoriesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ViewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AccountingSystem.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Categories.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/MainMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Register.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/System.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddPersonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddPerson.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/People.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/accounting-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/MainMenu.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/CategoryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/CompanyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/MainMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/PersonController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/SystemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/TransactionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/exception/BadLoginException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/exception/InvalidPasswordException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CategoriesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CategoriesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CompanyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/MainMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/PersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/RegisterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/SystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/SystemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/TransactionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UsersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/exception/BadLoginException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/exception/BadLoginException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/exception/InvalidPasswordException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/exception/InvalidPasswordException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/AccountingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/AccountingSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/SubCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/TransactionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/TransactionType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ExportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ExportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ImportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ImportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/InputService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/InputService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/LoginService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/MenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/AccountingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/Company.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/SubCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/Transaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/TransactionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/ExportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/ImportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/InputService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/MenuService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/MessageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/PasswordService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/service/RegisterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/util/DateUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/MessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/MessageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/PasswordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/PasswordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/RegisterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ViewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ViewService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/util/DateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/MainMenu.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/SystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/AccountingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/AccountingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/SubCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ExportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ImportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ImportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ViewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2048-Game" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Miscellaneous/Studies/Year 3/Semester 1/Programavimo technologijos/LibraryGuiHibernate" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -115,6 +114,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,74 +157,78 @@
     </state>
     <state x="-1060" y="262" key="#Project_Structure/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602505458791" />
     <state x="47" y="383" key="#Project_Structure/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602511751740" />
-    <state x="-1080" y="343" width="1080" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602506138388">
-      <screen x="-1080" y="-252" width="1080" height="1880" />
-    </state>
-    <state x="-1080" y="343" width="1080" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506138388" />
-    <state x="-622" y="293" key="#com.intellij.ide.util.MemberChooser" timestamp="1602520215010">
-      <screen x="-1080" y="-252" width="1080" height="1880" />
-    </state>
-    <state x="-622" y="293" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602520215010" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516039246" />
-    <state x="885" y="234" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602512894485">
+    <state x="0" y="443" width="1080" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603475826771">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="885" y="234" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602512894485" />
-    <state x="-810" y="435" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602519601053">
+    <state x="-1080" y="343" width="1080" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506138388" />
+    <state x="0" y="443" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475826771" />
+    <state x="-622" y="293" key="#com.intellij.ide.util.MemberChooser" timestamp="1603476515531">
       <screen x="-1080" y="-252" width="1080" height="1880" />
+    </state>
+    <state x="-622" y="293" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476515531" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475777460" />
+    <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603473819857">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603473819857" />
+    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603473805967">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-810" y="435" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602519601053" />
-    <state x="-834" y="429" key="FileChooserDialogImpl" timestamp="1602520697238">
-      <screen x="-1080" y="-252" width="1080" height="1880" />
+    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603473805967" />
+    <state x="583" y="507" key="FileChooserDialogImpl" timestamp="1603474075134">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-834" y="429" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602520697238" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1602531413304">
+    <state x="583" y="507" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603474075134" />
+    <state width="1037" height="492" key="GridCell.Tab.0.bottom" timestamp="1603476896114">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413304" />
-    <state width="2517" height="397" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441443" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1602531413304">
+    <state width="1037" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912686" />
+    <state width="1037" height="492" key="GridCell.Tab.0.center" timestamp="1603476896114">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413304" />
-    <state width="2517" height="397" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441443" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1602531413304">
+    <state width="1037" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
+    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912686" />
+    <state width="1037" height="492" key="GridCell.Tab.0.left" timestamp="1603476896114">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413304" />
-    <state width="2517" height="397" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441443" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1602531413304">
+    <state width="1037" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
+    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912686" />
+    <state width="1037" height="492" key="GridCell.Tab.0.right" timestamp="1603476896114">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413304" />
-    <state width="2517" height="397" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441443" />
-    <state width="1037" height="397" key="GridCell.Tab.1.bottom" timestamp="1602531413300">
+    <state width="1037" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896114" />
+    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912686" />
+    <state width="1037" height="492" key="GridCell.Tab.1.bottom" timestamp="1603476896025">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="1037" height="397" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413300" />
-    <state width="2517" height="397" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441336" />
-    <state width="1037" height="397" key="GridCell.Tab.1.center" timestamp="1602531413300">
+    <state width="1037" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912565" />
+    <state width="1037" height="492" key="GridCell.Tab.1.center" timestamp="1603476896025">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="1037" height="397" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413300" />
-    <state width="2517" height="397" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441336" />
-    <state width="1037" height="397" key="GridCell.Tab.1.left" timestamp="1602531413300">
+    <state width="1037" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
+    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912565" />
+    <state width="1037" height="492" key="GridCell.Tab.1.left" timestamp="1603476896025">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="1037" height="397" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413300" />
-    <state width="2517" height="397" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441336" />
-    <state width="1037" height="397" key="GridCell.Tab.1.right" timestamp="1602531413300">
+    <state width="1037" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
+    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912565" />
+    <state width="1037" height="492" key="GridCell.Tab.1.right" timestamp="1603476896025">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state width="1037" height="397" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602531413300" />
-    <state width="2517" height="397" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602516441336" />
+    <state width="1037" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
+    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603475912565" />
     <state x="-1060" y="262" key="SettingsEditor" timestamp="1602506465205">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
     <state x="-1060" y="262" key="SettingsEditor/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506465205" />
-    <state x="987" y="433" width="585" height="534" key="find.popup" timestamp="1602513823179">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="-664" y="329" width="555" height="718" key="find.popup" timestamp="1603476641774">
+      <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
+    <state x="-664" y="329" width="555" height="718" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476641774" />
     <state x="987" y="433" width="585" height="534" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1602513823179" />
     <state x="-798" y="401" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602585202748">
       <screen x="-1080" y="-252" width="1080" height="1880" />

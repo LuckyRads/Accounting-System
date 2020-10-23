@@ -13,4 +13,12 @@ public class ViewService {
         stage.show();
     }
 
+    public static void newWindow(Parent root, String title) {
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

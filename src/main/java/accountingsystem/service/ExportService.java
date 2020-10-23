@@ -3,7 +3,7 @@ package main.java.accountingsystem.service;
 import main.java.accountingsystem.model.AccountingSystem;
 import main.java.accountingsystem.model.Company;
 import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.model.SubCategory;
+import main.java.accountingsystem.model.Category;
 
 import java.io.*;
 import java.util.List;
@@ -89,8 +89,8 @@ public class ExportService {
                 objectOutputStream.writeObject(company);
             }
 
-            for (SubCategory subCategory : accountingSystem.getCategories()) {
-                objectOutputStream.writeObject(subCategory);
+            for (Category category : accountingSystem.getCategories()) {
+                objectOutputStream.writeObject(category);
             }
 
             fileOutputStream.close();
@@ -103,7 +103,7 @@ public class ExportService {
         }
     }
 
-    public static void exportCategoryData(List<SubCategory> categories) {
+    public static void exportCategoryData(List<Category> categories) {
         MessageService.showMessage(new String[]{"Export data",
                 "To save all data in current directory, type default",
                 "To save elsewhere, please put in destination file path where to save the output file"});
@@ -116,8 +116,8 @@ public class ExportService {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-            for (SubCategory subCategory : categories) {
-                objectOutputStream.writeObject(subCategory);
+            for (Category category : categories) {
+                objectOutputStream.writeObject(category);
             }
 
             fileOutputStream.close();

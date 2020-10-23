@@ -1,17 +1,15 @@
 package main.java.accountingsystem;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.accountingsystem.controller.LoginController;
-import main.java.accountingsystem.controller.SystemController;
 import main.java.accountingsystem.model.AccountingSystem;
 import main.java.accountingsystem.model.Company;
 import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.model.SubCategory;
+import main.java.accountingsystem.model.Category;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -51,7 +49,7 @@ public class Main extends Application {
                 "VGTU",
                 calendar.getTime(),
                 "1.0.0",
-                new ArrayList<SubCategory>(),
+                new ArrayList<Category>(),
                 new ArrayList<Person>(),
                 new ArrayList<Company>()
         );
