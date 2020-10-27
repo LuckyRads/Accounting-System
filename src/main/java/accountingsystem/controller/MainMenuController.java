@@ -38,9 +38,9 @@ public class MainMenuController {
 
         SystemController systemController = loader.getController();
         systemController.setAccountingSystem(accountingSystem);
-        systemController.loadSystemInfo();
 
         ViewService.openView((Stage) systemBtn.getScene().getWindow(), root);
+        systemController.loadSystemInfo();
     }
 
     @FXML
@@ -50,9 +50,9 @@ public class MainMenuController {
 
         CategoriesController categoriesController = loader.getController();
         categoriesController.setAccountingSystem(accountingSystem);
-        categoriesController.loadCategories();
 
         ViewService.openView((Stage) categoriesBtn.getScene().getWindow(), root);
+        categoriesController.loadCategories();
     }
 
     @FXML

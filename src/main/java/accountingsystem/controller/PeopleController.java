@@ -13,7 +13,7 @@ import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
-public class PeopleController {
+public class PeopleController implements Controller {
 
     private AccountingSystem accountingSystem;
 
@@ -113,7 +113,8 @@ public class PeopleController {
         }
     }
 
-    private void updateWindow() {
+    @Override
+    public void updateWindow() {
         Stage stage = (Stage) peopleList.getScene().getWindow();
         stage.show();
     }

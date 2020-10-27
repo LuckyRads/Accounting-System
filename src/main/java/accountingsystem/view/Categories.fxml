@@ -2,30 +2,38 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.accountingsystem.controller.CategoriesController">
+<AnchorPane prefHeight="518.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.accountingsystem.controller.CategoriesController">
    <children>
-      <ButtonBar layoutX="30.0" layoutY="366.0" prefHeight="64.0" prefWidth="560.0">
+      <ButtonBar layoutX="31.0" layoutY="440.0" prefHeight="64.0" prefWidth="560.0">
          <buttons>
-            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#openMenu" prefHeight="0.0" prefWidth="242.0" text="Back">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button fx:id="systemBtn" mnemonicParsing="false" onAction="#openSystem" prefHeight="43.0" text="System">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button fx:id="usersBtn" minWidth="57.0" mnemonicParsing="false" prefHeight="0.0" text="Users">
+            <Button fx:id="menuBtn" mnemonicParsing="false" onAction="#openMenu" prefHeight="0.0" prefWidth="242.0" text="Menu">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
          </buttons>
       </ButtonBar>
+      <TreeView fx:id="categoryList" layoutX="16.0" layoutY="57.0" prefHeight="270.0" prefWidth="235.0" />
+      <Label layoutX="16.0" layoutY="39.0" text="Categories" />
+      <Label layoutX="400.0" layoutY="39.0" text="Transactions" />
+      <Button fx:id="addCategoryBtn" layoutX="16.0" layoutY="334.0" mnemonicParsing="false" onAction="#addCategory" text="Add category">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeCategoryBtn" layoutX="126.0" layoutY="334.0" mnemonicParsing="false" onAction="#removeCategory" text="Remove category">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="835.0" layoutY="39.0" text="Responsible people" />
+      <ListView fx:id="transactionList" layoutX="400.0" layoutY="57.0" prefHeight="270.0" prefWidth="200.0" />
+      <ListView fx:id="responsiblePeopleList" layoutX="835.0" layoutY="57.0" prefHeight="270.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

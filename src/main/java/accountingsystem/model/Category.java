@@ -10,13 +10,15 @@ public class Category implements Serializable {
     private List<Transaction> transactions;
     private List<Category> subCategories;
     private List<Person> responsiblePeople;
+    private Category parentCategory;
 
-    public Category(String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople) {
+    public Category(String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
         this.responsiblePeople = responsiblePeople;
+        this.parentCategory = parentCategory;
     }
 
     public String getName() {
@@ -57,6 +59,19 @@ public class Category implements Serializable {
 
     public void setResponsiblePeople(List<Person> responsiblePeople) {
         this.responsiblePeople = responsiblePeople;
+    }
+
+    public Category getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(Category parentCategory) {
+        this.parentCategory = parentCategory;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
     public void addResponsiblePerson(Person person) {

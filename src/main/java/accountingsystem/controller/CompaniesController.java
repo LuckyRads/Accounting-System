@@ -16,7 +16,7 @@ import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
-public class CompaniesController {
+public class CompaniesController implements Controller {
 
     private AccountingSystem accountingSystem;
 
@@ -113,6 +113,7 @@ public class CompaniesController {
         }
     }
 
+    @Override
     public void updateWindow() {
         Stage stage = (Stage) companiesList.getScene().getWindow();
         stage.show();

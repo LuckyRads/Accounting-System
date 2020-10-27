@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="Accounting-System" target="7" />
+      <module name="Accounting-System" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

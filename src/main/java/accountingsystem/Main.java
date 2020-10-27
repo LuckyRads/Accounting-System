@@ -7,9 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.accountingsystem.controller.LoginController;
 import main.java.accountingsystem.model.AccountingSystem;
+import main.java.accountingsystem.model.Category;
 import main.java.accountingsystem.model.Company;
 import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.model.Category;
 
 import java.io.IOException;
 import java.util.ArrayList;
