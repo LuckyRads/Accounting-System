@@ -68,7 +68,6 @@ public class AddCategoryController implements WindowController {
             for (Category category : categoriesController.getAccountingSystem().getCategories()) {
                 addSubCategory(subCategory, category);
             }
-
         } else {
             categoriesController.getAccountingSystem().getCategories().add(
                     new Category(nameField.getText(), descriptionField.getText(),

@@ -78,12 +78,9 @@ public class CategoriesController implements Controller {
 
         AddCategoryController addCategoryController = loader.getController();
         addCategoryController.setCategoriesController(this);
+
         if (categoryList.getSelectionModel().getSelectedItem() != null) {
-
-            // TODO: Fix this mess
-            String selectedCategoryName = categoryList.getSelectionModel().getSelectedItem().toString().substring(18).split("]")[0].trim();
-
-            Category selectedCategory = CategoryService.getCategory(selectedCategoryName, accountingSystem.getCategories());
+            Category selectedCategory = CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
             addCategoryController.setParentCategory(selectedCategory);
         }
 
@@ -92,15 +89,27 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void removeCategory() throws IOException {
-//        String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
-//
-//        for (Person person : accountingSystem.getPeople()) {
-//            if (selectedPerson.equals(person.getEmail())) {
-//                accountingSystem.getPeople().remove(person);
-//                loadPeople();
-//                return;
-//            }
-//        }
+        Category selectedCategory = CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
+
+        for (Category category : accountingSystem.getCategories()) {
+            removeSubCategory(selectedCategory, category);
+        }
+        loadCategories();
+    }
+
+    private void removeSubCategory(Category subCategory, Category rootCategory) {
+        if (subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
+            rootCategory.getSubCategories().remove(subCategory);
+            return;
+        }
+
+        for (Category category : rootCategory.getSubCategories()) {
+            removeSubCategory(subCategory, category);
+        }
+    }
+
+    private String parseSelectedItem() {
+        return categoryList.getSelectionModel().getSelectedItem().toString().substring(18).split("]")[0].trim();
     }
 
 }
