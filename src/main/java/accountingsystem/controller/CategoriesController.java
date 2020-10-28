@@ -10,6 +10,7 @@ import javafx.scene.control.TreeView;
 import javafx.stage.Stage;
 import main.java.accountingsystem.model.AccountingSystem;
 import main.java.accountingsystem.model.Category;
+import main.java.accountingsystem.model.Person;
 import main.java.accountingsystem.service.CategoryService;
 import main.java.accountingsystem.service.ViewService;
 
@@ -179,13 +180,64 @@ public class CategoriesController implements Controller {
     }
 
     @FXML
-    public void addResponsiblePerson() {
+    public void addResponsiblePerson() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddResponsiblePerson.fxml"));
+        Parent root = loader.load();
 
+        AddResponsiblePersonController addResponsiblePersonController = loader.getController();
+        addResponsiblePersonController.setCategoriesController(this);
+
+        addResponsiblePersonController.populateAvailablePeopleList();
+        ViewService.newWindow(root, "Add responsible person");
+    }
+
+    public void addResponsiblePerson(Person person) {
+        Category selectedCategory = getSelectedCategory();
+        if (selectedCategory == null) {
+            return;
+        }
+
+        for (Category category : this.accountingSystem.getCategories()) {
+            addResponsiblePerson(selectedCategory, category, person);
+        }
+    }
+
+    private void addResponsiblePerson(Category subCategory, Category rootCategory, Person person) {
+        if (subCategory.getName().equals(rootCategory.getName())) {
+            rootCategory.getResponsiblePeople().add(person);
+            return;
+        }
+
+        for (Category category : rootCategory.getSubCategories()) {
+            addResponsiblePerson(subCategory, category, person);
+        }
+
+        updateWindow();
     }
 
     @FXML
     public void removeResponsiblePerson() {
-        
+        Category selectedCategory = getSelectedCategory();
+        if (selectedCategory == null) {
+            return;
+        }
+
+        for (Category category : this.accountingSystem.getCategories()) {
+            removeResponsiblePerson(selectedCategory, category);
+        }
+    }
+
+    private void removeResponsiblePerson(Category subCategory, Category rootCategory) {
+        if (subCategory.getName().equals(rootCategory.getName())) {
+            rootCategory.getResponsiblePeople().remove(responsiblePeopleList.getSelectionModel().getSelectedItem());
+            return;
+        }
+
+        for (Category category : rootCategory.getSubCategories()) {
+            removeResponsiblePerson(subCategory, category);
+        }
+
+        updateWindow();
     }
 
     private Category getSelectedCategory() {

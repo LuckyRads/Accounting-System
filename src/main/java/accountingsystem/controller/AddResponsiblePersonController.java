@@ -8,7 +8,9 @@ import main.java.accountingsystem.model.Person;
 
 public class AddResponsiblePersonController implements WindowController {
 
-    private AddCategoryController addCategoryController;
+    private AddCategoryController addCategoryController = null;
+
+    private CategoriesController categoriesController = null;
 
     @FXML
     private ListView availablePeopleList;
@@ -24,6 +26,14 @@ public class AddResponsiblePersonController implements WindowController {
         this.addCategoryController = addCategoryController;
     }
 
+    public CategoriesController getCategoriesController() {
+        return categoriesController;
+    }
+
+    public void setCategoriesController(CategoriesController categoriesController) {
+        this.categoriesController = categoriesController;
+    }
+
     @Override
     public void closeWindow() {
         Stage stage = (Stage) addResponsiblePersonBtn.getScene().getWindow();
@@ -33,14 +43,23 @@ public class AddResponsiblePersonController implements WindowController {
     public void populateAvailablePeopleList() {
         availablePeopleList.getItems().clear();
 
-        addCategoryController.getCategoriesController().getAccountingSystem().
-                getPeople().forEach(person -> availablePeopleList.getItems().add(person));
+        if (addCategoryController != null) {
+            addCategoryController.getCategoriesController().getAccountingSystem().
+                    getPeople().forEach(person -> availablePeopleList.getItems().add(person));
+        } else {
+            categoriesController.getAccountingSystem().
+                    getPeople().forEach(person -> availablePeopleList.getItems().add(person));
+        }
     }
 
     @FXML
     public void addResponsiblePerson() {
         if (availablePeopleList.getSelectionModel().getSelectedItem() != null) {
-            addCategoryController.addResponsiblePerson((Person) availablePeopleList.getSelectionModel().getSelectedItem());
+            if (addCategoryController != null) {
+                addCategoryController.addResponsiblePerson((Person) availablePeopleList.getSelectionModel().getSelectedItem());
+            } else {
+                categoriesController.addResponsiblePerson((Person) availablePeopleList.getSelectionModel().getSelectedItem());
+            }
             closeWindow();
         }
     }
