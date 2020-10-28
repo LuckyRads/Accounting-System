@@ -67,6 +67,14 @@ public class CategoriesController implements Controller {
         }
     }
 
+    public void populateTransactionList() {
+        transactionList.getItems().clear();
+
+        if (getSelectedCategory() != null) {
+            getSelectedCategory().getTransactions().forEach(transaction -> transactionList.getItems().add(transaction));
+        }
+    }
+
     private void addTreeItems(Category category, TreeItem parentItem) {
         TreeItem<Category> categoryTreeItem = new TreeItem<Category>(category);
         parentItem.getChildren().add(categoryTreeItem);
@@ -76,6 +84,7 @@ public class CategoriesController implements Controller {
     @Override
     public void updateWindow() {
         populateResponsiblePeopleList();
+        populateTransactionList();
         Stage stage = (Stage) menuBtn.getScene().getWindow();
         stage.show();
     }
@@ -123,6 +132,60 @@ public class CategoriesController implements Controller {
         for (Category category : rootCategory.getSubCategories()) {
             removeSubCategory(subCategory, category);
         }
+
+        updateWindow();
+    }
+
+    @FXML
+    public void addTransaction() throws IOException {
+        Category selectedCategory = getSelectedCategory();
+        if (selectedCategory == null) {
+            return;
+        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddTransaction.fxml"));
+        Parent root = loader.load();
+
+        AddTransactionController addTransactionController = loader.getController();
+        addTransactionController.setCategoriesController(this);
+        addTransactionController.setCategory(selectedCategory);
+        addTransactionController.populateTransactionTypeList();
+
+        ViewService.newWindow(root, "Add transaction");
+    }
+
+    @FXML
+    public void removeTransaction() {
+        Category selectedCategory = getSelectedCategory();
+        if (selectedCategory == null || transactionList.getSelectionModel().getSelectedItem() == null) {
+            return;
+        }
+
+        for (Category category : accountingSystem.getCategories()) {
+            removeTransaction(selectedCategory, category);
+        }
+    }
+
+    private void removeTransaction(Category subCategory, Category rootCategory) {
+        if (subCategory.getName().equals(rootCategory.getName())) {
+            rootCategory.getTransactions().remove(transactionList.getSelectionModel().getSelectedItem());
+            return;
+        }
+
+        for (Category category : rootCategory.getSubCategories()) {
+            removeTransaction(subCategory, category);
+        }
+
+        updateWindow();
+    }
+
+    @FXML
+    public void addResponsiblePerson() {
+
+    }
+
+    @FXML
+    public void removeResponsiblePerson() {
+        
     }
 
     private Category getSelectedCategory() {

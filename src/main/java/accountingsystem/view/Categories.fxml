@@ -33,7 +33,27 @@
          </font>
       </Button>
       <Label layoutX="835.0" layoutY="39.0" text="Responsible people" />
-      <ListView fx:id="transactionList" layoutX="400.0" layoutY="57.0" prefHeight="270.0" prefWidth="200.0" />
-      <ListView fx:id="responsiblePeopleList" layoutX="835.0" layoutY="57.0" prefHeight="270.0" prefWidth="200.0" />
+      <ListView fx:id="transactionList" layoutX="380.0" layoutY="57.0" prefHeight="270.0" prefWidth="270.0" />
+      <ListView fx:id="responsiblePeopleList" layoutX="835.0" layoutY="57.0" prefHeight="270.0" prefWidth="293.0" />
+      <Button fx:id="addTransactionBtn" layoutX="381.0" layoutY="334.0" mnemonicParsing="false" onAction="#addTransaction" text="Add transaction">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeTransactionBtn" layoutX="507.0" layoutY="334.0" mnemonicParsing="false" onAction="#removeTransaction" text="Remove transaction">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="addResponsiblePersonBtn" layoutX="765.0" layoutY="334.0" mnemonicParsing="false" onAction="#addResponsiblePerson" text="Add responsible person">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeResponbilePersonBtn" layoutX="945.0" layoutY="334.0" mnemonicParsing="false" onAction="#removeResponsiblePerson" text="Remove responsible person">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
