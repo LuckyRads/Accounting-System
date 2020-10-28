@@ -59,6 +59,14 @@ public class CategoriesController implements Controller {
         updateWindow();
     }
 
+    public void populateResponsiblePeopleList() {
+        responsiblePeopleList.getItems().clear();
+
+        if (getSelectedCategory() != null) {
+            getSelectedCategory().getResponsiblePeople().forEach(person -> responsiblePeopleList.getItems().add(person));
+        }
+    }
+
     private void addTreeItems(Category category, TreeItem parentItem) {
         TreeItem<Category> categoryTreeItem = new TreeItem<Category>(category);
         parentItem.getChildren().add(categoryTreeItem);
@@ -67,6 +75,7 @@ public class CategoriesController implements Controller {
 
     @Override
     public void updateWindow() {
+        populateResponsiblePeopleList();
         Stage stage = (Stage) menuBtn.getScene().getWindow();
         stage.show();
     }
@@ -79,8 +88,8 @@ public class CategoriesController implements Controller {
         AddCategoryController addCategoryController = loader.getController();
         addCategoryController.setCategoriesController(this);
 
-        if (categoryList.getSelectionModel().getSelectedItem() != null) {
-            Category selectedCategory = CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
+        Category selectedCategory = getSelectedCategory();
+        if (selectedCategory != null) {
             addCategoryController.setParentCategory(selectedCategory);
         }
 
@@ -91,14 +100,22 @@ public class CategoriesController implements Controller {
     public void removeCategory() throws IOException {
         Category selectedCategory = CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
 
+        Category categoryToRemove = null;
         for (Category category : accountingSystem.getCategories()) {
-            removeSubCategory(selectedCategory, category);
+            if (selectedCategory.getName().equals(category.getName())) {
+                categoryToRemove = category;
+            } else {
+                removeSubCategory(selectedCategory, category);
+            }
+        }
+        if (categoryToRemove != null) {
+            accountingSystem.getCategories().remove(categoryToRemove);
         }
         loadCategories();
     }
 
     private void removeSubCategory(Category subCategory, Category rootCategory) {
-        if (subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
+        if (subCategory.getParentCategory() != null && subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
             rootCategory.getSubCategories().remove(subCategory);
             return;
         }
@@ -106,6 +123,13 @@ public class CategoriesController implements Controller {
         for (Category category : rootCategory.getSubCategories()) {
             removeSubCategory(subCategory, category);
         }
+    }
+
+    private Category getSelectedCategory() {
+        if (categoryList.getSelectionModel().getSelectedItem() != null) {
+            return CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
+        }
+        return null;
     }
 
     private String parseSelectedItem() {

@@ -19,7 +19,7 @@
             </Button>
          </buttons>
       </ButtonBar>
-      <TreeView fx:id="categoryList" layoutX="16.0" layoutY="57.0" prefHeight="270.0" prefWidth="235.0" />
+      <TreeView fx:id="categoryList" layoutX="16.0" layoutY="57.0" onMouseClicked="#updateWindow" prefHeight="270.0" prefWidth="235.0" />
       <Label layoutX="16.0" layoutY="39.0" text="Categories" />
       <Label layoutX="400.0" layoutY="39.0" text="Transactions" />
       <Button fx:id="addCategoryBtn" layoutX="16.0" layoutY="334.0" mnemonicParsing="false" onAction="#addCategory" text="Add category">

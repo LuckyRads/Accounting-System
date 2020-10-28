@@ -39,4 +39,8 @@ public class Person extends User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return this.email;
+    }
 }
