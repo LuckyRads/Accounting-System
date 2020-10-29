@@ -6,6 +6,7 @@ Year 3 semester 1 of VGTU bachelor studies.
 ## Requirements
 - Java
 - Maven
+- JavaFX
 
 ## Project structure
 - <code>.idea/</code> contains IntelliJ IDEA IDE files
