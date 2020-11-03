@@ -35,8 +35,8 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="1158.0" layoutY="40.0" text="Responsible people" />
-      <ListView fx:id="responsiblePeopleList" layoutX="1158.0" layoutY="57.0" prefHeight="270.0" prefWidth="293.0" />
+      <Label layoutX="1166.0" layoutY="39.0" text="Responsible people" />
+      <ListView fx:id="responsiblePeopleList" layoutX="1166.0" layoutY="59.0" prefHeight="278.0" prefWidth="293.0" />
       <Button fx:id="addTransactionBtn" layoutX="457.0" layoutY="337.0" mnemonicParsing="false" onAction="#addTransaction" text="Add transaction">
          <font>
             <Font size="14.0" />
@@ -47,18 +47,18 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="addResponsiblePersonBtn" layoutX="1120.0" layoutY="349.0" mnemonicParsing="false" onAction="#addResponsiblePerson" text="Add responsible person">
+      <Button fx:id="addResponsiblePersonBtn" layoutX="1166.0" layoutY="349.0" mnemonicParsing="false" onAction="#addResponsiblePerson" text="Add responsible person">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="removeResponbilePersonBtn" layoutX="1287.0" layoutY="349.0" mnemonicParsing="false" onAction="#removeResponsiblePerson" text="Remove responsible person">
+      <Button fx:id="removeResponbilePersonBtn" layoutX="1270.0" layoutY="385.0" mnemonicParsing="false" onAction="#removeResponsiblePerson" text="Remove responsible person">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Label layoutX="254.0" layoutY="57.0" text="Description:" />
-      <TextArea fx:id="descriptionField" layoutX="254.0" layoutY="72.0" prefHeight="246.0" prefWidth="198.0" />
+      <TextArea fx:id="descriptionField" layoutX="254.0" layoutY="72.0" prefHeight="254.0" prefWidth="198.0" />
       <TableView fx:id="transactionTable" editable="true" layoutX="457.0" layoutY="66.0" prefHeight="270.0" prefWidth="701.0">
         <columns>
           <TableColumn fx:id="transactionNameCol" prefWidth="112.0" text="Transaction name" />
