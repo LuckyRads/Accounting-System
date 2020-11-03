@@ -2,12 +2,15 @@ package main.java.accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import main.java.accountingsystem.model.AccountingSystem;
 import main.java.accountingsystem.model.Category;
 import main.java.accountingsystem.model.Company;
 import main.java.accountingsystem.model.Person;
 
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
@@ -28,11 +31,21 @@ public class ImportController implements WindowController {
 
     @Override
     public void closeWindow() {
-
+        Stage stage = (Stage) importBtn.getScene().getWindow();
+        stage.close();
     }
 
     public void importData() {
-        String file = "output.ser";
+        Stage stage = (Stage) importBtn.getScene().getWindow();
+
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("Serializable files (*.ser)", "*.ser");
+        fileChooser.getExtensionFilters().add(extensionFilter);
+        File file = fileChooser.showOpenDialog(stage);
+
+        if (file == null) {
+            return;
+        }
 
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -86,6 +99,7 @@ public class ImportController implements WindowController {
 
             fileInputStream.close();
             objectInputStream.close();
+            closeWindow();
         } catch (Exception e) {
             System.out.println("Error! Something went wrong while importing data." +
                     "Please check if the destination path is correct");
