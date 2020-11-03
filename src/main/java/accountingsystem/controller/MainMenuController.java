@@ -5,13 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.java.accountingsystem.model.AccountingSystem;
 import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
-public class MainMenuController {
+public class MainMenuController implements Controller {
 
     private AccountingSystem accountingSystem;
 
@@ -30,24 +31,27 @@ public class MainMenuController {
     @FXML
     private MenuItem importMenuItem;
 
+    @FXML
+    private Button updateSystemInfoBtn;
+
+    @FXML
+    private Button resetSystemInfoBtn;
+
+    @FXML
+    private TextField companyTextField;
+
+    @FXML
+    private TextField createdAtDatePicker;
+
+    @FXML
+    private TextField versionTextField;
+
     public AccountingSystem getAccountingSystem() {
         return accountingSystem;
     }
 
     public void setAccountingSystem(AccountingSystem accountingSystem) {
         this.accountingSystem = accountingSystem;
-    }
-
-    @FXML
-    public void openSystem() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/System.fxml"));
-        Parent root = loader.load();
-
-        SystemController systemController = loader.getController();
-        systemController.setAccountingSystem(accountingSystem);
-
-        ViewService.openView((Stage) systemBtn.getScene().getWindow(), root);
-        systemController.loadSystemInfo();
     }
 
     @FXML
@@ -95,6 +99,26 @@ public class MainMenuController {
         importController.populateDataTypes();
 
         ViewService.newWindow(root, "Import");
+    }
+
+    public void loadSystemInfo() {
+        companyTextField.setText(this.accountingSystem.getCompany());
+        createdAtDatePicker.setText(this.accountingSystem.getDateCreated().toString());
+        versionTextField.setText(this.accountingSystem.getVersion());
+    }
+
+    @Override
+    public void updateWindow() {
+        Stage stage = (Stage) companyTextField.getScene().getWindow();
+        stage.show();
+    }
+
+    @FXML
+    public void updateSystemInfo() {
+        accountingSystem.setCompany(companyTextField.getText());
+//        accountingSystem.setDateCreated(createdAtDatePicker.getText().toString());
+        accountingSystem.setVersion(versionTextField.getText());
+        updateWindow();
     }
 
 }

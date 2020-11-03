@@ -38,6 +38,7 @@ public class UsersController {
 
         MainMenuController mainMenuController = loader.getController();
         mainMenuController.setAccountingSystem(accountingSystem);
+        mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
     }

@@ -35,6 +35,7 @@ public class LoginController {
 
         MainMenuController mainMenuController = loader.getController();
         mainMenuController.setAccountingSystem(accountingSystem);
+        mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) loginBtn.getScene().getWindow(), root);
     }

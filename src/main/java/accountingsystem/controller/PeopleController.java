@@ -68,6 +68,7 @@ public class PeopleController implements Controller {
 
         MainMenuController mainMenuController = loader.getController();
         mainMenuController.setAccountingSystem(accountingSystem);
+        mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
     }
