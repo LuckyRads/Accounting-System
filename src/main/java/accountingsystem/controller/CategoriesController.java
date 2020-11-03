@@ -172,6 +172,12 @@ public class CategoriesController implements Controller {
         updateWindow();
     }
 
+    @FXML
+    public void updateCategory() {
+        getSelectedCategory().setDescription(descriptionField.getText());
+        updateWindow();
+    }
+
     //endregion
 
     //region transactions

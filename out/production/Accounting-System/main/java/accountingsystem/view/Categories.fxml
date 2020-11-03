@@ -87,5 +87,10 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Button fx:id="updateCategoryBtn" layoutX="286.0" layoutY="334.0" mnemonicParsing="false" onAction="#updateCategory" text="Update category">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
