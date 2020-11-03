@@ -23,4 +23,14 @@ public class CategoryService {
         return foundCategory;
     }
 
+    public static void addReplaceCategory(Category categoryToAdd, List<Category> categories) {
+        for (Category category : categories) {
+            if (categoryToAdd.getName().equals(category.getName())) {
+                categories.remove(category);
+                break;
+            }
+        }
+        categories.add(categoryToAdd);
+    }
+
 }

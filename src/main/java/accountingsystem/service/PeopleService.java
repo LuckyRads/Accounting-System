@@ -15,4 +15,14 @@ public class PeopleService {
         return null;
     }
 
+    public static void addReplacePerson(Person personToAdd, List<Person> people) {
+        for (Person person : people) {
+            if (personToAdd.getEmail().equals(person.getEmail())) {
+                people.remove(person);
+                break;
+            }
+        }
+        people.add(personToAdd);
+    }
+
 }

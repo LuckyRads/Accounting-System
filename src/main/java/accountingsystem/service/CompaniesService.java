@@ -15,4 +15,14 @@ public class CompaniesService {
         return null;
     }
 
+    public static void addReplaceCompany(Company companyToAdd, List<Company> companies) {
+        for (Company company : companies) {
+            if (companyToAdd.getEmail().equals(company.getEmail())) {
+                companies.remove(company);
+                break;
+            }
+        }
+        companies.add(companyToAdd);
+    }
+
 }
