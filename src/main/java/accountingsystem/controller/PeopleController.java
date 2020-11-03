@@ -82,6 +82,7 @@ public class PeopleController implements Controller {
         usersController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) usersBtn.getScene().getWindow(), root);
+        usersController.updateWindow();
     }
 
     @FXML

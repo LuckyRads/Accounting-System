@@ -4,8 +4,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import main.java.accountingsystem.model.AccountingSystem;
+import main.java.accountingsystem.model.Company;
+import main.java.accountingsystem.model.Person;
 import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
@@ -23,6 +26,12 @@ public class UsersController implements Controller {
     @FXML
     private Button companiesBtn;
 
+    @FXML
+    private ListView peopleList;
+
+    @FXML
+    private ListView companiesList;
+
     public AccountingSystem getAccountingSystem() {
         return accountingSystem;
     }
@@ -33,7 +42,25 @@ public class UsersController implements Controller {
 
     @Override
     public void updateWindow() {
+        loadPeople();
+        loadCompanies();
+        Stage stage = (Stage) menuBtn.getScene().getWindow();
+        stage.show();
+    }
 
+    private void loadPeople() {
+        peopleList.getItems().clear();
+
+        for (Person person : accountingSystem.getPeople()) {
+            peopleList.getItems().add(person.getEmail());
+        }
+    }
+
+    private void loadCompanies() {
+        companiesList.getItems().clear();
+        for (Company company : accountingSystem.getCompanies()) {
+            companiesList.getItems().add(company.getEmail());
+        }
     }
 
     @FXML
