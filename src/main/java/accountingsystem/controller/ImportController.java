@@ -22,6 +22,8 @@ public class ImportController implements WindowController {
 
     private AccountingSystem accountingSystem;
 
+    private Controller controller;
+
     @FXML
     private Button importBtn;
 
@@ -36,10 +38,19 @@ public class ImportController implements WindowController {
         this.accountingSystem = accountingSystem;
     }
 
+    public Controller getController() {
+        return controller;
+    }
+
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
+
     @Override
     public void closeWindow() {
         Stage stage = (Stage) importBtn.getScene().getWindow();
         stage.close();
+        controller.updateWindow();
     }
 
     public void populateDataTypes() {

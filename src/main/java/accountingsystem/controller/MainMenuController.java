@@ -54,6 +54,13 @@ public class MainMenuController implements Controller {
         this.accountingSystem = accountingSystem;
     }
 
+    @Override
+    public void updateWindow() {
+        loadSystemInfo();
+        Stage stage = (Stage) companyTextField.getScene().getWindow();
+        stage.show();
+    }
+
     @FXML
     public void openCategories() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Categories.fxml"));
@@ -97,6 +104,7 @@ public class MainMenuController implements Controller {
         ImportController importController = loader.getController();
         importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
+        importController.setController(this);
 
         ViewService.newWindow(root, "Import");
     }
@@ -105,12 +113,6 @@ public class MainMenuController implements Controller {
         companyTextField.setText(this.accountingSystem.getCompany());
         createdAtDatePicker.setText(this.accountingSystem.getDateCreated().toString());
         versionTextField.setText(this.accountingSystem.getVersion());
-    }
-
-    @Override
-    public void updateWindow() {
-        Stage stage = (Stage) companyTextField.getScene().getWindow();
-        stage.show();
     }
 
     @FXML

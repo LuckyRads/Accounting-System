@@ -10,7 +10,7 @@ import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
-public class UsersController {
+public class UsersController implements Controller {
 
     private AccountingSystem accountingSystem;
 
@@ -29,6 +29,11 @@ public class UsersController {
 
     public void setAccountingSystem(AccountingSystem accountingSystem) {
         this.accountingSystem = accountingSystem;
+    }
+
+    @Override
+    public void updateWindow() {
+
     }
 
     @FXML
@@ -89,6 +94,7 @@ public class UsersController {
         ImportController importController = loader.getController();
         importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
+        importController.setController(this);
 
         ViewService.newWindow(root, "Import");
     }

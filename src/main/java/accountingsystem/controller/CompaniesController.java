@@ -191,6 +191,7 @@ public class CompaniesController implements Controller {
         ImportController importController = loader.getController();
         importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
+        importController.setController(this);
 
         ViewService.newWindow(root, "Import");
     }
