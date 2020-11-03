@@ -301,6 +301,34 @@ public class CategoriesController implements Controller {
 
     //endregion
 
+    //region importAndExport
+
+    @FXML
+    public void openExport() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Export.fxml"));
+        Parent root = loader.load();
+
+        ExportController exportController = loader.getController();
+        exportController.setAccountingSystem(accountingSystem);
+        exportController.populateDataTypes();
+
+        ViewService.newWindow(root, "Export");
+    }
+
+    @FXML
+    public void openImport() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Import.fxml"));
+        Parent root = loader.load();
+
+        ImportController importController = loader.getController();
+        importController.setAccountingSystem(accountingSystem);
+        importController.populateDataTypes();
+
+        ViewService.newWindow(root, "Import");
+    }
+
+    //endregion
+
     private Category getSelectedCategory() {
         if (categoryList.getSelectionModel().getSelectedItem() != null) {
             return CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
