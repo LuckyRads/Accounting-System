@@ -1,20 +1,19 @@
 package main.java.accountingsystem.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.AccountingSystem;
-import main.java.accountingsystem.model.Category;
-import main.java.accountingsystem.model.Person;
+import main.java.accountingsystem.model.*;
 import main.java.accountingsystem.service.CategoryService;
 import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class CategoriesController implements Controller {
 
@@ -27,7 +26,22 @@ public class CategoriesController implements Controller {
     private TreeView categoryList;
 
     @FXML
-    private ListView transactionList;
+    private TextArea descriptionField;
+
+    @FXML
+    private TableView transactionTable;
+    @FXML
+    private TableColumn<Transaction, String> transactionNameCol;
+    @FXML
+    private TableColumn<Transaction, TransactionType> transactionTypeCol;
+    @FXML
+    private TableColumn<Transaction, String> senderCol;
+    @FXML
+    private TableColumn<Transaction, String> receiverCol;
+    @FXML
+    private TableColumn<Transaction, Double> amountCol;
+    @FXML
+    private TableColumn<Transaction, Date> dateCol;
 
     @FXML
     private ListView responsiblePeopleList;
@@ -68,11 +82,29 @@ public class CategoriesController implements Controller {
         }
     }
 
-    public void populateTransactionList() {
-        transactionList.getItems().clear();
+    public void populateTransactionTable() {
+        transactionTable.getItems().clear();
 
         if (getSelectedCategory() != null) {
-            getSelectedCategory().getTransactions().forEach(transaction -> transactionList.getItems().add(transaction));
+            final ObservableList<Transaction> data = FXCollections.observableArrayList();
+
+            transactionNameCol.setCellValueFactory(new PropertyValueFactory("name"));
+            transactionTypeCol.setCellValueFactory(new PropertyValueFactory("transactionType"));
+            senderCol.setCellValueFactory(new PropertyValueFactory("sender"));
+            receiverCol.setCellValueFactory(new PropertyValueFactory("receiver"));
+            amountCol.setCellValueFactory(new PropertyValueFactory("amount"));
+            dateCol.setCellValueFactory(new PropertyValueFactory("date"));
+
+            getSelectedCategory().getTransactions().forEach(transaction -> data.add(transaction));
+
+            transactionTable.setItems(data);
+        }
+    }
+
+    private void fillDescriptionField() {
+        descriptionField.clear();
+        if (getSelectedCategory() != null) {
+            descriptionField.setText(getSelectedCategory().getDescription());
         }
     }
 
@@ -85,10 +117,13 @@ public class CategoriesController implements Controller {
     @Override
     public void updateWindow() {
         populateResponsiblePeopleList();
-        populateTransactionList();
+        populateTransactionTable();
+        fillDescriptionField();
         Stage stage = (Stage) menuBtn.getScene().getWindow();
         stage.show();
     }
+
+    //region categories
 
     @FXML
     public void addCategory() throws IOException {
@@ -137,6 +172,10 @@ public class CategoriesController implements Controller {
         updateWindow();
     }
 
+    //endregion
+
+    //region transactions
+
     @FXML
     public void addTransaction() throws IOException {
         Category selectedCategory = getSelectedCategory();
@@ -157,7 +196,7 @@ public class CategoriesController implements Controller {
     @FXML
     public void removeTransaction() {
         Category selectedCategory = getSelectedCategory();
-        if (selectedCategory == null || transactionList.getSelectionModel().getSelectedItem() == null) {
+        if (selectedCategory == null || transactionTable.getSelectionModel().getSelectedItem() == null) {
             return;
         }
 
@@ -168,16 +207,37 @@ public class CategoriesController implements Controller {
 
     private void removeTransaction(Category subCategory, Category rootCategory) {
         if (subCategory.getName().equals(rootCategory.getName())) {
-            rootCategory.getTransactions().remove(transactionList.getSelectionModel().getSelectedItem());
+            rootCategory.getTransactions().remove(transactionTable.getSelectionModel().getSelectedItem());
+            updateWindow();
             return;
         }
 
         for (Category category : rootCategory.getSubCategories()) {
             removeTransaction(subCategory, category);
         }
-
-        updateWindow();
     }
+
+    @FXML
+    public void editTransaction() throws IOException {
+        Transaction selectedTransaction = (Transaction) transactionTable.getSelectionModel().getSelectedItem();
+        if (selectedTransaction == null) {
+            return;
+        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/EditTransaction.fxml"));
+        Parent root = loader.load();
+
+        EditTransactionController editTransactionController = loader.getController();
+        editTransactionController.setCategoriesController(this);
+        editTransactionController.setTransaction(selectedTransaction);
+        editTransactionController.populateTransactionTypeList();
+        editTransactionController.loadTransaction();
+
+        ViewService.newWindow(root, "Edit transaction");
+    }
+
+    //endregion
+
+    //region responsiblePeople
 
     @FXML
     public void addResponsiblePerson() throws IOException {
@@ -230,15 +290,16 @@ public class CategoriesController implements Controller {
     private void removeResponsiblePerson(Category subCategory, Category rootCategory) {
         if (subCategory.getName().equals(rootCategory.getName())) {
             rootCategory.getResponsiblePeople().remove(responsiblePeopleList.getSelectionModel().getSelectedItem());
+            updateWindow();
             return;
         }
 
         for (Category category : rootCategory.getSubCategories()) {
             removeResponsiblePerson(subCategory, category);
         }
-
-        updateWindow();
     }
+
+    //endregion
 
     private Category getSelectedCategory() {
         if (categoryList.getSelectionModel().getSelectedItem() != null) {

@@ -71,6 +71,6 @@ public class Transaction implements Serializable {
 
     @Override
     public String toString() {
-        return this.transactionType.toString() + " " + this.name;
+        return this.transactionType.toString() + ": " + this.name;
     }
 }
