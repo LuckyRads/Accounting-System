@@ -5,118 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7af3e587-7351-4ae4-ab61-7b563cbc5916" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/AccountingSystem.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/AddCategory.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/AddCompany.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/AddPerson.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/AddResponsiblePerson.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/AddTransaction.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Categories.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Companies.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/EditTransaction.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Export.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Import.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/MainMenu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/People.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Register.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Users.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/AccountingSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounting-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/accounting-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddCategoryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddCompanyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddPersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddResponsiblePersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/AddTransactionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CategoriesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/CompaniesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/EditTransactionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/ExportController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/ImportController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/MainMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/PeopleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/RegisterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/UsersController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/controller/WindowController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/AccountingSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/Transaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/TransactionType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/CategoryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/CompaniesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/PeopleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/service/ViewService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/util/DateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddCategory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddCategory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddCompany.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddCompany.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddPerson.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddResponsiblePerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddResponsiblePerson.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddTransaction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/AddTransaction.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Categories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Categories.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Companies.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Companies.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/EditTransaction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/EditTransaction.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Export.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Export.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Import.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Import.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/People.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/People.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HibernateMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddPersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddPersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddResponsiblePersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddResponsiblePersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddTransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CompaniesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CompaniesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/EditTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/EditTransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ExportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ExportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/AccountingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/AccountingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/AccountingSystem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/AddCategory.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/AddCompany.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/AddPerson.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/AddResponsiblePerson.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/AddTransaction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Categories.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Companies.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/EditTransaction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Export.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Import.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/People.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/view/Users.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HibernateMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/HibernateMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/TransactionType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CompaniesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CompaniesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/PeopleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/service/ViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/util/DateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCategory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCategory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCompany.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCompany.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddPerson.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddResponsiblePerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddResponsiblePerson.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddTransaction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddTransaction.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Categories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Categories.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Companies.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Companies.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/EditTransaction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/EditTransaction.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Export.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Export.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Import.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Import.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/People.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/People.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AccountingSystem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCategory.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddCompany.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddPerson.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddResponsiblePerson.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/AddTransaction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Categories.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Companies.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/EditTransaction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Export.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Import.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/People.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/view/Users.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +98,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -168,22 +107,38 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\resources" />
+      <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\java\accountingsystem" />
       <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\java\accountingsystem\view" />
       <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\java\accountingsystem\controller" />
-      <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\java\accountingsystem" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="accountingsystem.jpa.model" />
       <recent name="main.java.accountingsystem.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\java\accountingsystem\jpa\model" />
       <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\resources\view" />
       <recent name="C:\Users\Matas\Documents\Git\Accounting-System\src\main\java\accountingsystem\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.HibernateMain (1)">
+    <configuration name="HibernateMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="accountingsystem.HibernateMain" />
+      <module name="Accounting-System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="accountingsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HibernateMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HibernateMain" />
       <module name="Accounting-System" />
@@ -235,9 +190,11 @@
       <item itemvalue="Application.HibernateMain" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.HibernateMain (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HibernateMain (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.HibernateMain" />
         <item itemvalue="Application.Main (1)" />
@@ -261,7 +218,7 @@
       <workItem from="1604415041291" duration="11451000" />
       <workItem from="1604941475295" duration="857000" />
       <workItem from="1605088686153" duration="243000" />
-      <workItem from="1605089596735" duration="7935000" />
+      <workItem from="1605089596735" duration="12212000" />
     </task>
     <servers />
   </component>
@@ -269,6 +226,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="906" y="378" key="#Inspections" timestamp="1605100797401">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="906" y="378" key="#Inspections/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605100797401" />
     <state x="47" y="383" key="#Project_Structure" timestamp="1605097538729">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -279,11 +240,11 @@
     </state>
     <state x="-1080" y="343" width="1080" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506138388" />
     <state x="887" y="467" width="1092" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097150103" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1605092556538">
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1605101618224">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-622" y="293" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476515531" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605092556538" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605101618224" />
     <state x="1009" y="475" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1605090538622">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -296,10 +257,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="908" y="389" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605090499968" />
-    <state x="825" y="546" width="562" height="186" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1605092198178">
+    <state x="825" y="546" width="649" height="186" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1605102197197">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="825" y="546" width="562" height="186" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605092198178" />
+    <state x="825" y="546" width="649" height="186" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102197197" />
     <state x="950" y="430" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1605090548952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -308,11 +269,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603473819857" />
-    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604429437092">
+    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605099507292">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-810" y="435" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602519601053" />
-    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1604429437092" />
+    <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605099507292" />
     <state x="1010" y="447" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1603825745254">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -321,56 +282,56 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="491" height="466" key="DebuggerActiveHint/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603918457964" />
-    <state x="620" y="644" key="FileChooserDialogImpl" timestamp="1605092164468">
+    <state x="620" y="644" key="FileChooserDialogImpl" timestamp="1605102093327">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-834" y="429" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602520697238" />
-    <state x="620" y="644" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605092164468" />
-    <state width="2517" height="553" key="GridCell.Tab.0.bottom" timestamp="1605097514826">
+    <state x="620" y="644" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102093327" />
+    <state width="2517" height="553" key="GridCell.Tab.0.bottom" timestamp="1605102276694">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514826" />
-    <state width="2517" height="553" key="GridCell.Tab.0.center" timestamp="1605097514826">
+    <state width="2517" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276694" />
+    <state width="2517" height="553" key="GridCell.Tab.0.center" timestamp="1605102276694">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514826" />
-    <state width="2517" height="553" key="GridCell.Tab.0.left" timestamp="1605097514826">
+    <state width="2517" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276694" />
+    <state width="2517" height="553" key="GridCell.Tab.0.left" timestamp="1605102276694">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066098" />
-    <state width="2517" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514826" />
-    <state width="2517" height="553" key="GridCell.Tab.0.right" timestamp="1605097514826">
+    <state width="2517" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276694" />
+    <state width="2517" height="553" key="GridCell.Tab.0.right" timestamp="1605102276694">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514826" />
-    <state width="2517" height="553" key="GridCell.Tab.1.bottom" timestamp="1605097514706">
+    <state width="2517" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276694" />
+    <state width="2517" height="553" key="GridCell.Tab.1.bottom" timestamp="1605102276576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514706" />
-    <state width="2517" height="553" key="GridCell.Tab.1.center" timestamp="1605097514706">
+    <state width="2517" height="553" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276576" />
+    <state width="2517" height="553" key="GridCell.Tab.1.center" timestamp="1605102276576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514706" />
-    <state width="2517" height="553" key="GridCell.Tab.1.left" timestamp="1605097514706">
+    <state width="2517" height="553" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276576" />
+    <state width="2517" height="553" key="GridCell.Tab.1.left" timestamp="1605102276576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514706" />
-    <state width="2517" height="553" key="GridCell.Tab.1.right" timestamp="1605097514706">
+    <state width="2517" height="553" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276576" />
+    <state width="2517" height="553" key="GridCell.Tab.1.right" timestamp="1605102276576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605097514706" />
-    <state x="576" y="214" key="SettingsEditor" timestamp="1605096538922">
+    <state width="2517" height="553" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102276576" />
+    <state x="576" y="214" key="SettingsEditor" timestamp="1605102274049">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-1060" y="262" key="SettingsEditor/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602506465205" />
-    <state x="576" y="214" key="SettingsEditor/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605096538922" />
+    <state x="576" y="214" key="SettingsEditor/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102274049" />
     <state x="800" y="531" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1605095547187">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -396,10 +357,10 @@
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
     <state x="-798" y="401" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602585202748" />
-    <state x="980" y="457" key="refactoring.ChangeSignatureDialog" timestamp="1603921179388">
+    <state x="980" y="457" key="refactoring.ChangeSignatureDialog" timestamp="1605101208416">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="980" y="457" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1603921179388" />
+    <state x="980" y="457" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605101208416" />
     <state x="-685" y="191" key="run.anything.popup" timestamp="1602519450058">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>

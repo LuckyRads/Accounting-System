@@ -1,11 +1,23 @@
-package accountingsystem.model;
+package accountingsystem.jpa.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
 public class Company extends User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
     private String name;
+
+    @OneToOne
     private Person responsiblePerson;
+
+    public Company() {
+        super();
+    }
 
     public Company(String email, String password, String name, Person responsiblePerson) {
         super();

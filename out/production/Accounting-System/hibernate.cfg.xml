@@ -12,5 +12,10 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
 
+        <mapping class="accountingsystem.jpa.model.AccountingSystem"></mapping>
+        <mapping class="accountingsystem.jpa.model.Category"></mapping>
+        <mapping class="accountingsystem.jpa.model.Company"></mapping>
+        <mapping class="accountingsystem.jpa.model.Person"></mapping>
+        <mapping class="accountingsystem.jpa.model.Transaction"></mapping>
     </session-factory>
 </hibernate-configuration>

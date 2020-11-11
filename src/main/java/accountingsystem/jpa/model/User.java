@@ -1,14 +1,20 @@
-package accountingsystem.model;
+package accountingsystem.jpa.model;
 
-
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
+@MappedSuperclass
 public abstract class User implements Serializable {
 
     protected String email;
+
     protected String password;
 
     public User() {
+
+    }
+
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
