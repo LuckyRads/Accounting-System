@@ -4,7 +4,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>accountingsystem.hibernate.model.AccountingSystem</class>
-        <class>accountingsystem.hibernate.model.CategoryHibernate</class>
+        <class>accountingsystem.hibernate.model.Category</class>
         <class>accountingsystem.hibernate.model.Company</class>
         <class>accountingsystem.hibernate.model.Person</class>
         <class>accountingsystem.hibernate.model.Transaction</class>

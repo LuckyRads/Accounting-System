@@ -26,7 +26,7 @@ public class Transaction implements Serializable {
     private Date date;
 
     @ManyToOne
-    private CategoryHibernate category;
+    private Category category;
 
     public Transaction() {
 

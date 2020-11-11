@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7af3e587-7351-4ae4-ab61-7b563cbc5916" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/util/AccountingSystemUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounting-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/accounting-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/MainMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/jpa/model/AccountingSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/jpa/model/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/jpa/model/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/jpa/model/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/jpa/model/Transaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/jpa/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/CategoryHibernate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/Transaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/AccountingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/AccountingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/CategoryHibernate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/jpa/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/CategoryHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
@@ -190,7 +177,7 @@
       <workItem from="1604415041291" duration="11451000" />
       <workItem from="1604941475295" duration="857000" />
       <workItem from="1605088686153" duration="243000" />
-      <workItem from="1605089596735" duration="16848000" />
+      <workItem from="1605089596735" duration="16991000" />
     </task>
     <servers />
   </component>
@@ -245,10 +232,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1063" y="594" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107048245" />
-    <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605104580894">
+    <state x="731" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605107143941">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="885" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605104580894" />
+    <state x="731" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107143941" />
     <state x="640" y="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605099507292">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -267,46 +254,46 @@
     </state>
     <state x="-834" y="429" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602520697238" />
     <state x="620" y="644" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102093327" />
-    <state width="2517" height="553" key="GridCell.Tab.0.bottom" timestamp="1605106928749">
+    <state width="2517" height="553" key="GridCell.Tab.0.bottom" timestamp="1605107181183">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928749" />
-    <state width="2517" height="553" key="GridCell.Tab.0.center" timestamp="1605106928749">
+    <state width="2517" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181183" />
+    <state width="2517" height="553" key="GridCell.Tab.0.center" timestamp="1605107181183">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928749" />
-    <state width="2517" height="553" key="GridCell.Tab.0.left" timestamp="1605106928749">
+    <state width="2517" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181183" />
+    <state width="2517" height="553" key="GridCell.Tab.0.left" timestamp="1605107181183">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066098" />
-    <state width="2517" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928749" />
-    <state width="2517" height="553" key="GridCell.Tab.0.right" timestamp="1605106928749">
+    <state width="2517" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181183" />
+    <state width="2517" height="553" key="GridCell.Tab.0.right" timestamp="1605107181183">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928749" />
-    <state width="2517" height="553" key="GridCell.Tab.1.bottom" timestamp="1605106928615">
+    <state width="2517" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181183" />
+    <state width="2517" height="553" key="GridCell.Tab.1.bottom" timestamp="1605107181038">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928615" />
-    <state width="2517" height="553" key="GridCell.Tab.1.center" timestamp="1605106928615">
+    <state width="2517" height="553" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181038" />
+    <state width="2517" height="553" key="GridCell.Tab.1.center" timestamp="1605107181038">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928615" />
-    <state width="2517" height="553" key="GridCell.Tab.1.left" timestamp="1605106928615">
+    <state width="2517" height="553" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181038" />
+    <state width="2517" height="553" key="GridCell.Tab.1.left" timestamp="1605107181038">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928615" />
-    <state width="2517" height="553" key="GridCell.Tab.1.right" timestamp="1605106928615">
+    <state width="2517" height="553" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181038" />
+    <state width="2517" height="553" key="GridCell.Tab.1.right" timestamp="1605107181038">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="553" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605106928615" />
+    <state width="2517" height="553" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107181038" />
     <state x="576" y="214" key="SettingsEditor" timestamp="1605104318858">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -328,11 +315,11 @@
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
     <state x="-1087" y="48" width="1094" height="806" key="dock-window-2/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1604427751387" />
-    <state x="987" y="433" width="585" height="534" key="find.popup" timestamp="1605096285412">
+    <state x="987" y="433" width="585" height="534" key="find.popup" timestamp="1605107159898">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-664" y="329" width="555" height="718" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476641774" />
-    <state x="987" y="433" width="585" height="534" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605096285412" />
+    <state x="987" y="433" width="585" height="534" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605107159898" />
     <state x="-798" y="401" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602585202748">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class CategoryHibernate implements Serializable {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,35 +19,35 @@ public class CategoryHibernate implements Serializable {
     private List<Transaction> transactions;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<CategoryHibernate> subCategories;
+    private List<Category> subCategories;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Person> responsiblePeople;
 
     @OneToOne
-    private CategoryHibernate parentCategoryHibernate;
+    private Category parentCategory;
 
-    public CategoryHibernate() {
+    public Category() {
 
     }
 
-    public CategoryHibernate(long id, String name, String description, List<Transaction> transactions, List<CategoryHibernate> subCategories, List<Person> responsiblePeople, CategoryHibernate parentCategoryHibernate) {
+    public Category(long id, String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
         this.responsiblePeople = responsiblePeople;
-        this.parentCategoryHibernate = parentCategoryHibernate;
+        this.parentCategory = parentCategory;
     }
 
-    public CategoryHibernate(String name, String description, List<Transaction> transactions, List<CategoryHibernate> subCategories, List<Person> responsiblePeople, CategoryHibernate parentCategoryHibernate) {
+    public Category(String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
         this.responsiblePeople = responsiblePeople;
-        this.parentCategoryHibernate = parentCategoryHibernate;
+        this.parentCategory = parentCategory;
     }
 
     public String getName() {
@@ -74,11 +74,11 @@ public class CategoryHibernate implements Serializable {
         this.transactions = transactions;
     }
 
-    public List<CategoryHibernate> getSubCategories() {
+    public List<Category> getSubCategories() {
         return subCategories;
     }
 
-    public void setSubCategories(List<CategoryHibernate> subCategories) {
+    public void setSubCategories(List<Category> subCategories) {
         this.subCategories = subCategories;
     }
 
@@ -90,12 +90,12 @@ public class CategoryHibernate implements Serializable {
         this.responsiblePeople = responsiblePeople;
     }
 
-    public CategoryHibernate getParentCategory() {
-        return parentCategoryHibernate;
+    public Category getParentCategory() {
+        return parentCategory;
     }
 
-    public void setParentCategory(CategoryHibernate parentCategoryHibernate) {
-        this.parentCategoryHibernate = parentCategoryHibernate;
+    public void setParentCategory(Category parentCategory) {
+        this.parentCategory = parentCategory;
     }
 
     @Override

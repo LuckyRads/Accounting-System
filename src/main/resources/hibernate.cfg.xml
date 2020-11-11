@@ -13,7 +13,7 @@
         <property name="hibernate.show_sql">true</property>
 
         <mapping class="accountingsystem.hibernate.model.AccountingSystem"></mapping>
-        <mapping class="accountingsystem.hibernate.model.CategoryHibernate"></mapping>
+        <mapping class="accountingsystem.hibernate.model.Category"></mapping>
         <mapping class="accountingsystem.hibernate.model.Company"></mapping>
         <mapping class="accountingsystem.hibernate.model.Person"></mapping>
         <mapping class="accountingsystem.hibernate.model.Transaction"></mapping>
