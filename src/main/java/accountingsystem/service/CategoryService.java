@@ -18,8 +18,6 @@ public class CategoryService {
             foundCategory = getCategory(name, category.getSubCategories());
         }
 
-        System.out.println(foundCategory);
-
         return foundCategory;
     }
 
