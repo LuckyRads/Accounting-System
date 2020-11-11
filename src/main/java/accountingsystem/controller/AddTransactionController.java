@@ -1,13 +1,13 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Category;
+import accountingsystem.hibernate.model.Transaction;
+import accountingsystem.model.TransactionType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.Category;
-import accountingsystem.model.Transaction;
-import accountingsystem.model.TransactionType;
 
 import java.util.Date;
 
@@ -67,7 +67,7 @@ public class AddTransactionController implements WindowController {
 
     @FXML
     public void addTransaction() {
-        for (Category category : categoriesController.getAccountingSystem().getCategories()) {
+        for (Category category : categoriesController.categoryUtil.getAllCategories()) {
             addTransactionToCategory(this.category, category);
         }
 
@@ -83,6 +83,7 @@ public class AddTransactionController implements WindowController {
                     new Date());
 
             rootCategory.getTransactions().add(transaction);
+            categoriesController.categoryUtil.edit(rootCategory);
             return;
         }
 

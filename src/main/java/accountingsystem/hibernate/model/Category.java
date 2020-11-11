@@ -24,7 +24,7 @@ public class Category implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Person> responsiblePeople;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private Category parentCategory;
 
     public Category() {

@@ -1,5 +1,9 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Category;
+import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.model.Transaction;
+import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,10 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.Category;
-import accountingsystem.model.Person;
-import accountingsystem.model.Transaction;
-import accountingsystem.service.ViewService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,13 +72,12 @@ public class AddCategoryController implements WindowController {
                     new ArrayList<Transaction>(), new ArrayList<Category>(),
                     responsiblePeople, parentCategory);
 
-            for (Category category : categoriesController.getAccountingSystem().getCategories()) {
+            for (Category category : categoriesController.categoryUtil.getAllCategories()) {
                 addSubCategory(subCategory, category);
             }
         } else {
-            categoriesController.getAccountingSystem().getCategories().add(
-                    new Category(nameField.getText(), descriptionField.getText(),
-                            new ArrayList<Transaction>(), new ArrayList<Category>(), responsiblePeople, parentCategory));
+            categoriesController.categoryUtil.create(new Category(nameField.getText(), descriptionField.getText(),
+                    new ArrayList<Transaction>(), new ArrayList<Category>(), responsiblePeople, parentCategory));
         }
 
         closeWindow();
@@ -87,6 +86,7 @@ public class AddCategoryController implements WindowController {
     private void addSubCategory(Category subCategory, Category rootCategory) {
         if (subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
             rootCategory.getSubCategories().add(subCategory);
+            categoriesController.categoryUtil.edit(rootCategory);
             return;
         }
 

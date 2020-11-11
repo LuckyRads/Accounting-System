@@ -1,5 +1,12 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Category;
+import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.model.Transaction;
+import accountingsystem.hibernate.util.CategoryUtil;
+import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.model.TransactionType;
+import accountingsystem.service.ViewService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,16 +15,13 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import accountingsystem.model.*;
-import accountingsystem.service.CategoryService;
-import accountingsystem.service.ViewService;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
 import java.util.Date;
 
 public class CategoriesController implements Controller {
-
-    private AccountingSystem accountingSystem;
 
     @FXML
     private Button menuBtn;
@@ -46,13 +50,11 @@ public class CategoriesController implements Controller {
     @FXML
     private ListView responsiblePeopleList;
 
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
-    }
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
+    CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
+    PersonUtil personUtil = new PersonUtil(entityManagerFactory);
 
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
-    }
+    //region Menu links
 
     @FXML
     public void openMenu() throws IOException {
@@ -60,16 +62,17 @@ public class CategoriesController implements Controller {
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
-//        mainMenuController.setAccountingSystem(accountingSystem);
         mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
     }
 
+    //endregion
+
     @FXML
     public void loadCategories() {
         categoryList.setRoot(new TreeItem<String>("Categories"));
-        accountingSystem.getCategories().forEach(category -> addTreeItems(category, categoryList.getRoot()));
+        categoryUtil.getAllCategories().forEach(category -> addTreeItems(category, categoryList.getRoot()));
         categoryList.setShowRoot(false);
 
         updateWindow();
@@ -143,11 +146,11 @@ public class CategoriesController implements Controller {
     }
 
     @FXML
-    public void removeCategory() throws IOException {
-        Category selectedCategory = CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
+    public void removeCategory() throws Exception {
+        Category selectedCategory = categoryUtil.getCategory(parseSelectedItem());
 
         Category categoryToRemove = null;
-        for (Category category : accountingSystem.getCategories()) {
+        for (Category category : categoryUtil.getAllCategories()) {
             if (selectedCategory.getName().equals(category.getName())) {
                 categoryToRemove = category;
             } else {
@@ -155,7 +158,7 @@ public class CategoriesController implements Controller {
             }
         }
         if (categoryToRemove != null) {
-            accountingSystem.getCategories().remove(categoryToRemove);
+            categoryUtil.destroy(categoryToRemove);
         }
         loadCategories();
     }
@@ -163,6 +166,7 @@ public class CategoriesController implements Controller {
     private void removeSubCategory(Category subCategory, Category rootCategory) {
         if (subCategory.getParentCategory() != null && subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
             rootCategory.getSubCategories().remove(subCategory);
+            categoryUtil.edit(rootCategory);
             return;
         }
 
@@ -176,6 +180,7 @@ public class CategoriesController implements Controller {
     @FXML
     public void updateCategory() {
         getSelectedCategory().setDescription(descriptionField.getText());
+        categoryUtil.edit(getSelectedCategory());
         updateWindow();
     }
 
@@ -207,7 +212,7 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : accountingSystem.getCategories()) {
+        for (Category category : categoryUtil.getAllCategories()) {
             removeTransaction(selectedCategory, category);
         }
     }
@@ -215,6 +220,7 @@ public class CategoriesController implements Controller {
     private void removeTransaction(Category subCategory, Category rootCategory) {
         if (subCategory.getName().equals(rootCategory.getName())) {
             rootCategory.getTransactions().remove(transactionTable.getSelectionModel().getSelectedItem());
+            categoryUtil.edit(rootCategory);
             updateWindow();
             return;
         }
@@ -264,7 +270,7 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : this.accountingSystem.getCategories()) {
+        for (Category category : categoryUtil.getAllCategories()) {
             addResponsiblePerson(selectedCategory, category, person);
         }
     }
@@ -272,6 +278,7 @@ public class CategoriesController implements Controller {
     private void addResponsiblePerson(Category subCategory, Category rootCategory, Person person) {
         if (subCategory.getName().equals(rootCategory.getName())) {
             rootCategory.getResponsiblePeople().add(person);
+            categoryUtil.edit(rootCategory);
             return;
         }
 
@@ -289,7 +296,7 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : this.accountingSystem.getCategories()) {
+        for (Category category : categoryUtil.getAllCategories()) {
             removeResponsiblePerson(selectedCategory, category);
         }
     }
@@ -297,6 +304,7 @@ public class CategoriesController implements Controller {
     private void removeResponsiblePerson(Category subCategory, Category rootCategory) {
         if (subCategory.getName().equals(rootCategory.getName())) {
             rootCategory.getResponsiblePeople().remove(responsiblePeopleList.getSelectionModel().getSelectedItem());
+            categoryUtil.edit(rootCategory);
             updateWindow();
             return;
         }
@@ -316,7 +324,6 @@ public class CategoriesController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-        exportController.setAccountingSystem(accountingSystem);
         exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
@@ -328,7 +335,6 @@ public class CategoriesController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-        importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
         importController.setController(this);
 
@@ -339,7 +345,7 @@ public class CategoriesController implements Controller {
 
     private Category getSelectedCategory() {
         if (categoryList.getSelectionModel().getSelectedItem() != null) {
-            return CategoryService.getCategory(parseSelectedItem(), accountingSystem.getCategories());
+            return categoryUtil.getCategory(parseSelectedItem());
         }
         return null;
     }

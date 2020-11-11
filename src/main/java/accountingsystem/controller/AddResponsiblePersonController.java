@@ -1,10 +1,10 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Person;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import accountingsystem.model.Person;
 
 public class AddResponsiblePersonController implements WindowController {
 
@@ -44,11 +44,9 @@ public class AddResponsiblePersonController implements WindowController {
         availablePeopleList.getItems().clear();
 
         if (addCategoryController != null) {
-            addCategoryController.getCategoriesController().getAccountingSystem().
-                    getPeople().forEach(person -> availablePeopleList.getItems().add(person));
+            addCategoryController.getCategoriesController().personUtil.getAllPeople().forEach(person -> availablePeopleList.getItems().add(person));
         } else {
-            categoriesController.getAccountingSystem().
-                    getPeople().forEach(person -> availablePeopleList.getItems().add(person));
+            categoriesController.personUtil.getAllPeople().forEach(person -> availablePeopleList.getItems().add(person));
         }
     }
 
