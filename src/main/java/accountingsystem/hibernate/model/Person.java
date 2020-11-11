@@ -1,4 +1,4 @@
-package accountingsystem.jpa.model;
+package accountingsystem.hibernate.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

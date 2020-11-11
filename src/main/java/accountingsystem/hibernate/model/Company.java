@@ -1,4 +1,4 @@
-package accountingsystem.jpa.model;
+package accountingsystem.hibernate.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,7 +16,7 @@ public class Company extends User implements Serializable {
     private Person responsiblePerson;
 
     public Company() {
-        super();
+        
     }
 
     public Company(String email, String password, String name, Person responsiblePerson) {

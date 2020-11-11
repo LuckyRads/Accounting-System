@@ -1,11 +1,11 @@
-package accountingsystem.jpa.model;
+package accountingsystem.hibernate.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Category implements Serializable {
+public class CategoryHibernate implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,39 +15,39 @@ public class Category implements Serializable {
 
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private List<Transaction> transactions;
 
-    @OneToMany
-    private List<Category> subCategories;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<CategoryHibernate> subCategories;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Person> responsiblePeople;
 
     @OneToOne
-    private Category parentCategory;
+    private CategoryHibernate parentCategoryHibernate;
 
-    public Category() {
+    public CategoryHibernate() {
 
     }
 
-    public Category(long id, String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
+    public CategoryHibernate(long id, String name, String description, List<Transaction> transactions, List<CategoryHibernate> subCategories, List<Person> responsiblePeople, CategoryHibernate parentCategoryHibernate) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
         this.responsiblePeople = responsiblePeople;
-        this.parentCategory = parentCategory;
+        this.parentCategoryHibernate = parentCategoryHibernate;
     }
 
-    public Category(String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
+    public CategoryHibernate(String name, String description, List<Transaction> transactions, List<CategoryHibernate> subCategories, List<Person> responsiblePeople, CategoryHibernate parentCategoryHibernate) {
         this.name = name;
         this.description = description;
         this.transactions = transactions;
         this.subCategories = subCategories;
         this.responsiblePeople = responsiblePeople;
-        this.parentCategory = parentCategory;
+        this.parentCategoryHibernate = parentCategoryHibernate;
     }
 
     public String getName() {
@@ -74,11 +74,11 @@ public class Category implements Serializable {
         this.transactions = transactions;
     }
 
-    public List<Category> getSubCategories() {
+    public List<CategoryHibernate> getSubCategories() {
         return subCategories;
     }
 
-    public void setSubCategories(List<Category> subCategories) {
+    public void setSubCategories(List<CategoryHibernate> subCategories) {
         this.subCategories = subCategories;
     }
 
@@ -90,12 +90,12 @@ public class Category implements Serializable {
         this.responsiblePeople = responsiblePeople;
     }
 
-    public Category getParentCategory() {
-        return parentCategory;
+    public CategoryHibernate getParentCategory() {
+        return parentCategoryHibernate;
     }
 
-    public void setParentCategory(Category parentCategory) {
-        this.parentCategory = parentCategory;
+    public void setParentCategory(CategoryHibernate parentCategoryHibernate) {
+        this.parentCategoryHibernate = parentCategoryHibernate;
     }
 
     @Override

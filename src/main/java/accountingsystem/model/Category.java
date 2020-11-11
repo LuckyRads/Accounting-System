@@ -1,15 +1,9 @@
 package accountingsystem.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity
 public class Category implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
 
     private String name;
 
@@ -22,20 +16,6 @@ public class Category implements Serializable {
     private List<Person> responsiblePeople;
 
     private Category parentCategory;
-
-    public Category() {
-
-    }
-
-    public Category(long id, String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.transactions = transactions;
-        this.subCategories = subCategories;
-        this.responsiblePeople = responsiblePeople;
-        this.parentCategory = parentCategory;
-    }
 
     public Category(String name, String description, List<Transaction> transactions, List<Category> subCategories, List<Person> responsiblePeople, Category parentCategory) {
         this.name = name;

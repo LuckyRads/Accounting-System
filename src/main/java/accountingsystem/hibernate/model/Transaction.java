@@ -1,11 +1,8 @@
-package accountingsystem.jpa.model;
+package accountingsystem.hibernate.model;
 
 import accountingsystem.model.TransactionType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -27,6 +24,9 @@ public class Transaction implements Serializable {
     private double amount;
 
     private Date date;
+
+    @ManyToOne
+    private CategoryHibernate category;
 
     public Transaction() {
 

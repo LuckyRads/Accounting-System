@@ -3,15 +3,15 @@
     <persistence-unit name="accountingsystem" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>accountingsystem.jpa.model.AccountingSystem</class>
-        <class>accountingsystem.jpa.model.Category</class>
-        <class>accountingsystem.jpa.model.Company</class>
-        <class>accountingsystem.jpa.model.Person</class>
-        <class>accountingsystem.jpa.model.Transaction</class>
+        <class>accountingsystem.hibernate.model.AccountingSystem</class>
+        <class>accountingsystem.hibernate.model.CategoryHibernate</class>
+        <class>accountingsystem.hibernate.model.Company</class>
+        <class>accountingsystem.hibernate.model.Person</class>
+        <class>accountingsystem.hibernate.model.Transaction</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/accounting_system"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="root"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

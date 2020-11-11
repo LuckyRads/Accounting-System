@@ -1,5 +1,8 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.util.AccountingSystemUtil;
+import accountingsystem.model.AccountingSystem;
+import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,10 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.AccountingSystem;
-import accountingsystem.service.ViewService;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
+import java.util.Date;
 
 public class MainMenuController implements Controller {
 
@@ -53,6 +57,9 @@ public class MainMenuController implements Controller {
     public void setAccountingSystem(AccountingSystem accountingSystem) {
         this.accountingSystem = accountingSystem;
     }
+
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
+    AccountingSystemUtil accountingSystemUtil = new AccountingSystemUtil(entityManagerFactory);
 
     @Override
     public void updateWindow() {
@@ -114,6 +121,7 @@ public class MainMenuController implements Controller {
         companyTextField.setText(this.accountingSystem.getCompany());
         createdAtDatePicker.setText(this.accountingSystem.getDateCreated().toString());
         versionTextField.setText(this.accountingSystem.getVersion());
+        accountingSystemUtil.create(new accountingsystem.hibernate.model.AccountingSystem("Company", new Date(), "2.0.0"));
     }
 
     @FXML
