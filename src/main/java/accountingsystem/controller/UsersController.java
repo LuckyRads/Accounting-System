@@ -69,7 +69,7 @@ public class UsersController implements Controller {
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
-        mainMenuController.setAccountingSystem(accountingSystem);
+//        mainMenuController.setAccountingSystem(accountingSystem);
         mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);

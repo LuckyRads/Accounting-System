@@ -30,6 +30,10 @@ public class Person extends User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

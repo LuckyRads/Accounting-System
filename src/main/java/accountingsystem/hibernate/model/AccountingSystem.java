@@ -24,10 +24,15 @@ public class AccountingSystem implements Serializable {
 
     }
 
-    public AccountingSystem(String company, Date dateCreated, String version) {
+    public AccountingSystem(Long id, String company, Date dateCreated, String version) {
+        this.id = id;
         this.company = company;
         this.dateCreated = dateCreated;
         this.version = version;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getCompany() {

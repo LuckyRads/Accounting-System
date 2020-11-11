@@ -25,6 +25,10 @@ public class Company extends User implements Serializable {
         this.responsiblePerson = responsiblePerson;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

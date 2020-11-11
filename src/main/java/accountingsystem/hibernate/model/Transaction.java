@@ -41,6 +41,10 @@ public class Transaction implements Serializable {
         this.date = date;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

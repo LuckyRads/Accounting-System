@@ -1,7 +1,7 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.AccountingSystem;
 import accountingsystem.hibernate.util.AccountingSystemUtil;
-import accountingsystem.model.AccountingSystem;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +14,8 @@ import javafx.stage.Stage;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.IOException;
-import java.util.Date;
 
 public class MainMenuController implements Controller {
-
-    private AccountingSystem accountingSystem;
 
     @FXML
     private Button systemBtn;
@@ -50,13 +47,13 @@ public class MainMenuController implements Controller {
     @FXML
     private TextField versionTextField;
 
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
-    }
-
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
-    }
+//    public AccountingSystem getAccountingSystem() {
+//        return accountingSystem;
+//    }
+//
+//    public void setAccountingSystem(AccountingSystem accountingSystem) {
+//        this.accountingSystem = accountingSystem;
+//    }
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     AccountingSystemUtil accountingSystemUtil = new AccountingSystemUtil(entityManagerFactory);
@@ -74,7 +71,7 @@ public class MainMenuController implements Controller {
         Parent root = loader.load();
 
         CategoriesController categoriesController = loader.getController();
-        categoriesController.setAccountingSystem(accountingSystem);
+//        categoriesController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) categoriesBtn.getScene().getWindow(), root);
         categoriesController.loadCategories();
@@ -86,7 +83,7 @@ public class MainMenuController implements Controller {
         Parent root = loader.load();
 
         UsersController usersController = loader.getController();
-        usersController.setAccountingSystem(accountingSystem);
+//        usersController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) usersBtn.getScene().getWindow(), root);
         usersController.updateWindow();
@@ -98,7 +95,7 @@ public class MainMenuController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-        exportController.setAccountingSystem(accountingSystem);
+//        exportController.setAccountingSystem(accountingSystem);
         exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
@@ -110,7 +107,7 @@ public class MainMenuController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-        importController.setAccountingSystem(accountingSystem);
+//        importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
         importController.setController(this);
 
@@ -118,17 +115,19 @@ public class MainMenuController implements Controller {
     }
 
     public void loadSystemInfo() {
-        companyTextField.setText(this.accountingSystem.getCompany());
-        createdAtDatePicker.setText(this.accountingSystem.getDateCreated().toString());
-        versionTextField.setText(this.accountingSystem.getVersion());
-        accountingSystemUtil.create(new accountingsystem.hibernate.model.AccountingSystem("Company", new Date(), "2.0.0"));
+        AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
+        
+        companyTextField.setText(accountingSystem.getCompany());
+        createdAtDatePicker.setText(accountingSystem.getDateCreated().toString());
+        versionTextField.setText(accountingSystem.getVersion());
     }
 
     @FXML
     public void updateSystemInfo() {
-        accountingSystem.setCompany(companyTextField.getText());
+//        accountingSystem.setCompany(companyTextField.getText());
 //        accountingSystem.setDateCreated(createdAtDatePicker.getText().toString());
-        accountingSystem.setVersion(versionTextField.getText());
+//        accountingSystem.setVersion(versionTextField.getText());
+        // TODO: Update database here
         updateWindow();
     }
 
