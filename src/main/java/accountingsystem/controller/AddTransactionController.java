@@ -67,7 +67,7 @@ public class AddTransactionController implements WindowController {
 
     @FXML
     public void addTransaction() {
-        for (Category category : categoriesController.categoryUtil.getAllCategories()) {
+        for (Category category : categoriesController.categoryUtil.getRootCategories()) {
             addTransactionToCategory(this.category, category);
         }
 

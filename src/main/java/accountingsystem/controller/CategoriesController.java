@@ -72,7 +72,7 @@ public class CategoriesController implements Controller {
     @FXML
     public void loadCategories() {
         categoryList.setRoot(new TreeItem<String>("Categories"));
-        categoryUtil.getAllCategories().forEach(category -> addTreeItems(category, categoryList.getRoot()));
+        categoryUtil.getRootCategories().forEach(category -> addTreeItems(category, categoryList.getRoot()));
         categoryList.setShowRoot(false);
 
         updateWindow();
@@ -153,28 +153,12 @@ public class CategoriesController implements Controller {
         for (Category category : categoryUtil.getAllCategories()) {
             if (selectedCategory.getName().equals(category.getName())) {
                 categoryToRemove = category;
-            } else {
-                removeSubCategory(selectedCategory, category);
             }
         }
         if (categoryToRemove != null) {
             categoryUtil.destroy(categoryToRemove);
         }
         loadCategories();
-    }
-
-    private void removeSubCategory(Category subCategory, Category rootCategory) {
-        if (subCategory.getParentCategory() != null && subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
-            rootCategory.getSubCategories().remove(subCategory);
-            categoryUtil.edit(rootCategory);
-            return;
-        }
-
-        for (Category category : rootCategory.getSubCategories()) {
-            removeSubCategory(subCategory, category);
-        }
-
-        updateWindow();
     }
 
     @FXML
@@ -212,7 +196,7 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : categoryUtil.getAllCategories()) {
+        for (Category category : categoryUtil.getRootCategories()) {
             removeTransaction(selectedCategory, category);
         }
     }
@@ -270,7 +254,7 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : categoryUtil.getAllCategories()) {
+        for (Category category : categoryUtil.getRootCategories()) {
             addResponsiblePerson(selectedCategory, category, person);
         }
     }
@@ -296,7 +280,7 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : categoryUtil.getAllCategories()) {
+        for (Category category : categoryUtil.getRootCategories()) {
             removeResponsiblePerson(selectedCategory, category);
         }
     }

@@ -72,7 +72,7 @@ public class AddCategoryController implements WindowController {
                     new ArrayList<Transaction>(), new ArrayList<Category>(),
                     responsiblePeople, parentCategory);
 
-            for (Category category : categoriesController.categoryUtil.getAllCategories()) {
+            for (Category category : categoriesController.categoryUtil.getRootCategories()) {
                 addSubCategory(subCategory, category);
             }
         } else {

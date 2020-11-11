@@ -97,7 +97,7 @@ public class CategoryUtil {
     //region Getters
 
     public Category getCategory(String name) {
-        for (Category category : getAllCategoriesOld()) {
+        for (Category category : getAllCategories()) {
             if (category.getName().equals(name)) {
                 return category;
             }
@@ -105,7 +105,7 @@ public class CategoryUtil {
         return null;
     }
 
-    public List<Category> getAllCategoriesOld() {
+    public List<Category> getAllCategories() {
         EntityManager entityManager = getEntityManager();
 
         try {
@@ -119,8 +119,8 @@ public class CategoryUtil {
         }
     }
 
-    public List<Category> getAllCategories() { // TODO: Change to getRootCategories?
-        List<Category> categories = getAllCategoriesOld();
+    public List<Category> getRootCategories() {
+        List<Category> categories = getAllCategories();
         List<Category> rootCategories = new ArrayList<>();
 
         for (Category category : categories) {
