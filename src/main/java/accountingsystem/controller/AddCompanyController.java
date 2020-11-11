@@ -1,13 +1,13 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.Company;
-import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.service.PeopleService;
+import accountingsystem.model.Company;
+import accountingsystem.model.Person;
+import accountingsystem.service.PeopleService;
 
 import java.io.IOException;
 

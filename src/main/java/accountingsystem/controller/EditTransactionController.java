@@ -1,12 +1,12 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.Transaction;
-import main.java.accountingsystem.model.TransactionType;
+import accountingsystem.model.Transaction;
+import accountingsystem.model.TransactionType;
 
 import java.util.Date;
 

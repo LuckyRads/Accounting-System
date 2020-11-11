@@ -1,4 +1,4 @@
-package main.java.accountingsystem.util;
+package accountingsystem.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

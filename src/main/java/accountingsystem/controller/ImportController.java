@@ -1,17 +1,17 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.AccountingSystem;
-import main.java.accountingsystem.model.Category;
-import main.java.accountingsystem.model.Company;
-import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.service.CategoryService;
-import main.java.accountingsystem.service.CompaniesService;
-import main.java.accountingsystem.service.PeopleService;
+import accountingsystem.model.AccountingSystem;
+import accountingsystem.model.Category;
+import accountingsystem.model.Company;
+import accountingsystem.model.Person;
+import accountingsystem.service.CategoryService;
+import accountingsystem.service.CompaniesService;
+import accountingsystem.service.PeopleService;
 
 import java.io.EOFException;
 import java.io.File;

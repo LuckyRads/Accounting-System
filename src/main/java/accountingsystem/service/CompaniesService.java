@@ -1,6 +1,6 @@
-package main.java.accountingsystem.service;
+package accountingsystem.service;
 
-import main.java.accountingsystem.model.Company;
+import accountingsystem.model.Company;
 
 import java.util.List;
 

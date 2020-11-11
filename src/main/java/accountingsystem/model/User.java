@@ -1,4 +1,4 @@
-package main.java.accountingsystem.model;
+package accountingsystem.model;
 
 
 import java.io.Serializable;

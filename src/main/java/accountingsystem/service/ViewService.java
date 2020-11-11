@@ -1,4 +1,4 @@
-package main.java.accountingsystem.service;
+package accountingsystem.service;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;

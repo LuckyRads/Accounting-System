@@ -1,4 +1,4 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,9 +8,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.*;
-import main.java.accountingsystem.service.CategoryService;
-import main.java.accountingsystem.service.ViewService;
+import accountingsystem.model.*;
+import accountingsystem.service.CategoryService;
+import accountingsystem.service.ViewService;
 
 import java.io.IOException;
 import java.util.Date;
@@ -56,7 +56,7 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void openMenu() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/MainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainMenu.fxml"));
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
@@ -128,7 +128,7 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void addCategory() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddCategory.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddCategory.fxml"));
         Parent root = loader.load();
 
         AddCategoryController addCategoryController = loader.getController();
@@ -189,7 +189,7 @@ public class CategoriesController implements Controller {
         if (selectedCategory == null) {
             return;
         }
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddTransaction.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddTransaction.fxml"));
         Parent root = loader.load();
 
         AddTransactionController addTransactionController = loader.getController();
@@ -230,7 +230,7 @@ public class CategoriesController implements Controller {
         if (selectedTransaction == null) {
             return;
         }
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/EditTransaction.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/EditTransaction.fxml"));
         Parent root = loader.load();
 
         EditTransactionController editTransactionController = loader.getController();
@@ -248,7 +248,7 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void addResponsiblePerson() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddResponsiblePerson.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddResponsiblePerson.fxml"));
         Parent root = loader.load();
 
         AddResponsiblePersonController addResponsiblePersonController = loader.getController();
@@ -312,7 +312,7 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void openExport() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Export.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Export.fxml"));
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
@@ -324,7 +324,7 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void openImport() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Import.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Import.fxml"));
         Parent root = loader.load();
 
         ImportController importController = loader.getController();

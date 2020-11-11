@@ -10,6 +10,7 @@
         <property name="connection.password">root</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
 
     </session-factory>
 </hibernate-configuration>

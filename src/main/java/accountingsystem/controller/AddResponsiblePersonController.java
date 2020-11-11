@@ -1,10 +1,10 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.Person;
+import accountingsystem.model.Person;
 
 public class AddResponsiblePersonController implements WindowController {
 

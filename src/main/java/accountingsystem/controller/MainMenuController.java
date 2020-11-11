@@ -1,4 +1,4 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,8 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.AccountingSystem;
-import main.java.accountingsystem.service.ViewService;
+import accountingsystem.model.AccountingSystem;
+import accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
@@ -63,7 +63,7 @@ public class MainMenuController implements Controller {
 
     @FXML
     public void openCategories() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Categories.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Categories.fxml"));
         Parent root = loader.load();
 
         CategoriesController categoriesController = loader.getController();
@@ -75,7 +75,7 @@ public class MainMenuController implements Controller {
 
     @FXML
     public void openUsers() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Users.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Users.fxml"));
         Parent root = loader.load();
 
         UsersController usersController = loader.getController();
@@ -87,7 +87,7 @@ public class MainMenuController implements Controller {
 
     @FXML
     public void openExport() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Export.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Export.fxml"));
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
@@ -99,7 +99,7 @@ public class MainMenuController implements Controller {
 
     @FXML
     public void openImport() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Import.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Import.fxml"));
         Parent root = loader.load();
 
         ImportController importController = loader.getController();

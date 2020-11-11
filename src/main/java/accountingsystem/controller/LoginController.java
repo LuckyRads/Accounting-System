@@ -1,12 +1,12 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
+import accountingsystem.model.AccountingSystem;
+import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.AccountingSystem;
-import main.java.accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
@@ -30,7 +30,7 @@ public class LoginController {
 
     @FXML
     public void login() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/MainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainMenu.fxml"));
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
@@ -42,7 +42,7 @@ public class LoginController {
 
     @FXML
     public void register() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Register.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Register.fxml"));
         Parent root = loader.load();
 
         RegisterController registerController = loader.getController();

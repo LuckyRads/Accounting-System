@@ -1,4 +1,4 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,10 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.AccountingSystem;
-import main.java.accountingsystem.model.Company;
-import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.service.ViewService;
+import accountingsystem.model.AccountingSystem;
+import accountingsystem.model.Company;
+import accountingsystem.model.Person;
+import accountingsystem.service.ViewService;
 
 import java.io.IOException;
 
@@ -65,7 +65,7 @@ public class UsersController implements Controller {
 
     @FXML
     public void openMenu() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/MainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainMenu.fxml"));
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
@@ -77,7 +77,7 @@ public class UsersController implements Controller {
 
     @FXML
     public void openPeople() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/People.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/People.fxml"));
         Parent root = loader.load();
 
         PeopleController peopleController = loader.getController();
@@ -89,7 +89,7 @@ public class UsersController implements Controller {
 
     @FXML
     public void openCompanies() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Companies.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Companies.fxml"));
         Parent root = loader.load();
 
         CompaniesController companiesController = loader.getController();
@@ -103,7 +103,7 @@ public class UsersController implements Controller {
 
     @FXML
     public void openExport() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Export.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Export.fxml"));
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
@@ -115,7 +115,7 @@ public class UsersController implements Controller {
 
     @FXML
     public void openImport() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Import.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Import.fxml"));
         Parent root = loader.load();
 
         ImportController importController = loader.getController();

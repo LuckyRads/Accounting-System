@@ -1,6 +1,6 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
-import main.java.accountingsystem.model.AccountingSystem;
+import accountingsystem.model.AccountingSystem;
 
 public class RegisterController {
 

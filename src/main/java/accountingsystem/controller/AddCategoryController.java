@@ -1,4 +1,4 @@
-package main.java.accountingsystem.controller;
+package accountingsystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,10 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.accountingsystem.model.Category;
-import main.java.accountingsystem.model.Person;
-import main.java.accountingsystem.model.Transaction;
-import main.java.accountingsystem.service.ViewService;
+import accountingsystem.model.Category;
+import accountingsystem.model.Person;
+import accountingsystem.model.Transaction;
+import accountingsystem.service.ViewService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -97,7 +97,7 @@ public class AddCategoryController implements WindowController {
 
     @FXML
     public void addResponsiblePerson() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/AddResponsiblePerson.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddResponsiblePerson.fxml"));
         Parent root = loader.load();
 
         AddResponsiblePersonController addResponsiblePersonController = loader.getController();

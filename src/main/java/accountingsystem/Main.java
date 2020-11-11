@@ -1,15 +1,15 @@
-package main.java.accountingsystem;
+package accountingsystem;
 
+import accountingsystem.controller.LoginController;
+import accountingsystem.model.AccountingSystem;
+import accountingsystem.model.Category;
+import accountingsystem.model.Company;
+import accountingsystem.model.Person;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.java.accountingsystem.controller.LoginController;
-import main.java.accountingsystem.model.AccountingSystem;
-import main.java.accountingsystem.model.Category;
-import main.java.accountingsystem.model.Company;
-import main.java.accountingsystem.model.Person;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/java/accountingsystem/view/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Login.fxml"));
         initializeApplication(primaryStage, loader);
 
         AccountingSystem accountingSystem = initializeAccountingSystem();

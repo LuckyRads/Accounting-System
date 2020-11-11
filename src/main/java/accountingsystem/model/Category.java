@@ -1,4 +1,4 @@
-package main.java.accountingsystem.model;
+package accountingsystem.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
