@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryUtil {
@@ -96,7 +97,7 @@ public class CategoryUtil {
     //region Getters
 
     public Category getCategory(String name) {
-        for (Category category : getAllCategories()) {
+        for (Category category : getAllCategoriesOld()) {
             if (category.getName().equals(name)) {
                 return category;
             }
@@ -104,7 +105,7 @@ public class CategoryUtil {
         return null;
     }
 
-    public List<Category> getAllCategories() {
+    public List<Category> getAllCategoriesOld() {
         EntityManager entityManager = getEntityManager();
 
         try {
@@ -116,6 +117,18 @@ public class CategoryUtil {
         } finally {
             entityManager.close();
         }
+    }
+
+    public List<Category> getAllCategories() { // TODO: Change to getRootCategories?
+        List<Category> categories = getAllCategoriesOld();
+        List<Category> rootCategories = new ArrayList<>();
+
+        for (Category category : categories) {
+            if (category.getParentCategory() == null) {
+                rootCategories.add(category);
+            }
+        }
+        return rootCategories;
     }
 
     //endregion
