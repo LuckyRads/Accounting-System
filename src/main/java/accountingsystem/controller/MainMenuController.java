@@ -47,14 +47,6 @@ public class MainMenuController implements Controller {
     @FXML
     private TextField versionTextField;
 
-//    public AccountingSystem getAccountingSystem() {
-//        return accountingSystem;
-//    }
-//
-//    public void setAccountingSystem(AccountingSystem accountingSystem) {
-//        this.accountingSystem = accountingSystem;
-//    }
-
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     AccountingSystemUtil accountingSystemUtil = new AccountingSystemUtil(entityManagerFactory);
 
@@ -83,7 +75,6 @@ public class MainMenuController implements Controller {
         Parent root = loader.load();
 
         UsersController usersController = loader.getController();
-//        usersController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) usersBtn.getScene().getWindow(), root);
         usersController.updateWindow();
@@ -116,7 +107,7 @@ public class MainMenuController implements Controller {
 
     public void loadSystemInfo() {
         AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
-        
+
         companyTextField.setText(accountingSystem.getCompany());
         createdAtDatePicker.setText(accountingSystem.getDateCreated().toString());
         versionTextField.setText(accountingSystem.getVersion());
@@ -124,10 +115,13 @@ public class MainMenuController implements Controller {
 
     @FXML
     public void updateSystemInfo() {
-//        accountingSystem.setCompany(companyTextField.getText());
-//        accountingSystem.setDateCreated(createdAtDatePicker.getText().toString());
-//        accountingSystem.setVersion(versionTextField.getText());
-        // TODO: Update database here
+        AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
+
+        accountingSystem.setCompany(companyTextField.getText());
+//        accountingSystem.setDateCreated(createdAtDatePicker.getText().toString()); // TODO: Fix date picker (issue with @Deprecated Date)
+        accountingSystem.setVersion(versionTextField.getText());
+
+        accountingSystemUtil.edit(accountingSystem);
         updateWindow();
     }
 

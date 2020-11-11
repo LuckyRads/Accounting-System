@@ -1,10 +1,10 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Person;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.Person;
 
 import java.io.IOException;
 
@@ -47,7 +47,7 @@ public class AddPersonController implements WindowController {
 
     @FXML
     public void addPerson() throws IOException {
-        peopleController.getAccountingSystem().getPeople().add(new Person(emailField.getText(), passwordField.getText(), nameField.getText(),
+        peopleController.personUtil.create(new Person(emailField.getText(), passwordField.getText(), nameField.getText(),
                 surnameField.getText(), phoneNumberField.getText()));
         closeWindow();
     }

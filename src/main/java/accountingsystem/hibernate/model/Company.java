@@ -16,11 +16,11 @@ public class Company extends User implements Serializable {
     private Person responsiblePerson;
 
     public Company() {
-        
+
     }
 
     public Company(String email, String password, String name, Person responsiblePerson) {
-        super();
+        super(email, password);
         this.name = name;
         this.responsiblePerson = responsiblePerson;
     }
@@ -45,4 +45,8 @@ public class Company extends User implements Serializable {
         this.responsiblePerson = responsiblePerson;
     }
 
+    @Override
+    public String toString() {
+        return this.email;
+    }
 }

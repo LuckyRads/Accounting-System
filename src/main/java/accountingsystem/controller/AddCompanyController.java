@@ -1,13 +1,12 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Company;
+import accountingsystem.hibernate.model.Person;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.Company;
-import accountingsystem.model.Person;
-import accountingsystem.service.PeopleService;
 
 import java.io.IOException;
 
@@ -41,8 +40,8 @@ public class AddCompanyController implements WindowController {
     public void populateResponsiblePeopleSelect() {
         responsiblePersonSelect.getItems().clear();
 
-        for (Person person : companiesController.getAccountingSystem().getPeople()) {
-            responsiblePersonSelect.getItems().add(person.getEmail());
+        for (Person person : companiesController.personUtil.getAllPeople()) {
+            responsiblePersonSelect.getItems().add(person);
         }
     }
 
@@ -55,9 +54,8 @@ public class AddCompanyController implements WindowController {
 
     @FXML
     public void addCompany() throws IOException {
-        Person responsiblePerson = PeopleService.getPerson(responsiblePersonSelect.getSelectionModel().getSelectedItem().toString(), companiesController.getAccountingSystem().getPeople());
-        companiesController.getAccountingSystem().getCompanies().add(new Company(emailField.getText(), passwordField.getText(), nameField.getText(),
-                responsiblePerson));
+        companiesController.companyUtil.create(new Company(emailField.getText(), passwordField.getText(), nameField.getText(),
+                (Person) responsiblePersonSelect.getSelectionModel().getSelectedItem()));
         closeWindow();
     }
 

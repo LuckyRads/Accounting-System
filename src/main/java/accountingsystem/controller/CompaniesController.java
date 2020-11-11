@@ -1,5 +1,10 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Company;
+import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.util.CompanyUtil;
+import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,17 +13,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.AccountingSystem;
-import accountingsystem.model.Company;
-import accountingsystem.model.Person;
-import accountingsystem.service.PeopleService;
-import accountingsystem.service.ViewService;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
 
 public class CompaniesController implements Controller {
-
-    private AccountingSystem accountingSystem;
 
     @FXML
     private ListView companiesList;
@@ -53,13 +53,11 @@ public class CompaniesController implements Controller {
     @FXML
     private ComboBox responsiblePersonSelect;
 
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
-    }
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
+    CompanyUtil companyUtil = new CompanyUtil(entityManagerFactory);
+    PersonUtil personUtil = new PersonUtil(entityManagerFactory);
 
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
-    }
+    //region Menu links
 
     @FXML
     public void openMenu() throws IOException {
@@ -67,7 +65,6 @@ public class CompaniesController implements Controller {
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
-//        mainMenuController.setAccountingSystem(accountingSystem);
         mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
@@ -79,17 +76,18 @@ public class CompaniesController implements Controller {
         Parent root = loader.load();
 
         UsersController usersController = loader.getController();
-        usersController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) usersBtn.getScene().getWindow(), root);
         usersController.updateWindow();
     }
 
+    //endregion
+
     @FXML
     public void loadCompanies() {
         companiesList.getItems().clear();
-        for (Company company : accountingSystem.getCompanies()) {
-            companiesList.getItems().add(company.getEmail());
+        for (Company company : companyUtil.getAllCompanies()) {
+            companiesList.getItems().add(company);
         }
         updateWindow();
     }
@@ -99,20 +97,15 @@ public class CompaniesController implements Controller {
         if (companiesList.getSelectionModel().getSelectedItem() == null) {
             return;
         }
-        String selectedCompany = companiesList.getSelectionModel().getSelectedItem().toString();
+        Company company = (Company) companiesList.getSelectionModel().getSelectedItem();
 
         populateResponsiblePeopleSelect();
 
-        for (Company company : accountingSystem.getCompanies()) {
-            if (selectedCompany.equals(company.getEmail())) {
-                emailField.setText(company.getEmail());
-                passwordField.setText(company.getPassword());
-                nameField.setText(company.getName());
-                responsiblePersonSelect.getSelectionModel().select(company.getResponsiblePerson().getEmail());
-                updateWindow();
-                return;
-            }
-        }
+        emailField.setText(company.getEmail());
+        passwordField.setText(company.getPassword());
+        nameField.setText(company.getName());
+        responsiblePersonSelect.getSelectionModel().select(company.getResponsiblePerson());
+        updateWindow();
     }
 
     @Override
@@ -124,8 +117,8 @@ public class CompaniesController implements Controller {
     private void populateResponsiblePeopleSelect() {
         responsiblePersonSelect.getItems().clear();
 
-        for (Person person : accountingSystem.getPeople()) {
-            responsiblePersonSelect.getItems().add(person.getEmail());
+        for (Person person : personUtil.getAllPeople()) {
+            responsiblePersonSelect.getItems().add(person);
         }
     }
 
@@ -142,35 +135,34 @@ public class CompaniesController implements Controller {
     }
 
     @FXML
-    public void removeCompany() {
-        String selectedCompany = companiesList.getSelectionModel().getSelectedItem().toString();
-
-        for (Company company : accountingSystem.getCompanies()) {
-            if (selectedCompany.equals(company.getEmail())) {
-                accountingSystem.getCompanies().remove(company);
-                loadCompanies();
-                return;
-            }
+    public void removeCompany() throws Exception {
+        if (companiesList.getSelectionModel().getSelectedItem() == null) {
+            return;
         }
+        Company company = (Company) companiesList.getSelectionModel().getSelectedItem();
+        companyUtil.destroy(company);
+        loadCompanies();
     }
 
     @FXML
     public void updateCompany() {
-        String selectedCompany = companiesList.getSelectionModel().getSelectedItem().toString();
-
-        Person responsiblePerson = PeopleService.getPerson(responsiblePersonSelect.getSelectionModel().getSelectedItem().toString(), accountingSystem.getPeople());
-
-        for (Company company : accountingSystem.getCompanies()) {
-            if (selectedCompany.equals(company.getEmail())) {
-                accountingSystem.getCompanies().remove(company);
-                accountingSystem.getCompanies().add(new Company(emailField.getText(), passwordField.getText(), nameField.getText(), responsiblePerson));
-                loadCompanies();
-                return;
-            }
+        if (companiesList.getSelectionModel().getSelectedItem() == null) {
+            return;
         }
+
+        Company company = (Company) companiesList.getSelectionModel().getSelectedItem();
+
+        Person responsiblePerson = (Person) responsiblePersonSelect.getSelectionModel().getSelectedItem();
+
+        company.setEmail(emailField.getText());
+        company.setPassword(passwordField.getText());
+        company.setName(nameField.getText());
+        company.setResponsiblePerson(responsiblePerson);
+
+        companyUtil.edit(company);
     }
 
-    //region importAndExport
+    //region Import and export
 
     @FXML
     public void openExport() throws IOException {
@@ -178,7 +170,6 @@ public class CompaniesController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-        exportController.setAccountingSystem(accountingSystem);
         exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
@@ -190,7 +181,6 @@ public class CompaniesController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-        importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
         importController.setController(this);
 

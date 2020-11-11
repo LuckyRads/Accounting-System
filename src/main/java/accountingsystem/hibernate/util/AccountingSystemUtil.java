@@ -18,40 +18,7 @@ public class AccountingSystemUtil {
         this.entityManagerFactory = entityManagerFactory;
     }
 
-    public void edit(AccountingSystem accountingSystem) {
-        EntityManager entityManager = null;
-
-        try {
-            entityManager = getEntityManager();
-            entityManager.getTransaction().begin();
-            entityManager.flush();
-            accountingSystem = entityManager.merge(accountingSystem);
-            entityManager.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (entityManager != null) {
-                entityManager.close();
-            }
-        }
-    }
-
-    public AccountingSystem getAccountingSystem() {
-        EntityManager entityManager = getEntityManager();
-
-        try {
-            AccountingSystem accountingSystem = entityManager.find(AccountingSystem.class, (long) 1);
-
-            if (accountingSystem == null) {
-                create(getDefaultAccountingSystem());
-                return getDefaultAccountingSystem();
-            } else {
-                return accountingSystem;
-            }
-        } finally {
-            entityManager.close();
-        }
-    }
+    //region CRUD operations
 
     private void create(AccountingSystem accountingSystem) {
         EntityManager entityManager = null;
@@ -70,6 +37,46 @@ public class AccountingSystemUtil {
         }
     }
 
+    public void edit(AccountingSystem accountingSystem) {
+        EntityManager entityManager = null;
+
+        try {
+            entityManager = getEntityManager();
+            entityManager.getTransaction().begin();
+            entityManager.flush();
+            accountingSystem = entityManager.merge(accountingSystem);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+        }
+    }
+
+    //endregion
+
+    //region Getters
+
+    public AccountingSystem getAccountingSystem() {
+        EntityManager entityManager = getEntityManager();
+
+        try {
+            AccountingSystem accountingSystem = entityManager.find(AccountingSystem.class, (long) 1);
+
+            if (accountingSystem == null) {
+                create(getDefaultAccountingSystem());
+                return getDefaultAccountingSystem();
+            } else {
+                return accountingSystem;
+            }
+        } finally {
+            entityManager.close();
+        }
+    }
+
+
     private AccountingSystem getDefaultAccountingSystem() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, 2020);
@@ -83,5 +90,7 @@ public class AccountingSystemUtil {
                 "1.0.0"
         );
     }
+
+    //endregion
 
 }

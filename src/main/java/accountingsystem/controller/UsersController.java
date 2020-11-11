@@ -1,21 +1,22 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Company;
+import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.util.CompanyUtil;
+import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import accountingsystem.model.AccountingSystem;
-import accountingsystem.model.Company;
-import accountingsystem.model.Person;
-import accountingsystem.service.ViewService;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
 
 public class UsersController implements Controller {
-
-    private AccountingSystem accountingSystem;
 
     @FXML
     private Button menuBtn;
@@ -32,13 +33,9 @@ public class UsersController implements Controller {
     @FXML
     private ListView companiesList;
 
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
-    }
-
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
-    }
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
+    PersonUtil personUtil = new PersonUtil(entityManagerFactory);
+    CompanyUtil companyUtil = new CompanyUtil(entityManagerFactory);
 
     @Override
     public void updateWindow() {
@@ -51,17 +48,19 @@ public class UsersController implements Controller {
     private void loadPeople() {
         peopleList.getItems().clear();
 
-        for (Person person : accountingSystem.getPeople()) {
+        for (Person person : personUtil.getAllPeople()) {
             peopleList.getItems().add(person.getEmail());
         }
     }
 
     private void loadCompanies() {
         companiesList.getItems().clear();
-        for (Company company : accountingSystem.getCompanies()) {
+        for (Company company : companyUtil.getAllCompanies()) {
             companiesList.getItems().add(company.getEmail());
         }
     }
+
+    //region Menu links
 
     @FXML
     public void openMenu() throws IOException {
@@ -69,7 +68,6 @@ public class UsersController implements Controller {
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
-//        mainMenuController.setAccountingSystem(accountingSystem);
         mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
@@ -81,7 +79,6 @@ public class UsersController implements Controller {
         Parent root = loader.load();
 
         PeopleController peopleController = loader.getController();
-        peopleController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) peopleBtn.getScene().getWindow(), root);
         peopleController.loadPeople();
@@ -93,13 +90,14 @@ public class UsersController implements Controller {
         Parent root = loader.load();
 
         CompaniesController companiesController = loader.getController();
-        companiesController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) companiesBtn.getScene().getWindow(), root);
         companiesController.loadCompanies();
     }
 
-    //region importAndExport
+    //endregion
+
+    //region Import and export
 
     @FXML
     public void openExport() throws IOException {
@@ -107,7 +105,6 @@ public class UsersController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-        exportController.setAccountingSystem(accountingSystem);
         exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
@@ -119,7 +116,6 @@ public class UsersController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-        importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
         importController.setController(this);
 

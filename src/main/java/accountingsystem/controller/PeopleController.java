@@ -1,5 +1,8 @@
 package accountingsystem.controller;
 
+import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,15 +10,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import accountingsystem.model.AccountingSystem;
-import accountingsystem.model.Person;
-import accountingsystem.service.ViewService;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
 
 public class PeopleController implements Controller {
-
-    private AccountingSystem accountingSystem;
 
     @FXML
     private ListView peopleList;
@@ -53,13 +53,10 @@ public class PeopleController implements Controller {
     @FXML
     private TextField phoneNumberField;
 
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
-    }
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
+    PersonUtil personUtil = new PersonUtil(entityManagerFactory);
 
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
-    }
+    //region Menu links
 
     @FXML
     public void openMenu() throws IOException {
@@ -67,7 +64,6 @@ public class PeopleController implements Controller {
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
-//        mainMenuController.setAccountingSystem(accountingSystem);
         mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) menuBtn.getScene().getWindow(), root);
@@ -79,18 +75,19 @@ public class PeopleController implements Controller {
         Parent root = loader.load();
 
         UsersController usersController = loader.getController();
-        usersController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) usersBtn.getScene().getWindow(), root);
         usersController.updateWindow();
     }
 
+    //endregion
+
     @FXML
     public void loadPeople() {
         peopleList.getItems().clear();
 
-        for (Person person : accountingSystem.getPeople()) {
-            peopleList.getItems().add(person.getEmail());
+        for (Person person : personUtil.getAllPeople()) {
+            peopleList.getItems().add(person);
         }
         updateWindow();
     }
@@ -100,19 +97,13 @@ public class PeopleController implements Controller {
         if (peopleList.getSelectionModel().getSelectedItem() == null) {
             return;
         }
-        String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
-
-        for (Person person : accountingSystem.getPeople()) {
-            if (selectedPerson.equals(person.getEmail())) {
-                emailField.setText(person.getEmail());
-                passwordField.setText(person.getPassword());
-                nameField.setText(person.getName());
-                surnameField.setText(person.getSurname());
-                phoneNumberField.setText(person.getPhoneNumber());
-                updateWindow();
-                return;
-            }
-        }
+        Person person = (Person) peopleList.getSelectionModel().getSelectedItem();
+        emailField.setText(person.getEmail());
+        passwordField.setText(person.getPassword());
+        nameField.setText(person.getName());
+        surnameField.setText(person.getSurname());
+        phoneNumberField.setText(person.getPhoneNumber());
+        updateWindow();
     }
 
     @Override
@@ -133,30 +124,27 @@ public class PeopleController implements Controller {
     }
 
     @FXML
-    public void removePerson() {
-        String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
-
-        for (Person person : accountingSystem.getPeople()) {
-            if (selectedPerson.equals(person.getEmail())) {
-                accountingSystem.getPeople().remove(person);
-                loadPeople();
-                return;
-            }
+    public void removePerson() throws Exception {
+        if (peopleList.getSelectionModel().getSelectedItem() == null) {
+            return;
         }
+        Person person = (Person) peopleList.getSelectionModel().getSelectedItem();
+        personUtil.destroy(person);
+        loadPeople();
     }
 
     @FXML
     public void updatePerson() {
-        String selectedPerson = peopleList.getSelectionModel().getSelectedItem().toString();
-
-        for (Person person : accountingSystem.getPeople()) {
-            if (selectedPerson.equals(person.getEmail())) {
-                accountingSystem.getPeople().remove(person);
-                accountingSystem.getPeople().add(new Person(emailField.getText(), passwordField.getText(), nameField.getText(), surnameField.getText(), phoneNumberField.getText()));
-                loadPeople();
-                return;
-            }
+        if (peopleList.getSelectionModel().getSelectedItem() == null) {
+            return;
         }
+        Person person = (Person) peopleList.getSelectionModel().getSelectedItem();
+        person.setEmail(emailField.getText());
+        person.setPassword(passwordField.getText());
+        person.setName(nameField.getText());
+        person.setSurname(surnameField.getText());
+        person.setPhoneNumber(phoneNumberField.getText());
+        personUtil.edit(person);
     }
 
     //region importAndExport
@@ -167,7 +155,6 @@ public class PeopleController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-        exportController.setAccountingSystem(accountingSystem);
         exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
@@ -179,7 +166,6 @@ public class PeopleController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-        importController.setAccountingSystem(accountingSystem);
         importController.populateDataTypes();
         importController.setController(this);
 
