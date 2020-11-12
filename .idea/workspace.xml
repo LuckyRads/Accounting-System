@@ -5,68 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7af3e587-7351-4ae4-ab61-7b563cbc5916" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0cbd3791dbd1a7339a2b199b08e06497aa4a3e20" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0cbd3791dbd1a7339a2b199b08e06497aa4a3e20" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/152bf26a6186ab81238d015df54dd44ecb5c334a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/152bf26a6186ab81238d015df54dd44ecb5c334a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45eadd80a52af25e2767b219f2d5de479ac641a1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45eadd80a52af25e2767b219f2d5de479ac641a1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b96d4f5e705d8cbb34782e8ac9148bcdffa42c7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/79054339503a519682b26cd7724711b80e31ae54" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/79054339503a519682b26cd7724711b80e31ae54" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/793642ba327a191ba6c025c8e5bb55a5b19484e1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/793642ba327a191ba6c025c8e5bb55a5b19484e1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e6399f0ffe6c191ad13b326004e9e36a852a6eb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e6399f0ffe6c191ad13b326004e9e36a852a6eb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3664081b8118578f44174c85ff45908ca1ee880" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3664081b8118578f44174c85ff45908ca1ee880" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a435eb0454e513b5851bfdaaad2fc6d1b1ad19e3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a435eb0454e513b5851bfdaaad2fc6d1b1ad19e3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca1ccfc4fdd8808b496407b2a4c73df0ab3e1d87" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca1ccfc4fdd8808b496407b2a4c73df0ab3e1d87" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3f19a46cda8d430b7d3c17cc0c28124ff3587a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc78cc0b251a25a2cdbc998de9b91dd2c69b3818" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e68d2640297e317e0f266ec2cc4e527c5b136f1b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e68d2640297e317e0f266ec2cc4e527c5b136f1b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7bce625254ebc60ad71810bf4c98eb30c45bd15" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7bce625254ebc60ad71810bf4c98eb30c45bd15" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/util/TransactionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/AddCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/AddCategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/AddTransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/AddTransactionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/CategoriesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/CategoriesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/CompaniesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/CompaniesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/ExportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/ExportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/ImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/ImportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/MainMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/PeopleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/PeopleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/hibernate/model/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/AccountingSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/Transaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/service/CategoryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/service/CompaniesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/service/PeopleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/AddTransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/EditTransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Accounting-System/accountingsystem/controller/EditTransactionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CategoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CompaniesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/CompaniesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ExportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ExportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/ImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/AccountingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Company.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/Transaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/CompaniesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/service/PeopleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/EditTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/controller/EditTransactionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +173,7 @@
       <workItem from="1604941475295" duration="857000" />
       <workItem from="1605088686153" duration="243000" />
       <workItem from="1605089596735" duration="29479000" />
-      <workItem from="1605205067014" duration="2488000" />
+      <workItem from="1605205067014" duration="4631000" />
     </task>
     <servers />
   </component>
@@ -306,46 +250,46 @@
     </state>
     <state x="-834" y="429" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1602520697238" />
     <state x="620" y="644" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605102093327" />
-    <state width="2517" height="535" key="GridCell.Tab.0.bottom" timestamp="1605207521598">
+    <state width="2517" height="535" key="GridCell.Tab.0.bottom" timestamp="1605209593659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="535" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521598" />
-    <state width="2517" height="535" key="GridCell.Tab.0.center" timestamp="1605207521598">
+    <state width="2517" height="535" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209593659" />
+    <state width="2517" height="535" key="GridCell.Tab.0.center" timestamp="1605209593659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="535" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521598" />
-    <state width="2517" height="535" key="GridCell.Tab.0.left" timestamp="1605207521598">
+    <state width="2517" height="535" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209593659" />
+    <state width="2517" height="535" key="GridCell.Tab.0.left" timestamp="1605209593658">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066098" />
-    <state width="2517" height="535" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521598" />
-    <state width="2517" height="535" key="GridCell.Tab.0.right" timestamp="1605207521598">
+    <state width="2517" height="535" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209593658" />
+    <state width="2517" height="535" key="GridCell.Tab.0.right" timestamp="1605209593659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="553" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1604415066099" />
-    <state width="2517" height="535" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521598" />
-    <state width="2517" height="535" key="GridCell.Tab.1.bottom" timestamp="1605207521504">
+    <state width="2517" height="535" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209593659" />
+    <state width="2517" height="535" key="GridCell.Tab.1.bottom" timestamp="1605209688815">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="535" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521504" />
-    <state width="2517" height="535" key="GridCell.Tab.1.center" timestamp="1605207521504">
+    <state width="2517" height="535" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209688815" />
+    <state width="2517" height="535" key="GridCell.Tab.1.center" timestamp="1605209688815">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="535" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521504" />
-    <state width="2517" height="535" key="GridCell.Tab.1.left" timestamp="1605207521504">
+    <state width="2517" height="535" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209688815" />
+    <state width="2517" height="535" key="GridCell.Tab.1.left" timestamp="1605209688815">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="535" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521504" />
-    <state width="2517" height="535" key="GridCell.Tab.1.right" timestamp="1605207521504">
+    <state width="2517" height="535" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209688815" />
+    <state width="2517" height="535" key="GridCell.Tab.1.right" timestamp="1605209688815">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1037" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476896025" />
-    <state width="2517" height="535" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207521504" />
+    <state width="2517" height="535" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605209688815" />
     <state x="576" y="214" key="SettingsEditor" timestamp="1605125952291">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -367,11 +311,11 @@
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
     <state x="-1087" y="48" width="1094" height="806" key="dock-window-2/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1604427751387" />
-    <state x="987" y="433" width="585" height="534" key="find.popup" timestamp="1605108700865">
+    <state x="987" y="433" width="585" height="534" key="find.popup" timestamp="1605207754379">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-664" y="329" width="555" height="718" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@-1080.-252.1080.1880" timestamp="1603476641774" />
-    <state x="987" y="433" width="585" height="534" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605108700865" />
+    <state x="987" y="433" width="585" height="534" key="find.popup/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1605207754379" />
     <state x="-798" y="401" key="git4idea.branch.GitSmartOperationDialog" timestamp="1602585202748">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>

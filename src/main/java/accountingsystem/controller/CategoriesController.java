@@ -314,11 +314,17 @@ public class CategoriesController implements Controller {
 
     //endregion
 
-    private Category getSelectedCategory() {
+    public Category getSelectedCategory() {
         if (categoryList.getSelectionModel().getSelectedItem() != null) {
             return categoryUtil.getCategory(parseSelectedItem());
         }
         return null;
+    }
+
+    public Transaction getSelectedTransaction() {
+        return transactionTable.getSelectionModel().getSelectedItem() == null ?
+                null :
+                (Transaction) transactionTable.getSelectionModel().getSelectedItem();
     }
 
     private String parseSelectedItem() {
