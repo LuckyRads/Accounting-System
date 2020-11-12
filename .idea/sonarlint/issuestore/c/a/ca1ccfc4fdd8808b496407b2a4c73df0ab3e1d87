@@ -1,17 +1,17 @@
 
 N	java:S106s"9Replace this use of System.out or System.err by a logger.(¹©–•
+L
+java:S3740"/Provide the parametrized type for this generic.(ıÁ¦Ï8ÿÛñøØ.
+j
+java:S2095Q"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(†š­î8©‚ÎúØ.
+o
+java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(È©éê8¸ÎúØ.
+k
+java:S1192;"IDefine a constant instead of duplicating this literal "All data" 3 times.(è§òèüÿÿÿÿ8ÁàôøØ.
+e
+java:S2095R"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(´¢ß
+P
+java:S1141V"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
 >	java:S131Y""Add a default case to this switch.(”ø·8ÁàôøØ.
 1
 java:S3626v"Remove this redundant jump.(ûÁİ…
-j
-java:S2095Q"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(†š­î8©‚ÎúØ.
-P
-java:S1141V"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-e
-java:S2095R"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(´¢ß
-L
-java:S3740"/Provide the parametrized type for this generic.(ıÁ¦Ï8ÿÛñøØ.
-k
-java:S1192;"IDefine a constant instead of duplicating this literal "All data" 3 times.(è§òèüÿÿÿÿ8ÁàôøØ.
-o
-java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(È©éê8¸ÎúØ.

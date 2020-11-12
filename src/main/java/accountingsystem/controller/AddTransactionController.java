@@ -67,29 +67,13 @@ public class AddTransactionController implements WindowController {
 
     @FXML
     public void addTransaction() {
-        for (Category category : categoriesController.categoryUtil.getRootCategories()) {
-            addTransactionToCategory(this.category, category);
-        }
+        this.category.getTransactions().add(new Transaction(nameField.getText(),
+                (TransactionType) transactionTypeList.getSelectionModel().getSelectedItem(),
+                senderField.getText(), receiverField.getText(), Double.parseDouble(amountField.getText()),
+                new Date(), category));
 
+        categoriesController.categoryUtil.edit(category);
         closeWindow();
-    }
-
-    private void addTransactionToCategory(Category subCategory, Category rootCategory) {
-        if (subCategory.getName().equals(rootCategory.getName())) {
-
-            Transaction transaction = new Transaction(nameField.getText(),
-                    (TransactionType) transactionTypeList.getSelectionModel().getSelectedItem(),
-                    senderField.getText(), receiverField.getText(), Double.parseDouble(amountField.getText()),
-                    new Date());
-
-            rootCategory.getTransactions().add(transaction);
-            categoriesController.categoryUtil.edit(rootCategory);
-            return;
-        }
-
-        for (Category category : rootCategory.getSubCategories()) {
-            addTransactionToCategory(subCategory, category);
-        }
     }
 
 }

@@ -72,8 +72,11 @@ public class AddCategoryController implements WindowController {
                     new ArrayList<Transaction>(), new ArrayList<Category>(),
                     responsiblePeople, parentCategory);
 
-            for (Category category : categoriesController.categoryUtil.getRootCategories()) {
-                addSubCategory(subCategory, category);
+            for (Category category : categoriesController.categoryUtil.getAllCategories()) {
+                if (category.getName().equals(parentCategory.getName())) {
+                    category.getSubCategories().add(subCategory);
+                    categoriesController.categoryUtil.edit(category);
+                }
             }
         } else {
             categoriesController.categoryUtil.create(new Category(nameField.getText(), descriptionField.getText(),
@@ -83,17 +86,17 @@ public class AddCategoryController implements WindowController {
         closeWindow();
     }
 
-    private void addSubCategory(Category subCategory, Category rootCategory) {
-        if (subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
-            rootCategory.getSubCategories().add(subCategory);
-            categoriesController.categoryUtil.edit(rootCategory);
-            return;
-        }
-
-        for (Category category : rootCategory.getSubCategories()) {
-            addSubCategory(subCategory, category);
-        }
-    }
+//    private void addSubCategory(Category subCategory, Category rootCategory) {
+//        if (subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
+//            rootCategory.getSubCategories().add(subCategory);
+//            categoriesController.categoryUtil.edit(rootCategory);
+//            return;
+//        }
+//
+//        for (Category category : rootCategory.getSubCategories()) {
+//            addSubCategory(subCategory, category);
+//        }
+//    }
 
     @FXML
     public void addResponsiblePerson() throws IOException {

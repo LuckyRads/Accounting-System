@@ -1,6 +1,5 @@
 package accountingsystem.controller;
 
-import accountingsystem.model.AccountingSystem;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,21 +11,11 @@ import java.io.IOException;
 
 public class LoginController {
 
-    private AccountingSystem accountingSystem;
-
     @FXML
     private Button loginBtn;
 
     @FXML
     private Button registerBtn;
-
-    public AccountingSystem getAccountingSystem() {
-        return accountingSystem;
-    }
-
-    public void setAccountingSystem(AccountingSystem accountingSystem) {
-        this.accountingSystem = accountingSystem;
-    }
 
     @FXML
     public void login() throws IOException {
@@ -34,7 +23,6 @@ public class LoginController {
         Parent root = loader.load();
 
         MainMenuController mainMenuController = loader.getController();
-//        mainMenuController.setAccountingSystem(accountingSystem);
         mainMenuController.loadSystemInfo();
 
         ViewService.openView((Stage) loginBtn.getScene().getWindow(), root);

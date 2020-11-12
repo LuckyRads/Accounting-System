@@ -32,13 +32,14 @@ public class Transaction implements Serializable {
 
     }
 
-    public Transaction(String name, TransactionType transactionType, String sender, String receiver, double amount, Date date) {
+    public Transaction(String name, TransactionType transactionType, String sender, String receiver, double amount, Date date, Category category) {
         this.name = name;
         this.transactionType = transactionType;
         this.sender = sender;
         this.receiver = receiver;
         this.amount = amount;
         this.date = date;
+        this.category = category;
     }
 
     public long getId() {
@@ -91,6 +92,14 @@ public class Transaction implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override

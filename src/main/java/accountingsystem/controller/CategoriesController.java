@@ -196,22 +196,9 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : categoryUtil.getRootCategories()) {
-            removeTransaction(selectedCategory, category);
-        }
-    }
-
-    private void removeTransaction(Category subCategory, Category rootCategory) {
-        if (subCategory.getName().equals(rootCategory.getName())) {
-            rootCategory.getTransactions().remove(transactionTable.getSelectionModel().getSelectedItem());
-            categoryUtil.edit(rootCategory);
-            updateWindow();
-            return;
-        }
-
-        for (Category category : rootCategory.getSubCategories()) {
-            removeTransaction(subCategory, category);
-        }
+        selectedCategory.getTransactions().remove(transactionTable.getSelectionModel().getSelectedItem());
+        categoryUtil.edit(selectedCategory);
+        updateWindow();
     }
 
     @FXML
@@ -308,7 +295,7 @@ public class CategoriesController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-        exportController.populateDataTypes();
+//        exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
     }
@@ -319,7 +306,7 @@ public class CategoriesController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-        importController.populateDataTypes();
+//        importController.populateDataTypes();
         importController.setController(this);
 
         ViewService.newWindow(root, "Import");

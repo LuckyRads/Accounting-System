@@ -1,35 +1,33 @@
 
-Q
-java:S3740]"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8ÌúéõØ.
-Q
-java:S3740_"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8˜ØîõØ.
 L
-java:S3740a"/Provide the parametrized type for this generic.(ú›úĞ8ŸÁïõØ.
+java:S3740a"/Provide the parametrized type for this generic.(š€è¼8ˆäºÛ.
+Q
+java:S3740`"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8ˆäºÛ.
+Q
+java:S3740b"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8ˆäºÛ.
 p
-java:S2259²"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(¾ƒ¬¿8˜ã´ûØ.
-L
-java:S3740\"/Provide the parametrized type for this generic.(ƒ¢©—8¯µèõØ.
-o
-java:S2259c"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(ÿÒÕü8¢òùõØ.
-L
-java:S3740`"/Provide the parametrized type for this generic.(Ä‹Üİ8˜ØîõØ.
-L
-java:S3740 "/Provide the parametrized type for this generic.(ÎŒÎ8’ì¸õØ.
-L
-java:S3740^"/Provide the parametrized type for this generic.(š€è¼8˜ØîõØ.
+java:S2259¦"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(¾ƒ¬¿8ˆäºÛ.
+{
+java:S2293t"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÇÃÕªûÿÿÿÿ8ÆÑ»ÇÛ.
 E
-java:S3740"/Provide the parametrized type for this generic.(®×î
-J
-java:S3740p"/Provide the parametrized type for this generic.(Ûœé´ûÿÿÿÿ
-‚
-java:S1130’"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(»¿éT
-t
-java:S2259l"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(Õìßúÿÿÿÿ8ĞâıôØ.
-m
-java:S2259R"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(«á§Ğÿÿÿÿÿ
+java:S3740"/Provide the parametrized type for this generic.(®×î
+E
+java:S37403"/Provide the parametrized type for this generic.(Š Ê‚
+L
+java:S3740$"/Provide the parametrized type for this generic.(ÎŒÎ8’ì¸õØ.
+L
+java:S3740c"/Provide the parametrized type for this generic.(Ä‹Üİ8ˆäºÛ.
+L
+java:S3740_"/Provide the parametrized type for this generic.(ƒ¢©—8ˆäºÛ.
 I
-java:S1612c",Replace this lambda with a method reference.(ÿÒÕü8¢òùõØ.
-E
-java:S3740/"/Provide the parametrized type for this generic.(Š Ê‚
+java:S1612f",Replace this lambda with a method reference.(ÿÒÕü8áÇ‹ÇÛ.
+L
+java:S3740d"/Provide the parametrized type for this generic.(ú›úĞ8ˆäºÛ.
+Q
+java:S3740s"/Provide the parametrized type for this generic.(Ûœé´ûÿÿÿÿ8ˆäºÛ.
+o
+java:S2259f"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(ÿÒÕü8ˆäºÛ.
 t
-java:S2293q"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÇÃÕªûÿÿÿÿ
+java:S2259o"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(Õìßúÿÿÿÿ8ˆäºÛ.
+t
+java:S2259U"RA "NullPointerException" could be thrown; "getSelectedCategory()" can return null.(«á§Ğÿÿÿÿÿ8ˆäºÛ.

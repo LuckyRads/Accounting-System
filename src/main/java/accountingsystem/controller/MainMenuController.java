@@ -87,7 +87,7 @@ public class MainMenuController implements Controller {
 
         ExportController exportController = loader.getController();
 //        exportController.setAccountingSystem(accountingSystem);
-        exportController.populateDataTypes();
+//        exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
     }
@@ -99,7 +99,7 @@ public class MainMenuController implements Controller {
 
         ImportController importController = loader.getController();
 //        importController.setAccountingSystem(accountingSystem);
-        importController.populateDataTypes();
+//        importController.populateDataTypes();
         importController.setController(this);
 
         ViewService.newWindow(root, "Import");

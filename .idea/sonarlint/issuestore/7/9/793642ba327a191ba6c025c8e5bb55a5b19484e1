@@ -1,13 +1,13 @@
 
+8
+java:S3626a"Remove this redundant jump.(ûÁİ…8éİ‘øØ.
 k
 java:S2095D"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(éà¾î8äŒ’øØ.
+m
+java:S2095E"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(«Şó°8äŒ’øØ.
+>	java:S131I""Add a default case to this switch.(”ø·8æ‹ÍøØ.
 Z	java:S106_"9Replace this use of System.out or System.err by a logger.(¹§è¾øÿÿÿÿ8éİ‘øØ.
 k
 java:S1192-"IDefine a constant instead of duplicating this literal "All data" 3 times.(è§òèüÿÿÿÿ8¥şÍøØ.
-m
-java:S2095E"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(«Şó°8äŒ’øØ.
-8
-java:S3626a"Remove this redundant jump.(ûÁİ…8éİ‘øØ.
 L
 java:S3740"/Provide the parametrized type for this generic.(ıÁ¦Ï8–£¿øØ.
->	java:S131I""Add a default case to this switch.(”ø·8æ‹ÍøØ.
