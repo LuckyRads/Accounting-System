@@ -1,6 +1,5 @@
 package accountingsystem.controller;
 
-import accountingsystem.hibernate.model.Category;
 import accountingsystem.hibernate.model.Transaction;
 import accountingsystem.hibernate.util.TransactionUtil;
 import accountingsystem.model.TransactionType;
@@ -82,13 +81,6 @@ public class EditTransactionController implements WindowController {
 
     @FXML
     public void editTransaction() throws Exception {
-        Transaction newTransaction = new Transaction();
-//        newTransaction.setName(nameField.getText());
-//        newTransaction.setTransactionType((TransactionType) transactionTypeList.getSelectionModel().getSelectedItem());
-//        newTransaction.setSender(senderField.getText());
-//        newTransaction.setReceiver(receiverField.getText());
-//        newTransaction.setAmount(Double.parseDouble(amountField.getText()));
-//        newTransaction.setDate(new Date()); // TODO: Fix date
         transaction.setName(nameField.getText());
         transaction.setTransactionType((TransactionType) transactionTypeList.getSelectionModel().getSelectedItem());
         transaction.setSender(senderField.getText());
@@ -97,12 +89,6 @@ public class EditTransactionController implements WindowController {
         transaction.setDate(new Date()); // TODO: Fix date
 
         transactionUtil.edit(transaction);
-
-//        Category selectedCategory = getCategoriesController().getSelectedCategory();
-//        getCategoriesController().categoryUtil.destroy(selectedCategory.getName());
-//        selectedCategory.getTransactions().remove(transaction);
-//        selectedCategory.getTransactions().add(newTransaction);
-//        getCategoriesController().categoryUtil.create(selectedCategory);
 
         closeWindow();
     }

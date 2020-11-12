@@ -1,6 +1,5 @@
 package accountingsystem.hibernate.util;
 
-import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.model.Transaction;
 
 import javax.persistence.EntityManager;
@@ -77,13 +76,13 @@ public class TransactionUtil {
         }
     }
 
-    public void destroy(Person person) throws Exception {
+    public void destroy(Transaction transaction) throws Exception {
         EntityManager entityManager = null;
 
         try {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
-            entityManager.remove(entityManager.merge(person));
+            entityManager.remove(entityManager.merge(transaction));
             entityManager.getTransaction().commit();
         } finally {
             if (entityManager != null) {

@@ -5,6 +5,7 @@ import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.model.Transaction;
 import accountingsystem.hibernate.util.CategoryUtil;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.hibernate.util.TransactionUtil;
 import accountingsystem.model.TransactionType;
 import accountingsystem.service.ViewService;
 import javafx.collections.FXCollections;
@@ -53,6 +54,7 @@ public class CategoriesController implements Controller {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
     PersonUtil personUtil = new PersonUtil(entityManagerFactory);
+    TransactionUtil transactionUtil = new TransactionUtil(entityManagerFactory);
 
     //region Menu links
 
@@ -190,14 +192,11 @@ public class CategoriesController implements Controller {
     }
 
     @FXML
-    public void removeTransaction() {
-        Category selectedCategory = getSelectedCategory();
-        if (selectedCategory == null || transactionTable.getSelectionModel().getSelectedItem() == null) {
+    public void removeTransaction() throws Exception {
+        if (transactionTable.getSelectionModel().getSelectedItem() == null) {
             return;
         }
-
-        selectedCategory.getTransactions().remove(transactionTable.getSelectionModel().getSelectedItem());
-        categoryUtil.edit(selectedCategory);
+        transactionUtil.destroy((Transaction) transactionTable.getSelectionModel().getSelectedItem());
         updateWindow();
     }
 
@@ -319,12 +318,6 @@ public class CategoriesController implements Controller {
             return categoryUtil.getCategory(parseSelectedItem());
         }
         return null;
-    }
-
-    public Transaction getSelectedTransaction() {
-        return transactionTable.getSelectionModel().getSelectedItem() == null ?
-                null :
-                (Transaction) transactionTable.getSelectionModel().getSelectedItem();
     }
 
     private String parseSelectedItem() {
