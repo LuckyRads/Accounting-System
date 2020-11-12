@@ -170,7 +170,7 @@ public class CompaniesController implements Controller {
         Parent root = loader.load();
 
         ExportController exportController = loader.getController();
-//        exportController.populateDataTypes();
+        exportController.populateDataTypes();
 
         ViewService.newWindow(root, "Export");
     }
@@ -181,7 +181,7 @@ public class CompaniesController implements Controller {
         Parent root = loader.load();
 
         ImportController importController = loader.getController();
-//        importController.populateDataTypes();
+        importController.populateDataTypes();
         importController.setController(this);
 
         ViewService.newWindow(root, "Import");

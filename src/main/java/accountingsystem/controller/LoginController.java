@@ -40,8 +40,10 @@ public class LoginController {
 
     @FXML
     public void login() throws IOException {
-        if (validateUser()) openMainMenu();
-        else {
+        try {
+            if (validateUser()) openMainMenu();
+            else throw new Exception();
+        } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong credentials!");
             alert.showAndWait();
         }

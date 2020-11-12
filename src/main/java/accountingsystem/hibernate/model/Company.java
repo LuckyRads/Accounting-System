@@ -12,7 +12,7 @@ public class Company extends User implements Serializable {
 
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE})
     private Person responsiblePerson;
 
     public Company() {
