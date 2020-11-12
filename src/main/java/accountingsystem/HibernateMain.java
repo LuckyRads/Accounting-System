@@ -9,6 +9,9 @@ import org.hibernate.query.Query;
 
 import javax.persistence.metamodel.EntityType;
 
+/**
+ * Run this class one time for database generation.
+ */
 public class HibernateMain {
     private static final SessionFactory ourSessionFactory;
 
