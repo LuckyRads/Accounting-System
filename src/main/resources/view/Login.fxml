@@ -9,30 +9,35 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.controller.LoginController">
    <children>
-      <Button fx:id="registerBtn" layoutX="110.0" layoutY="314.0" mnemonicParsing="false" onAction="#register" prefHeight="51.0" prefWidth="117.0" text="Register">
+      <Button fx:id="registerPersonBtn" layoutX="111.0" layoutY="284.0" mnemonicParsing="false" onAction="#registerPerson" prefHeight="51.0" prefWidth="170.0" text="Register person">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="loginBtn" layoutX="326.0" layoutY="314.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="153.0" text="Login">
+      <Button fx:id="loginBtn" layoutX="225.0" layoutY="200.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="153.0" text="Login">
          <font>
             <Font size="24.0" />
          </font></Button>
-      <TextField layoutX="198.0" layoutY="163.0" prefHeight="39.0" prefWidth="283.0">
+      <TextField layoutX="198.0" layoutY="69.0" prefHeight="39.0" prefWidth="283.0">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <PasswordField layoutX="198.0" layoutY="230.0" prefHeight="39.0" prefWidth="283.0">
+      <PasswordField layoutX="198.0" layoutY="136.0" prefHeight="39.0" prefWidth="283.0">
          <font>
             <Font size="18.0" />
          </font></PasswordField>
-      <Label layoutX="110.0" layoutY="236.0" text="Password">
+      <Label layoutX="110.0" layoutY="142.0" text="Password">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="107.0" layoutY="169.0" text="Username">
+      <Label layoutX="107.0" layoutY="75.0" text="Username">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="registerCompanyBtn" layoutX="311.0" layoutY="284.0" mnemonicParsing="false" onAction="#registerCompany" prefHeight="51.0" prefWidth="170.0" text="Register company">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

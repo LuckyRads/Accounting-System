@@ -15,7 +15,10 @@ public class LoginController {
     private Button loginBtn;
 
     @FXML
-    private Button registerBtn;
+    private Button registerPersonBtn;
+
+    @FXML
+    private Button registerCompanyBtn;
 
     @FXML
     public void login() throws IOException {
@@ -29,13 +32,24 @@ public class LoginController {
     }
 
     @FXML
-    public void register() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Register.fxml"));
+    public void registerPerson() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RegisterPerson.fxml"));
         Parent root = loader.load();
 
-        RegisterController registerController = loader.getController();
+        RegisterPersonController registerPersonController = loader.getController();
 
-        ViewService.openView((Stage) registerBtn.getScene().getWindow(), root);
+        ViewService.openView((Stage) registerPersonBtn.getScene().getWindow(), root);
+    }
+
+    @FXML
+    public void registerCompany() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RegisterCompany.fxml"));
+        Parent root = loader.load();
+
+        RegisterCompanyController registerCompanyController = loader.getController();
+        registerCompanyController.populateResponsiblePeopleSelect();
+
+        ViewService.openView((Stage) registerCompanyBtn.getScene().getWindow(), root);
     }
 
 }
