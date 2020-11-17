@@ -165,8 +165,10 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void updateCategory() {
-        getSelectedCategory().setDescription(descriptionField.getText());
-        categoryUtil.edit(getSelectedCategory());
+        Category selectedCategory = getSelectedCategory();
+
+        selectedCategory.setDescription(descriptionField.getText());
+        categoryUtil.edit(selectedCategory);
         updateWindow();
     }
 
