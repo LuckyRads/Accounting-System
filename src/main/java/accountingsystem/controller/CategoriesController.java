@@ -269,18 +269,15 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void removeResponsiblePerson() {
-        Category selectedCategory = getSelectedCategory();
-        if (selectedCategory == null || responsiblePeopleList.getSelectionModel().getSelectedItem() == null) {
+        if (getSelectedCategory() == null || responsiblePeopleList.getSelectionModel().getSelectedItem() == null) {
             AlertService.showError("Please select a person to remove.");
             return;
         }
+
+        Category selectedCategory = categoryUtil.getCategory(getSelectedCategory().getName());
         Person responsiblePerson = (Person) responsiblePeopleList.getSelectionModel().getSelectedItem();
 
-        System.out.println(selectedCategory.getResponsiblePeople());
-
         selectedCategory.removeResponsiblePerson(responsiblePerson);
-
-        System.out.println(selectedCategory.getResponsiblePeople());
 
         categoryUtil.edit(selectedCategory);
         updateWindow();

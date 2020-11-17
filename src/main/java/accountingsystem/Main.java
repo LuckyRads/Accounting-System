@@ -26,7 +26,7 @@ public class Main extends Application {
     private void initializeApplication(Stage primaryStage, FXMLLoader loader) throws IOException {
         Parent root = loader.load();
         primaryStage.setTitle("Accounting System");
-        primaryStage.setScene(new Scene(root, 600, 600));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 
