@@ -18,13 +18,13 @@ public class Category implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private List<Transaction> transactions;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parentCategory")
     private List<Category> subCategories;
 
     @ManyToMany(cascade = CascadeType.DETACH)
     private List<Person> responsiblePeople;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private Category parentCategory;
 
     public Category() {

@@ -155,17 +155,9 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        Category selectedCategory = categoryUtil.getCategory(parseSelectedItem());
+        Category selectedCategory = getSelectedCategory();
+        categoryUtil.destroy(selectedCategory);
 
-        Category categoryToRemove = null;
-        for (Category category : categoryUtil.getAllCategories()) {
-            if (selectedCategory.getName().equals(category.getName())) {
-                categoryToRemove = category;
-            }
-        }
-        if (categoryToRemove != null) {
-            categoryUtil.destroy(categoryToRemove);
-        }
         loadCategories();
     }
 

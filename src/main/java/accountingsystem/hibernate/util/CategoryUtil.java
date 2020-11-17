@@ -92,6 +92,29 @@ public class CategoryUtil {
         }
     }
 
+    public void addSubcategory(Category parentCategory, Category subcategory) {
+        EntityManager entityManager = null;
+
+        try {
+            entityManager = getEntityManager();
+            entityManager.getTransaction().begin();
+
+            subcategory.setParentCategory(parentCategory);
+            parentCategory.getSubCategories().add(subcategory);
+
+            entityManager.persist(subcategory);
+            parentCategory = entityManager.merge(parentCategory);
+
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+        }
+    }
+
     //endregion
 
     //region Getters
