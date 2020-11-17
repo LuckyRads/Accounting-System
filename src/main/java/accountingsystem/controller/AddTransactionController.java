@@ -3,6 +3,7 @@ package accountingsystem.controller;
 import accountingsystem.hibernate.model.Category;
 import accountingsystem.hibernate.model.Transaction;
 import accountingsystem.model.TransactionType;
+import accountingsystem.service.AlertService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -69,6 +70,13 @@ public class AddTransactionController implements WindowController {
 
     @FXML
     public void addTransaction() {
+        if (nameField.getText().isEmpty() || transactionTypeList.getSelectionModel().getSelectedItem() == null ||
+                senderField.getText().isEmpty() || receiverField.getText().isEmpty() || amountField.getText().isEmpty() ||
+                datePicker.valueProperty().get() == null) {
+            AlertService.showError("Please fill out all fields correctly.");
+            return;
+        }
+
         this.category.getTransactions().add(new Transaction(nameField.getText(),
                 (TransactionType) transactionTypeList.getSelectionModel().getSelectedItem(),
                 senderField.getText(), receiverField.getText(), Double.parseDouble(amountField.getText()),

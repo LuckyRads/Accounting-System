@@ -111,4 +111,8 @@ public class Category implements Serializable {
         this.responsiblePeople.add(person);
     }
 
+    public void removeResponsiblePerson(Person person) {
+        this.responsiblePeople.remove(person);
+    }
+
 }

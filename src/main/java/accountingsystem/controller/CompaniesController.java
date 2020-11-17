@@ -4,6 +4,7 @@ import accountingsystem.hibernate.model.Company;
 import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.util.CompanyUtil;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -137,6 +138,7 @@ public class CompaniesController implements Controller {
     @FXML
     public void removeCompany() throws Exception {
         if (companiesList.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a company to remove.");
             return;
         }
         Company company = (Company) companiesList.getSelectionModel().getSelectedItem();
@@ -147,6 +149,7 @@ public class CompaniesController implements Controller {
     @FXML
     public void updateCompany() {
         if (companiesList.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a company to update.");
             return;
         }
 

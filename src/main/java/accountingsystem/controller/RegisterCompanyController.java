@@ -4,6 +4,7 @@ import accountingsystem.hibernate.model.Company;
 import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.util.CompanyUtil;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,6 +54,12 @@ public class RegisterCompanyController {
 
     @FXML
     public void register() throws IOException {
+        if (emailField.getText().isEmpty() || passwordField.getText().isEmpty() || nameField.getText().isEmpty() ||
+                responsiblePersonSelect.getItems() == null) {
+            AlertService.showError("Please fill out all fields correctly!");
+            return;
+        }
+
         Company company = new Company(emailField.getText(), passwordField.getText(),
                 nameField.getText(), (Person) responsiblePersonSelect.getSelectionModel().getSelectedItem());
 

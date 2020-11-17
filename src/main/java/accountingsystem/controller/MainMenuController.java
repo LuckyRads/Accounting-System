@@ -2,6 +2,7 @@ package accountingsystem.controller;
 
 import accountingsystem.hibernate.model.AccountingSystem;
 import accountingsystem.hibernate.util.AccountingSystemUtil;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -113,6 +114,12 @@ public class MainMenuController implements Controller {
 
     @FXML
     public void updateSystemInfo() {
+        if (companyTextField.getText().isEmpty() || datePicker.valueProperty().get() == null ||
+                versionTextField.getText().isEmpty()) {
+            AlertService.showError("Please fill out all fields correctly!");
+            return;
+        }
+
         AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
 
         accountingSystem.setCompany(companyTextField.getText());

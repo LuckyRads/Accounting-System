@@ -2,6 +2,7 @@ package accountingsystem.controller;
 
 import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +53,12 @@ public class RegisterPersonController {
 
     @FXML
     public void register() throws IOException {
+        if (emailField.getText().isEmpty() || passwordField.getText().isEmpty() || nameField.getText().isEmpty() ||
+                surnameField.getText().isEmpty() || phoneNumberField.getText().isEmpty()) {
+            AlertService.showError("Please fill out all fields correctly!");
+            return;
+        }
+
         Person person = new Person(emailField.getText(), passwordField.getText(),
                 nameField.getText(), surnameField.getText(), phoneNumberField.getText());
 

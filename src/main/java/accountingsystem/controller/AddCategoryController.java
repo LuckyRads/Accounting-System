@@ -3,6 +3,7 @@ package accountingsystem.controller;
 import accountingsystem.hibernate.model.Category;
 import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.model.Transaction;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -64,6 +65,12 @@ public class AddCategoryController implements WindowController {
 
     @FXML
     public void addCategory() throws IOException {
+        if (nameField.getText().isEmpty() || descriptionField.getText().isEmpty() ||
+                responsiblePeopleList.getItems() == null) {
+            AlertService.showError("Please fill out all fields correctly.");
+            return;
+        }
+
         List<Person> responsiblePeople = new ArrayList<>();
         responsiblePeopleList.getItems().forEach(personItem -> responsiblePeople.add((Person) personItem));
 
@@ -85,18 +92,6 @@ public class AddCategoryController implements WindowController {
 
         closeWindow();
     }
-
-//    private void addSubCategory(Category subCategory, Category rootCategory) {
-//        if (subCategory.getParentCategory().getName().equals(rootCategory.getName())) {
-//            rootCategory.getSubCategories().add(subCategory);
-//            categoriesController.categoryUtil.edit(rootCategory);
-//            return;
-//        }
-//
-//        for (Category category : rootCategory.getSubCategories()) {
-//            addSubCategory(subCategory, category);
-//        }
-//    }
 
     @FXML
     public void addResponsiblePerson() throws IOException {

@@ -1,6 +1,7 @@
 package accountingsystem.controller;
 
 import accountingsystem.hibernate.model.Person;
+import accountingsystem.service.AlertService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -59,6 +60,8 @@ public class AddResponsiblePersonController implements WindowController {
                 categoriesController.addResponsiblePerson((Person) availablePeopleList.getSelectionModel().getSelectedItem());
             }
             closeWindow();
+        } else {
+            AlertService.showError("Please select a person.");
         }
     }
 

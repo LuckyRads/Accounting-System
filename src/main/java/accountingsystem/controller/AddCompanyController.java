@@ -2,6 +2,7 @@ package accountingsystem.controller;
 
 import accountingsystem.hibernate.model.Company;
 import accountingsystem.hibernate.model.Person;
+import accountingsystem.service.AlertService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -54,6 +55,12 @@ public class AddCompanyController implements WindowController {
 
     @FXML
     public void addCompany() throws IOException {
+        if (emailField.getText().isEmpty() || passwordField.getText().isEmpty() || nameField.getText().isEmpty() ||
+                responsiblePersonSelect.getItems() == null) {
+            AlertService.showError("Please fill out all fields correctly.");
+            return;
+        }
+
         companiesController.companyUtil.create(new Company(emailField.getText(), passwordField.getText(), nameField.getText(),
                 (Person) responsiblePersonSelect.getSelectionModel().getSelectedItem()));
         closeWindow();

@@ -7,8 +7,8 @@ import accountingsystem.hibernate.util.AccountingSystemUtil;
 import accountingsystem.hibernate.util.CategoryUtil;
 import accountingsystem.hibernate.util.CompanyUtil;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.AlertService;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.FileChooser;
@@ -92,8 +92,7 @@ public class ExportController implements WindowController {
             objectOutputStream.close();
             closeWindow();
         } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Something went wrong while exporting data.");
-            alert.showAndWait();
+            AlertService.showError("Something went wrong while exporting data.");
             return;
         }
     }

@@ -2,6 +2,7 @@ package accountingsystem.controller;
 
 import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -126,6 +127,7 @@ public class PeopleController implements Controller {
     @FXML
     public void removePerson() throws Exception {
         if (peopleList.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a person to remove.");
             return;
         }
         Person person = (Person) peopleList.getSelectionModel().getSelectedItem();
@@ -136,6 +138,7 @@ public class PeopleController implements Controller {
     @FXML
     public void updatePerson() {
         if (peopleList.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a person to update.");
             return;
         }
         Person person = (Person) peopleList.getSelectionModel().getSelectedItem();

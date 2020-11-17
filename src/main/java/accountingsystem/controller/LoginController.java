@@ -4,11 +4,11 @@ import accountingsystem.hibernate.model.Company;
 import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.util.CompanyUtil;
 import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -44,8 +44,7 @@ public class LoginController {
             if (validateUser()) openMainMenu();
             else throw new Exception();
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong credentials!");
-            alert.showAndWait();
+            AlertService.showError("Wrong credentials!");
         }
     }
 

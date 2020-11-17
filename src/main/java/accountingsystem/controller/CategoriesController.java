@@ -7,6 +7,7 @@ import accountingsystem.hibernate.util.CategoryUtil;
 import accountingsystem.hibernate.util.PersonUtil;
 import accountingsystem.hibernate.util.TransactionUtil;
 import accountingsystem.model.TransactionType;
+import accountingsystem.service.AlertService;
 import accountingsystem.service.ViewService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -149,6 +150,11 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void removeCategory() throws Exception {
+        if (getSelectedCategory() == null) {
+            AlertService.showError("Please select a category to remove.");
+            return;
+        }
+
         Category selectedCategory = categoryUtil.getCategory(parseSelectedItem());
 
         Category categoryToRemove = null;
@@ -167,6 +173,11 @@ public class CategoriesController implements Controller {
     public void updateCategory() {
         Category selectedCategory = getSelectedCategory();
 
+        if (selectedCategory == null) {
+            AlertService.showError("Please select a category to update.");
+            return;
+        }
+
         selectedCategory.setDescription(descriptionField.getText());
         categoryUtil.edit(selectedCategory);
         updateWindow();
@@ -180,6 +191,7 @@ public class CategoriesController implements Controller {
     public void addTransaction() throws IOException {
         Category selectedCategory = getSelectedCategory();
         if (selectedCategory == null) {
+            AlertService.showError("Please select a category.");
             return;
         }
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddTransaction.fxml"));
@@ -196,6 +208,7 @@ public class CategoriesController implements Controller {
     @FXML
     public void removeTransaction() throws Exception {
         if (transactionTable.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a transaction to remove.");
             return;
         }
         transactionUtil.destroy((Transaction) transactionTable.getSelectionModel().getSelectedItem());
@@ -205,7 +218,8 @@ public class CategoriesController implements Controller {
     @FXML
     public void editTransaction() throws IOException {
         Transaction selectedTransaction = (Transaction) transactionTable.getSelectionModel().getSelectedItem();
-        if (selectedTransaction == null) {
+        if (selectedTransaction == null || transactionTable.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a transaction to edit.");
             return;
         }
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/EditTransaction.fxml"));
@@ -226,6 +240,11 @@ public class CategoriesController implements Controller {
 
     @FXML
     public void addResponsiblePerson() throws IOException {
+        if (getSelectedCategory() == null) {
+            AlertService.showError("Please select a category.");
+            return;
+        }
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddResponsiblePerson.fxml"));
         Parent root = loader.load();
 
@@ -239,6 +258,7 @@ public class CategoriesController implements Controller {
     public void addResponsiblePerson(Person person) {
         Category selectedCategory = getSelectedCategory();
         if (selectedCategory == null) {
+            AlertService.showError("Please select a category.");
             return;
         }
 
@@ -251,10 +271,17 @@ public class CategoriesController implements Controller {
     public void removeResponsiblePerson() {
         Category selectedCategory = getSelectedCategory();
         if (selectedCategory == null || responsiblePeopleList.getSelectionModel().getSelectedItem() == null) {
+            AlertService.showError("Please select a person to remove.");
             return;
         }
+        Person responsiblePerson = (Person) responsiblePeopleList.getSelectionModel().getSelectedItem();
 
-        selectedCategory.getResponsiblePeople().remove(responsiblePeopleList.getSelectionModel().getSelectedItem());
+        System.out.println(selectedCategory.getResponsiblePeople());
+
+        selectedCategory.removeResponsiblePerson(responsiblePerson);
+
+        System.out.println(selectedCategory.getResponsiblePeople());
+
         categoryUtil.edit(selectedCategory);
         updateWindow();
     }
