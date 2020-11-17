@@ -72,3 +72,5 @@ w
 Gsrc/main/java/accountingsystem/controller/RegisterPersonController.java,1\c\1c61fe603ba34fe571a540e3800564eccaa1f643
 x
 Hsrc/main/java/accountingsystem/controller/RegisterCompanyController.java,7\e\7e2413a489e5e76af95d938b84955b8e11e48878
+h
+8src/main/java/accountingsystem/service/AlertService.java,4\e\4ef7ea983a0251cd8541435560abd69ebe56c0ce

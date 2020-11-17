@@ -270,7 +270,7 @@ public class CategoriesController implements Controller {
         Person responsiblePerson = personUtil.
                 getPerson(responsiblePeopleList.getSelectionModel().getSelectedItem().toString());
 
-        categoryUtil.removeResponsiblePerson(selectedCategory, responsiblePerson);
+        categoryUtil.removeResponsiblePerson(selectedCategory.getId(), responsiblePerson.getId());
         updateWindow();
     }
 

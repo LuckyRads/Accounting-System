@@ -1,9 +1,15 @@
 
-g	java:S112P"FDefine and throw a dedicated exception instead of using a generic one.(åµ¥íıÿÿÿÿ8ş¢ùÆÛ.
-Q
-java:S3740p"/Provide the parametrized type for this generic.(Àº·Ùøÿÿÿÿ8±Û¬ÈÛ.
-
-java:S1130P"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(åµ¥íıÿÿÿÿ8ş¢ùÆÛ.
+k
+java:S2095‚"HUse try-with-resources or close this "Connection" in a "finally" clause.(Š¹§«ıÿÿÿÿ8ŞËÕÀİ.
 ‰
-java:S1130="lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸Úšõ8‘è—ÈÛ.
-b	java:S112="FDefine and throw a dedicated exception instead of using a generic one.(¸Úšõ8ş¢ùÆÛ.
+java:S1130@"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸Úšõ8Š²ÒÀİ.
+r
+java:S2095†"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8»¸„Áİ.
+R
+java:S3740¢"/Provide the parametrized type for this generic.(Àº·Ùøÿÿÿÿ8Û‡°İ.
+
+java:S1130S"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(åµ¥íıÿÿÿÿ8Š²ÒÀİ.
+b	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(¸Úšõ8Û‡°İ.
+P
+java:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿ8ƒÈåÀİ.
+g	java:S112S"FDefine and throw a dedicated exception instead of using a generic one.(åµ¥íıÿÿÿÿ8Û‡°İ.

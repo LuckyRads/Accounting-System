@@ -1,12 +1,14 @@
 package accountingsystem.hibernate.util;
 
 import accountingsystem.hibernate.model.Category;
-import accountingsystem.hibernate.model.Person;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,27 +118,27 @@ public class CategoryUtil {
         }
     }
 
-    public void removeResponsiblePerson(Category category, Person person) {
-        EntityManager entityManager = null;
-
+    /**
+     * This function does not use hibernate because of unknown issue with responsible person deletion.
+     *
+     * @param categoryId
+     * @param personId
+     */
+    public void removeResponsiblePerson(long categoryId, long personId) {
         try {
-            entityManager = getEntityManager();
-            entityManager.getTransaction().begin();
-            entityManager.flush();
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.
+                    getConnection("jdbc:mysql://localhost:3306/accounting_system", "root", "root");
 
-            person.getManagedCategories().remove(category);
-            person = entityManager.merge(person);
+            String sql = "DELETE FROM category_person WHERE managedCategories_id = ? AND responsiblePeople_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setLong(1, categoryId);
+            preparedStatement.setLong(2, personId);
+            preparedStatement.execute();
 
-            category.getResponsiblePeople().remove(person);
-            category = entityManager.merge(category);
-
-            entityManager.getTransaction().commit();
+            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (entityManager != null) {
-                entityManager.close();
-            }
         }
     }
 
