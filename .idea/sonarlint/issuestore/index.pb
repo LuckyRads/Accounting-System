@@ -1,20 +1,10 @@
 
 i
 9src/main/java/accountingsystem/model/TransactionType.java,b\e\bed82dc8c5c42fb19e8f98ec8bf15214a8797d2b
-b
-2src/main/java/accountingsystem/model/Category.java,e\1\e1257394225914e32295e3b8679993fccd8868ea
-e
-5src/main/java/accountingsystem/model/Transaction.java,3\2\32f4a700ed760500eb9eed1cc954b9395231375b
 g
 7src/main/java/accountingsystem/service/ViewService.java,b\c\bc2abd4292932cd4fd32af1371c15e23a4720052
 i
-9src/main/java/accountingsystem/service/PeopleService.java,f\e\fe5b0757138165895d780e5dd17e10a96db9e2f2
-k
-;src/main/java/accountingsystem/service/CategoryService.java,b\5\b5223447bea46ec1d4d6a95336433d938755943d
-i
 9src/main/java/accountingsystem/controller/Controller.java,1\4\140471b16121585779da045779222f5fed2d943f
-l
-<src/main/java/accountingsystem/service/CompaniesService.java,4\3\437424cdf65f93a90358cbb391360754f55e3121
 t
 Dsrc/main/java/accountingsystem/controller/AddCategoryController.java,0\c\0cbd3791dbd1a7339a2b199b08e06497aa4a3e20
 s
@@ -27,8 +17,6 @@ x
 Hsrc/main/java/accountingsystem/controller/EditTransactionController.java,a\3\a3664081b8118578f44174c85ff45908ca1ee880
 n
 >src/main/java/accountingsystem/controller/LoginController.java,1\5\152bf26a6186ab81238d015df54dd44ecb5c334a
-q
-Asrc/main/java/accountingsystem/controller/RegisterController.java,a\3\a3e3bd3b236011755fd1fe91982608929557fb4d
 o
 ?src/main/java/accountingsystem/controller/ImportController.java,c\a\ca1ccfc4fdd8808b496407b2a4c73df0ab3e1d87
 r
@@ -48,22 +36,14 @@ o
 :
 
 output.ser,1\0\100d6e68f2f045a03d1817a3f09ce850c59e82c3
-j
-:src/main/java/accountingsystem/model/AccountingSystem.java,e\7\e7943470a587e1602cf48eabe4e91d8680765e3b
 a
 1src/main/java/accountingsystem/util/DateUtil.java,1\7\17bc0d9174c17f9144fae8a49497dc731a78ef36
 o
 ?src/main/java/accountingsystem/controller/WindowController.java,9\3\93b09514c4a5763cbaee659c7888717ec22e1b4d
 E
 accounting-system.iml,d\9\d9b7cf2589fab77488398dda6cfa3f00623d4ec3
-^
-.src/main/java/accountingsystem/model/User.java,4\0\40ab03f677b261bc85eb48999ad5c0fc237caf6d
-`
-0src/main/java/accountingsystem/model/Person.java,2\9\29e3ab418f5e65fb49b3bd7d8c2f1fc1fa4a2ea0
 a
 1src/main/java/accountingsystem/HibernateMain.java,6\4\64c85df57e83e4e6482e02bd8e3e6e4db35b49b6
-a
-1src/main/java/accountingsystem/model/Company.java,b\2\b22c1778cdbd65aebd55db465936ea7d635d368f
 X
 (src/main/java/accountingsystem/Main.java,d\a\da209579e29b355f1d7ffaa07bd6f3683c1e9f3d
 w
@@ -86,3 +66,9 @@ l
 <src/main/java/accountingsystem/hibernate/model/Category.java,2\3\23bebe69e3e5d153b471dd05c690a875c5395085
 o
 ?src/main/java/accountingsystem/hibernate/util/CategoryUtil.java,2\d\2d0f821583707c7867bb193a5090ee637fded185
+r
+Bsrc/main/java/accountingsystem/hibernate/util/TransactionUtil.java,d\0\d0aff16f4758a3fe0f2bf6b315c465af2c19797d
+w
+Gsrc/main/java/accountingsystem/controller/RegisterPersonController.java,1\c\1c61fe603ba34fe571a540e3800564eccaa1f643
+x
+Hsrc/main/java/accountingsystem/controller/RegisterCompanyController.java,7\e\7e2413a489e5e76af95d938b84955b8e11e48878

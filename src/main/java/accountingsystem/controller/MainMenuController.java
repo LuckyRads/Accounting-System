@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -42,7 +43,7 @@ public class MainMenuController implements Controller {
     private TextField companyTextField;
 
     @FXML
-    private TextField createdAtDatePicker;
+    private DatePicker datePicker;
 
     @FXML
     private TextField versionTextField;
@@ -63,7 +64,6 @@ public class MainMenuController implements Controller {
         Parent root = loader.load();
 
         CategoriesController categoriesController = loader.getController();
-//        categoriesController.setAccountingSystem(accountingSystem);
 
         ViewService.openView((Stage) categoriesBtn.getScene().getWindow(), root);
         categoriesController.loadCategories();
@@ -107,7 +107,7 @@ public class MainMenuController implements Controller {
         AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
 
         companyTextField.setText(accountingSystem.getCompany());
-        createdAtDatePicker.setText(accountingSystem.getDateCreated().toString());
+        datePicker.setValue(accountingSystem.getDateCreated());
         versionTextField.setText(accountingSystem.getVersion());
     }
 
@@ -116,7 +116,7 @@ public class MainMenuController implements Controller {
         AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
 
         accountingSystem.setCompany(companyTextField.getText());
-//        accountingSystem.setDateCreated(createdAtDatePicker.getText().toString()); // TODO: Fix date picker (issue with @Deprecated Date)
+        accountingSystem.setDateCreated(datePicker.valueProperty().get());
         accountingSystem.setVersion(versionTextField.getText());
 
         accountingSystemUtil.edit(accountingSystem);

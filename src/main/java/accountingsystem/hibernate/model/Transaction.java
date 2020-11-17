@@ -4,6 +4,7 @@ import accountingsystem.model.TransactionType;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -23,7 +24,7 @@ public class Transaction implements Serializable {
 
     private double amount;
 
-    private Date date;
+    private LocalDate date;
 
     @ManyToOne
     private Category category;
@@ -32,7 +33,7 @@ public class Transaction implements Serializable {
 
     }
 
-    public Transaction(String name, TransactionType transactionType, String sender, String receiver, double amount, Date date, Category category) {
+    public Transaction(String name, TransactionType transactionType, String sender, String receiver, double amount, LocalDate date, Category category) {
         this.name = name;
         this.transactionType = transactionType;
         this.sender = sender;
@@ -86,11 +87,11 @@ public class Transaction implements Serializable {
         this.amount = amount;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

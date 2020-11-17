@@ -1,10 +1,13 @@
 
-v
-java:S2293P"YReplace the type specification in this constructor call with the diamond operator ("<>").(•¶µ£8θΗΫ.
-v
-java:S2293P"YReplace the type specification in this constructor call with the diamond operator ("<>").(•¶µ£8θΗΫ.
+X	java:S125Y"<This block of commented-out lines of code should be removed.(ΠβΫ®8β…ξΫ.
+‰
+java:S1130B"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ισή8ΪσξΫ.
 {
 java:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(ª°ύÿÿÿÿ8›ΗΫ.
+v
+java:S2293S"YReplace the type specification in this constructor call with the diamond operator ("<>").(•¶µ£8θΗΫ.
+v
+java:S2293S"YReplace the type specification in this constructor call with the diamond operator ("<>").(•¶µ£8θΗΫ.
 E
 java:S3740#"/Provide the parametrized type for this generic.( Κ‚
 {

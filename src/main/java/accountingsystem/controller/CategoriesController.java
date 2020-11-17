@@ -240,48 +240,21 @@ public class CategoriesController implements Controller {
             return;
         }
 
-        for (Category category : categoryUtil.getRootCategories()) {
-            addResponsiblePerson(selectedCategory, category, person);
-        }
-    }
-
-    private void addResponsiblePerson(Category subCategory, Category rootCategory, Person person) {
-        if (subCategory.getName().equals(rootCategory.getName())) {
-            rootCategory.getResponsiblePeople().add(person);
-            categoryUtil.edit(rootCategory);
-            return;
-        }
-
-        for (Category category : rootCategory.getSubCategories()) {
-            addResponsiblePerson(subCategory, category, person);
-        }
-
+        selectedCategory.getResponsiblePeople().add(person);
+        categoryUtil.edit(selectedCategory);
         updateWindow();
     }
 
     @FXML
     public void removeResponsiblePerson() {
         Category selectedCategory = getSelectedCategory();
-        if (selectedCategory == null) {
+        if (selectedCategory == null || responsiblePeopleList.getSelectionModel().getSelectedItem() == null) {
             return;
         }
 
-        for (Category category : categoryUtil.getRootCategories()) {
-            removeResponsiblePerson(selectedCategory, category);
-        }
-    }
-
-    private void removeResponsiblePerson(Category subCategory, Category rootCategory) {
-        if (subCategory.getName().equals(rootCategory.getName())) {
-            rootCategory.getResponsiblePeople().remove(responsiblePeopleList.getSelectionModel().getSelectedItem());
-            categoryUtil.edit(rootCategory);
-            updateWindow();
-            return;
-        }
-
-        for (Category category : rootCategory.getSubCategories()) {
-            removeResponsiblePerson(subCategory, category);
-        }
+        selectedCategory.getResponsiblePeople().remove(responsiblePeopleList.getSelectionModel().getSelectedItem());
+        categoryUtil.edit(selectedCategory);
+        updateWindow();
     }
 
     //endregion

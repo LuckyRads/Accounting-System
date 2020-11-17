@@ -6,12 +6,12 @@ import accountingsystem.model.TransactionType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
 
 public class EditTransactionController implements WindowController {
 
@@ -36,6 +36,9 @@ public class EditTransactionController implements WindowController {
 
     @FXML
     private TextField amountField;
+
+    @FXML
+    private DatePicker datePicker;
 
     public CategoriesController getCategoriesController() {
         return categoriesController;
@@ -69,7 +72,7 @@ public class EditTransactionController implements WindowController {
         senderField.setText(transaction.getSender());
         receiverField.setText(transaction.getReceiver());
         amountField.setText(String.valueOf(transaction.getAmount()));
-        // TODO: Date field
+        datePicker.setValue(transaction.getDate());
     }
 
     public void populateTransactionTypeList() {
@@ -86,7 +89,7 @@ public class EditTransactionController implements WindowController {
         transaction.setSender(senderField.getText());
         transaction.setReceiver(receiverField.getText());
         transaction.setAmount(Double.parseDouble(amountField.getText()));
-        transaction.setDate(new Date()); // TODO: Fix date
+        transaction.setDate(datePicker.valueProperty().get());
 
         transactionUtil.edit(transaction);
 

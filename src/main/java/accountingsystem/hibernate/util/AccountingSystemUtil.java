@@ -4,7 +4,7 @@ import accountingsystem.hibernate.model.AccountingSystem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class AccountingSystemUtil {
 
@@ -78,15 +78,10 @@ public class AccountingSystemUtil {
 
 
     private AccountingSystem getDefaultAccountingSystem() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, 2020);
-        calendar.set(Calendar.MONTH, Calendar.OCTOBER);
-        calendar.set(Calendar.DAY_OF_MONTH, 5);
-
         return new AccountingSystem(
                 (long) 1,
                 "VGTU",
-                calendar.getTime(),
+                LocalDate.of(2020, 10, 5),
                 "1.0.0"
         );
     }

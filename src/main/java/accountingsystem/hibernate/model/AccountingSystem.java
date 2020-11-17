@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class AccountingSystem implements Serializable {
@@ -16,7 +16,7 @@ public class AccountingSystem implements Serializable {
 
     private String company;
 
-    private Date dateCreated;
+    private LocalDate dateCreated;
 
     private String version;
 
@@ -24,7 +24,7 @@ public class AccountingSystem implements Serializable {
 
     }
 
-    public AccountingSystem(Long id, String company, Date dateCreated, String version) {
+    public AccountingSystem(Long id, String company, LocalDate dateCreated, String version) {
         this.id = id;
         this.company = company;
         this.dateCreated = dateCreated;
@@ -43,11 +43,11 @@ public class AccountingSystem implements Serializable {
         this.company = company;
     }
 
-    public Date getDateCreated() {
+    public LocalDate getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
+    public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
     }
 
