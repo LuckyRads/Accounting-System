@@ -1,10 +1,11 @@
 package accountingsystem.hibernate.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Person extends User implements Serializable {
@@ -18,6 +19,11 @@ public class Person extends User implements Serializable {
     private String surname;
 
     private String phoneNumber;
+
+    @ManyToMany(mappedBy = "responsiblePeople", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OrderBy("id asc")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Category> managedCategories;
 
     public Person() {
 
@@ -58,9 +64,17 @@ public class Person extends User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
+    public List<Category> getManagedCategories() {
+        return managedCategories;
+    }
+
+    public void setManagedCategories(List<Category> managedCategories) {
+        this.managedCategories = managedCategories;
+    }
+
     @Override
     public String toString() {
         return this.email;
     }
-
+    
 }

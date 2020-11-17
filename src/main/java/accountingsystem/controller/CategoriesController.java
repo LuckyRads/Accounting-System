@@ -267,11 +267,10 @@ public class CategoriesController implements Controller {
         }
 
         Category selectedCategory = categoryUtil.getCategory(getSelectedCategory().getName());
-        Person responsiblePerson = (Person) responsiblePeopleList.getSelectionModel().getSelectedItem();
+        Person responsiblePerson = personUtil.
+                getPerson(responsiblePeopleList.getSelectionModel().getSelectedItem().toString());
 
-        selectedCategory.removeResponsiblePerson(responsiblePerson);
-
-        categoryUtil.edit(selectedCategory);
+        categoryUtil.removeResponsiblePerson(selectedCategory, responsiblePerson);
         updateWindow();
     }
 

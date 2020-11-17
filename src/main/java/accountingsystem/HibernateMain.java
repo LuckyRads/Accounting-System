@@ -12,6 +12,7 @@ import javax.persistence.metamodel.EntityType;
 /**
  * Run this class one time for database generation.
  */
+@Deprecated
 public class HibernateMain {
     private static final SessionFactory ourSessionFactory;
 

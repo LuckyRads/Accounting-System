@@ -1,5 +1,8 @@
 package accountingsystem.hibernate.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -21,7 +24,9 @@ public class Category implements Serializable {
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parentCategory")
     private List<Category> subCategories;
 
-    @ManyToMany(cascade = CascadeType.DETACH)
+    @ManyToMany(cascade = CascadeType.MERGE)
+    @OrderBy("id asc")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Person> responsiblePeople;
 
     @ManyToOne
@@ -105,14 +110,6 @@ public class Category implements Serializable {
     @Override
     public String toString() {
         return this.name;
-    }
-
-    public void addResponsiblePerson(Person person) {
-        this.responsiblePeople.add(person);
-    }
-
-    public void removeResponsiblePerson(Person person) {
-        this.responsiblePeople.remove(person);
     }
 
 }
