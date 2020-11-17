@@ -1,8 +1,6 @@
 package accountingsystem.hibernate.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -11,7 +9,6 @@ import java.time.LocalDate;
 public class AccountingSystem implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String company;

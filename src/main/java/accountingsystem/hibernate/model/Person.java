@@ -76,5 +76,5 @@ public class Person extends User implements Serializable {
     public String toString() {
         return this.email;
     }
-    
+
 }

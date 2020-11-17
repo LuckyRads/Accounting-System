@@ -124,9 +124,6 @@ public class CategoryUtil {
             entityManager.getTransaction().begin();
             entityManager.flush();
 
-            // delete from person
-            // delete from cat
-
             person.getManagedCategories().remove(category);
             person = entityManager.merge(person);
 
