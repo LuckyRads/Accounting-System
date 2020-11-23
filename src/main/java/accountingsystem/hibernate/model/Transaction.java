@@ -5,7 +5,6 @@ import accountingsystem.model.TransactionType;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class Transaction implements Serializable {

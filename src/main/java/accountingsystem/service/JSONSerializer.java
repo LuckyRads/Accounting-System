@@ -1,8 +1,6 @@
 package accountingsystem.service;
 
-import accountingsystem.hibernate.model.AccountingSystem;
-import accountingsystem.hibernate.model.Company;
-import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.model.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,6 +17,10 @@ public class JSONSerializer {
                 jsonArray.put(serializeObject((Person) object));
             } else if (object instanceof Company) {
                 jsonArray.put(serializeObject((Company) object));
+            } else if (object instanceof Category) {
+                jsonArray.put(serializeObject((Category) object));
+            } else if (object instanceof Transaction) {
+                jsonArray.put(serializeObject((Transaction) object));
             }
         }
 
@@ -56,6 +58,35 @@ public class JSONSerializer {
         object.put("version", accountingSystem.getVersion());
 
         return object.toString();
+    }
+
+    public static JSONObject serializeObject(Category category) throws JSONException {
+        JSONObject object = new JSONObject();
+
+        object.put("id", category.getId());
+        object.put("name", category.getName());
+        object.put("description", category.getDescription());
+        object.put("transactions", new JSONArray(category.getTransactions().toString()));
+        object.put("subCategories", new JSONArray(category.getSubCategories().toString()));
+        object.put("responsiblePeople", new JSONArray(category.getResponsiblePeople().toString()));
+        if (category.getParentCategory() != null) object.put("parentCategory", category.getParentCategory().toString());
+
+        return object;
+    }
+
+    public static JSONObject serializeObject(Transaction transaction) throws JSONException {
+        JSONObject object = new JSONObject();
+
+        object.put("id", transaction.getId());
+        object.put("name", transaction.getName());
+        object.put("transactionType", transaction.getTransactionType());
+        object.put("sender", transaction.getSender());
+        object.put("receiver", transaction.getReceiver());
+        object.put("amount", transaction.getAmount());
+        object.put("date", transaction.getDate());
+        object.put("category", transaction.getCategory().toString());
+
+        return object;
     }
 
 }
