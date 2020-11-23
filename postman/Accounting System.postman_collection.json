@@ -283,6 +283,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "POST Accounting System edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"MANO VGTU\",\r\n    \"dateCreated\": \"2020-11-23\",\r\n    \"version\": \"5.0.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/accounting-system",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"accounting-system"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
