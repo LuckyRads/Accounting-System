@@ -76,6 +76,25 @@ public class TransactionUtil {
         }
     }
 
+    public void destroy(Long id) throws Exception {
+        EntityManager entityManager = null;
+
+        try {
+            for (Transaction transaction : getAllTransactions()) {
+                if (transaction.getId() == id) {
+                    entityManager = getEntityManager();
+                    entityManager.getTransaction().begin();
+                    entityManager.remove(entityManager.merge(transaction));
+                    entityManager.getTransaction().commit();
+                }
+            }
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+        }
+    }
+
     public void destroy(Transaction transaction) throws Exception {
         EntityManager entityManager = null;
 

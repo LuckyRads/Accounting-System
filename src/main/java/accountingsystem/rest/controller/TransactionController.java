@@ -66,4 +66,62 @@ public class TransactionController {
         return "Success";
     }
 
+    @DeleteMapping(value = "transaction/delete")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String deleteTransaction(@RequestBody String request) throws Exception {
+        Gson parser = new Gson();
+        Properties data = parser.fromJson(request, Properties.class);
+
+        Long id = Long.parseLong((String) data.get("id"));
+        String name = (String) data.get("name");
+
+        if (id != null) {
+            transactionUtil.destroy(id);
+        } else {
+            transactionUtil.destroy(name);
+        }
+
+        return "Success";
+    }
+
+    @PostMapping(value = "transaction/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String editTransaction(@RequestBody String request, @PathVariable Long id) {
+        Gson parser = new Gson();
+        Properties data = parser.fromJson(request, Properties.class);
+
+        String name = (String) data.get("name");
+
+        String transactionTypeString = (String) data.get("transactionType");
+        TransactionType transactionType = TransactionType.INCOME;
+        if (transactionTypeString.equalsIgnoreCase("EXPENSE")) {
+            transactionType = TransactionType.EXPENSE;
+        }
+
+        String sender = (String) data.get("sender");
+        String receiver = (String) data.get("receiver");
+        double amount = Double.parseDouble((String) data.get("amount"));
+        LocalDate date = LocalDate.parse((String) data.get("date"));
+        Long categoryId = Long.parseLong((String) data.get("category"));
+
+        Category category = null;
+        if (categoryId != null) {
+            category = categoryUtil.getCategory(categoryId);
+        }
+
+        Transaction transaction = transactionUtil.getTransaction(id);
+
+        transaction.setName(name);
+        transaction.setTransactionType(transactionType);
+        transaction.setSender(sender);
+        transaction.setReceiver(receiver);
+        transaction.setAmount(amount);
+        transaction.setDate(date);
+        transaction.setCategory(category);
+
+        transactionUtil.edit(transaction);
+
+        return "Success";
+    }
+
 }
