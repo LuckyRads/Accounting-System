@@ -36,8 +36,6 @@ o
 :
 
 output.ser,1\0\100d6e68f2f045a03d1817a3f09ce850c59e82c3
-a
-1src/main/java/accountingsystem/util/DateUtil.java,1\7\17bc0d9174c17f9144fae8a49497dc731a78ef36
 o
 ?src/main/java/accountingsystem/controller/WindowController.java,9\3\93b09514c4a5763cbaee659c7888717ec22e1b4d
 E
