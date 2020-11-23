@@ -50,5 +50,6 @@
     <orderEntry type="library" name="Spring Web Services-2.0.2" level="project" />
     <orderEntry type="library" name="Spring Security-5.2.1" level="project" />
     <orderEntry type="library" name="org.json-20120521" level="project" />
+    <orderEntry type="library" name="gson-2.8.0" level="project" />
   </component>
 </module>

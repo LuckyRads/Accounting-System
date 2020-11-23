@@ -28,6 +28,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "POST Create person",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"matas@mailas.com\",\r\n    \"password\": \"passwwww\",\r\n    \"name\": \"Matas\",\r\n    \"surname\": \"Mal\",\r\n    \"phoneNumber\": \"+37065874145\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Accounting_System_war_exploded/person/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Accounting_System_war_exploded",
+								"person",
+								"create"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
