@@ -14,14 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/Accounting_System_war_exploded/person/people",
+							"raw": "http://localhost:8080/accounting-system/person/people",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"Accounting_System_war_exploded",
+								"accounting-system",
 								"person",
 								"people"
 							]
@@ -47,16 +47,46 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/Accounting_System_war_exploded/person/create",
+							"raw": "http://localhost:8080/accounting-system/person/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"Accounting_System_war_exploded",
+								"accounting-system",
 								"person",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Delete person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"matas@mailas.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/person/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"person",
+								"delete"
 							]
 						}
 					},
@@ -96,14 +126,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/Accounting_System_war_exploded/company/companies",
+							"raw": "http://localhost:8080/accounting-system/company/companies",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"Accounting_System_war_exploded",
+								"accounting-system",
 								"company",
 								"companies"
 							]
@@ -123,14 +153,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/Accounting_System_war_exploded/accounting-system",
+							"raw": "http://localhost:8080/accounting-system/accounting-system",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"Accounting_System_war_exploded",
+								"accounting-system",
 								"accounting-system"
 							]
 						}
@@ -149,14 +179,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/Accounting_System_war_exploded/category/categories",
+							"raw": "http://localhost:8080/accounting-system/category/categories",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"Accounting_System_war_exploded",
+								"accounting-system",
 								"category",
 								"categories"
 							]
@@ -176,14 +206,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/Accounting_System_war_exploded/transaction/transactions",
+							"raw": "http://localhost:8080/accounting-system/transaction/transactions",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"Accounting_System_war_exploded",
+								"accounting-system",
 								"transaction",
 								"transactions"
 							]

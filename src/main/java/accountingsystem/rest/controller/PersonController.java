@@ -26,7 +26,7 @@ public class PersonController {
 
     @PostMapping(value = "person/create")
     @ResponseStatus(value = HttpStatus.OK)
-    public String createPerson(@RequestBody String request) throws JSONException {
+    public String createPerson(@RequestBody String request) {
         Gson parser = new Gson();
         Properties data = parser.fromJson(request, Properties.class);
 
@@ -38,6 +38,19 @@ public class PersonController {
 
         Person person = new Person(email, password, name, surname, phoneNumber);
         personUtil.create(person);
+
+        return "Success";
+    }
+
+    @DeleteMapping(value = "person/delete")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String deletePerson(@RequestBody String request) throws Exception {
+        Gson parser = new Gson();
+        Properties data = parser.fromJson(request, Properties.class);
+
+        String email = (String) data.get("email");
+
+        personUtil.destroy(email);
 
         return "Success";
     }
