@@ -1,5 +1,6 @@
 package accountingsystem.service;
 
+import accountingsystem.hibernate.model.Company;
 import accountingsystem.hibernate.model.Person;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -9,17 +10,21 @@ import java.util.List;
 
 public class JSONSerializer {
 
-    public static String serializeJSONArray(List<Person> people) throws JSONException {
+    public static <T> String serializeJSONArray(List<T> objects) throws JSONException {
         JSONArray jsonArray = new JSONArray();
 
-        for (Person person : people) {
-            jsonArray.put(serializePerson(person));
+        for (T object : objects) {
+            if (object instanceof Person) {
+                jsonArray.put(serializeObject((Person) object));
+            } else if (object instanceof Company) {
+                jsonArray.put(serializeObject((Company) object));
+            }
         }
 
         return jsonArray.toString(2);
     }
 
-    private static JSONObject serializePerson(Person person) throws JSONException {
+    public static JSONObject serializeObject(Person person) throws JSONException {
         JSONObject object = new JSONObject();
 
         object.put("id", person.getId());
@@ -27,6 +32,16 @@ public class JSONSerializer {
         object.put("surname", person.getSurname());
         object.put("phoneNumber", person.getPhoneNumber());
         object.put("managedCategories", new JSONArray(person.getManagedCategories().toString()));
+
+        return object;
+    }
+
+    public static JSONObject serializeObject(Company company) throws JSONException {
+        JSONObject object = new JSONObject();
+
+        object.put("id", company.getId());
+        object.put("name", company.getName());
+        object.put("managedCategories", company.getResponsiblePerson().toString());
 
         return object;
     }

@@ -14,6 +14,7 @@
         <property name="mappings">
             <props>
                 <prop key="/person">person</prop>
+                <prop key="/company">company</prop>
             </props>
         </property>
     </bean>
@@ -22,8 +23,7 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp"/>
 
-    <bean name="person"
-          class="accountingsystem.rest.controller.PersonController"
-    />
+    <bean name="person" class="accountingsystem.rest.controller.PersonController"/>
+    <bean name="company" class="accountingsystem.rest.controller.CompanyController"/>
 
 </beans>
