@@ -1,5 +1,6 @@
 package accountingsystem.rest.controller;
 
+import accountingsystem.hibernate.model.Person;
 import accountingsystem.hibernate.util.PersonUtil;
 import accountingsystem.service.JSONSerializer;
 import com.google.gson.Gson;
@@ -28,8 +29,16 @@ public class PersonController {
     public String createPerson(@RequestBody String request) throws JSONException {
         Gson parser = new Gson();
         Properties data = parser.fromJson(request, Properties.class);
-        System.out.println(data.get("email"));
-        System.out.println(data.get("password"));
+
+        String email = (String) data.get("email");
+        String password = (String) data.get("password");
+        String name = (String) data.get("name");
+        String surname = (String) data.get("surname");
+        String phoneNumber = (String) data.get("phoneNumber");
+
+        Person person = new Person(email, password, name, surname, phoneNumber);
+        personUtil.create(person);
+
         return "Success";
     }
 
