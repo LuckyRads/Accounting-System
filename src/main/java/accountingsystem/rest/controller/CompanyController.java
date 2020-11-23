@@ -61,11 +61,11 @@ public class CompanyController {
         Gson parser = new Gson();
         Properties data = parser.fromJson(request, Properties.class);
 
-        String id = (String) data.get("id");
+        Long id = Long.parseLong((String) data.get("id"));
         String email = (String) data.get("email");
 
         if (id != null) {
-            companyUtil.destroy(Long.parseLong(id));
+            companyUtil.destroy(id);
         } else {
             companyUtil.destroy(email);
         }

@@ -77,6 +77,28 @@ public class PersonUtil {
         }
     }
 
+    public void destroy(Long id) throws Exception {
+        EntityManager entityManager = null;
+
+        try {
+            entityManager = getEntityManager();
+            entityManager.getTransaction().begin();
+            Person person = null;
+            try {
+                person = entityManager.getReference(Person.class, id);
+                person.getId();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            entityManager.remove(person);
+            entityManager.getTransaction().commit();
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+        }
+    }
+
     public void destroy(Person person) throws Exception {
         EntityManager entityManager = null;
 

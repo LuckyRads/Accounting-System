@@ -54,9 +54,33 @@ public class PersonController {
         Gson parser = new Gson();
         Properties data = parser.fromJson(request, Properties.class);
 
+        Long id = Long.parseLong((String) data.get("id"));
         String email = (String) data.get("email");
 
-        personUtil.destroy(email);
+        if (id != null) {
+            personUtil.destroy(id);
+        } else {
+            personUtil.destroy(email);
+        }
+
+        return "Success";
+    }
+
+    @PostMapping(value = "person/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String editPerson(@RequestBody String request) {
+        Gson parser = new Gson();
+        Properties data = parser.fromJson(request, Properties.class);
+
+        Long id = (Long) data.get("id");
+        String email = (String) data.get("email");
+        String password = (String) data.get("password");
+        String name = (String) data.get("name");
+        String surname = (String) data.get("surname");
+        String phoneNumber = (String) data.get("phoneNumber");
+
+        Person person = personUtil.getPerson(id);
+
 
         return "Success";
     }
