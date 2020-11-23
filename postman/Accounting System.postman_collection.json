@@ -486,6 +486,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "POST Create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"testine kategorija\",\r\n    \"description\": \"testavimo kategorijos aprasas\",\r\n    \"responsiblePeople\": \"1,2\",\r\n    \"parentCategory\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/category/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -560,6 +590,66 @@
 								"accounting-system",
 								"transaction",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Delete transaction by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 24\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/transaction/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"transaction",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Edit transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Redaguota transakcija\",\r\n    \"transactionType\": \"INCOME\",\r\n    \"sender\": \"Mano imone edited\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/transaction/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"transaction",
+								"25"
 							]
 						}
 					},

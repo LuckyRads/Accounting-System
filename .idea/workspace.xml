@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7af3e587-7351-4ae4-ab61-7b563cbc5916" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/util/TransactionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/hibernate/util/TransactionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/rest/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/rest/controller/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accountingsystem/rest/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accountingsystem/rest/controller/CategoryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +268,7 @@
       <workItem from="1605604845205" duration="7063000" />
       <workItem from="1605694869651" duration="112000" />
       <workItem from="1606134736041" duration="21549000" />
-      <workItem from="1606165560125" duration="516000" />
+      <workItem from="1606165560125" duration="961000" />
     </task>
     <servers />
   </component>
@@ -442,10 +441,10 @@
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
     <state x="-1080" y="-171" width="1096" height="958" key="dock-window-1/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1606165989877" />
-    <state x="-1080" y="-217" width="1096" height="958" key="dock-window-2" timestamp="1606144774436">
+    <state x="-1080" y="-211" width="1096" height="958" key="dock-window-2" timestamp="1606166235975">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
-    <state x="-1080" y="-217" width="1096" height="958" key="dock-window-2/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1606144774436" />
+    <state x="-1080" y="-211" width="1096" height="958" key="dock-window-2/0.0.2560.1400/-1080.-252.1080.1880@0.0.2560.1400" timestamp="1606166235975" />
     <state x="-1080" y="-231" width="1096" height="960" key="dock-window-3" timestamp="1606145503830">
       <screen x="-1080" y="-252" width="1080" height="1880" />
     </state>
