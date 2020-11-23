@@ -99,12 +99,16 @@ public class CategoryController {
 
         Long parentCategoryId = Long.parseLong((String) data.get("parentCategory"));
 
-        Category parentCategory = null;
+        Category category = categoryUtil.getCategory(id);
+
+        Category parentCategory = category.getParentCategory();
         if (parentCategoryId != null) {
             parentCategory = categoryUtil.getCategory(parentCategoryId);
         }
 
-        Category category = categoryUtil.getCategory(id);
+        category.getResponsiblePeople().forEach(responsiblePerson -> {
+            categoryUtil.removeResponsiblePerson(category.getId(), responsiblePerson.getId());
+        });
 
         category.setName(name);
         category.setDescription(description);
