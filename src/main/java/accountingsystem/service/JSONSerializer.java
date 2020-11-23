@@ -1,5 +1,6 @@
 package accountingsystem.service;
 
+import accountingsystem.hibernate.model.AccountingSystem;
 import accountingsystem.hibernate.model.Company;
 import accountingsystem.hibernate.model.Person;
 import org.json.JSONArray;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class JSONSerializer {
 
-    public static <T> String serializeJSONArray(List<T> objects) throws JSONException {
+    public static <T> String serializeArray(List<T> objects) throws JSONException {
         JSONArray jsonArray = new JSONArray();
 
         for (T object : objects) {
@@ -44,6 +45,17 @@ public class JSONSerializer {
         object.put("managedCategories", company.getResponsiblePerson().toString());
 
         return object;
+    }
+
+    public static String serializeObject(AccountingSystem accountingSystem) throws JSONException {
+        JSONObject object = new JSONObject();
+
+        object.put("id", accountingSystem.getId());
+        object.put("company", accountingSystem.getCompany());
+        object.put("dateCreated", accountingSystem.getDateCreated());
+        object.put("version", accountingSystem.getVersion());
+
+        return object.toString();
     }
 
 }

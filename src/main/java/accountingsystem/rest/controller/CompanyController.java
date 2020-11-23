@@ -20,7 +20,7 @@ public class CompanyController {
     @GetMapping(value = "company/companies")
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllCompanies() throws JSONException {
-        return JSONSerializer.serializeJSONArray(companyUtil.getAllCompanies());
+        return JSONSerializer.serializeArray(companyUtil.getAllCompanies());
     }
 
 }

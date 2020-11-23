@@ -1,6 +1,6 @@
 package accountingsystem.rest.controller;
 
-import accountingsystem.hibernate.util.PersonUtil;
+import accountingsystem.hibernate.util.AccountingSystemUtil;
 import accountingsystem.service.JSONSerializer;
 import org.json.JSONException;
 import org.springframework.http.HttpStatus;
@@ -12,15 +12,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 @RestController
-public class PersonController {
+public class AccountingSystemController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
-    PersonUtil personUtil = new PersonUtil(entityManagerFactory);
+    AccountingSystemUtil accountingSystemUtil = new AccountingSystemUtil(entityManagerFactory);
 
-    @GetMapping(value = "person/people")
+    @GetMapping(value = "accounting-system")
     @ResponseStatus(value = HttpStatus.OK)
-    public String getAllPeople() throws JSONException {
-        return JSONSerializer.serializeArray(personUtil.getAllPeople());
+    public String getAccountingSystem() throws JSONException {
+        return JSONSerializer.serializeObject(accountingSystemUtil.getAccountingSystem());
     }
 
 }
