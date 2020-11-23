@@ -138,7 +138,7 @@
 			"name": "Transaction",
 			"item": [
 				{
-					"name": "GETTransactions",
+					"name": "GET Transactions",
 					"request": {
 						"method": "GET",
 						"header": [],

@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JSONSerializer {
@@ -66,7 +67,11 @@ public class JSONSerializer {
         object.put("id", category.getId());
         object.put("name", category.getName());
         object.put("description", category.getDescription());
-        object.put("transactions", new JSONArray(category.getTransactions().toString()));
+
+        List<String> transactions = new ArrayList<>();
+        category.getTransactions().forEach(transaction -> transactions.add(transaction.toString()));
+
+        object.put("transactions", transactions);
         object.put("subCategories", new JSONArray(category.getSubCategories().toString()));
         object.put("responsiblePeople", new JSONArray(category.getResponsiblePeople().toString()));
         if (category.getParentCategory() != null) object.put("parentCategory", category.getParentCategory().toString());
