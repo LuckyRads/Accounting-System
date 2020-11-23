@@ -68,11 +68,10 @@ public class PersonController {
 
     @PostMapping(value = "person/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public String editPerson(@RequestBody String request) {
+    public String editPerson(@RequestBody String request, @PathVariable Long id) {
         Gson parser = new Gson();
         Properties data = parser.fromJson(request, Properties.class);
 
-        Long id = (Long) data.get("id");
         String email = (String) data.get("email");
         String password = (String) data.get("password");
         String name = (String) data.get("name");
@@ -81,6 +80,13 @@ public class PersonController {
 
         Person person = personUtil.getPerson(id);
 
+        person.setEmail(email);
+        person.setPassword(password);
+        person.setName(name);
+        person.setSurname(surname);
+        person.setPhoneNumber(phoneNumber);
+
+        personUtil.edit(person);
 
         return "Success";
     }

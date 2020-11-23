@@ -112,6 +112,69 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "DELETE Delete person by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 18\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/person/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"person",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Edit person",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"matas@mailas.com\",\r\n    \"password\": \"edited\",\r\n    \"name\": \"Matas\",\r\n    \"surname\": \"Maliis\",\r\n    \"phoneNumber\": \"+37065874145\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/person/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"person",
+								"20"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -253,6 +316,69 @@
 								"accounting-system",
 								"company",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Delete company by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/company/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"company",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Edit company",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"companymano@mailas.com\",\r\n    \"password\": \"editedPassworddddddd\",\r\n    \"name\": \"Kompanijaaaaaaa\",\r\n    \"responsiblePerson\": \"admin@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/company/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"company",
+								"22"
 							]
 						}
 					},

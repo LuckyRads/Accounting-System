@@ -73,4 +73,27 @@ public class CompanyController {
         return "Success";
     }
 
+    @PostMapping(value = "company/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String editPerson(@RequestBody String request, @PathVariable Long id) {
+        Gson parser = new Gson();
+        Properties data = parser.fromJson(request, Properties.class);
+
+        String email = (String) data.get("email");
+        String password = (String) data.get("password");
+        String name = (String) data.get("name");
+        String responsiblePerson = (String) data.get("responsiblePerson");
+
+        Company company = companyUtil.getCompany(id);
+
+        company.setEmail(email);
+        company.setPassword(password);
+        company.setName(name);
+        company.setResponsiblePerson(personUtil.getPerson(responsiblePerson));
+
+        companyUtil.edit(company);
+
+        return "Success";
+    }
+
 }
