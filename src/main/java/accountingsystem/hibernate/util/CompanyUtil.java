@@ -76,6 +76,28 @@ public class CompanyUtil {
         }
     }
 
+    public void destroy(Long id) throws Exception {
+        EntityManager entityManager = null;
+
+        try {
+            entityManager = getEntityManager();
+            entityManager.getTransaction().begin();
+            Company company = null;
+            try {
+                company = entityManager.getReference(Company.class, id);
+                company.getId();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            entityManager.remove(company);
+            entityManager.getTransaction().commit();
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+        }
+    }
+
     public void destroy(Company company) throws Exception {
         EntityManager entityManager = null;
 
