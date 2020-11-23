@@ -80,6 +80,29 @@ public class CategoryUtil {
         }
     }
 
+    public void destroy(Long id) throws Exception {
+        EntityManager entityManager = null;
+
+        try {
+
+            entityManager = getEntityManager();
+            entityManager.getTransaction().begin();
+            Category category = null;
+            try {
+                category = entityManager.getReference(Category.class, id);
+                category.getId();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            entityManager.remove(entityManager.merge(category));
+            entityManager.getTransaction().commit();
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+        }
+    }
+
     public void destroy(Category category) throws Exception {
         EntityManager entityManager = null;
 
