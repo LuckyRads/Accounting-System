@@ -155,6 +155,15 @@ public class CategoryUtil {
         return null;
     }
 
+    public Category getCategory(Long id) {
+        for (Category category : getAllCategories()) {
+            if (category.getId() == id) {
+                return category;
+            }
+        }
+        return null;
+    }
+
     public List<Category> getAllCategories() {
         EntityManager entityManager = getEntityManager();
 

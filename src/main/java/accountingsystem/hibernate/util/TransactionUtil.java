@@ -104,6 +104,15 @@ public class TransactionUtil {
         return null;
     }
 
+    public Transaction getTransaction(Long id) {
+        for (Transaction transaction : getAllTransactions()) {
+            if (transaction.getId() == id) {
+                return transaction;
+            }
+        }
+        return null;
+    }
+
     public List<Transaction> getAllTransactions() {
         EntityManager entityManager = getEntityManager();
 

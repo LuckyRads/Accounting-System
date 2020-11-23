@@ -5,6 +5,7 @@ import accountingsystem.service.JSONSerializer;
 import org.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +22,12 @@ public class CategoryController {
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllCategories() throws JSONException {
         return JSONSerializer.serializeArray(categoryUtil.getAllCategories());
+    }
+
+    @GetMapping(value = "category/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String getCategory(@PathVariable Long id) throws JSONException {
+        return JSONSerializer.serializeObject(categoryUtil.getCategory(id)).toString();
     }
 
 }
