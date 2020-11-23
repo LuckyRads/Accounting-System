@@ -27,20 +27,18 @@ public class AccountingSystemController {
 
     @PostMapping(value = "accounting-system")
     @ResponseStatus(value = HttpStatus.OK)
-    public String editAccountingSystem(@RequestBody String request) throws JSONException {
+    public String editAccountingSystem(@RequestBody String request) {
         Gson parser = new Gson();
         Properties data = parser.fromJson(request, Properties.class);
 
         String company = (String) data.get("company");
-        String dateCreated = (String) data.get("dateCreated");
+        LocalDate dateCreated = LocalDate.parse((String) data.get("dateCreated"));
         String version = (String) data.get("version");
-
-        LocalDate date = LocalDate.parse(dateCreated);
 
         AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
 
         accountingSystem.setCompany(company);
-        accountingSystem.setDateCreated(date);
+        accountingSystem.setDateCreated(dateCreated);
         accountingSystem.setVersion(version);
 
         accountingSystemUtil.edit(accountingSystem);

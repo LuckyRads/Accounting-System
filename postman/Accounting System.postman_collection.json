@@ -226,7 +226,7 @@
 					"response": []
 				},
 				{
-					"name": "GET company by id",
+					"name": "GET Company by id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -465,6 +465,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GET Category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/category/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"category",
+								"4"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -488,6 +509,57 @@
 								"accounting-system",
 								"transaction",
 								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Transaction by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/transaction/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"transaction",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"transakcijaaa\",\r\n    \"transactionType\": \"EXPENSE\",\r\n    \"sender\": \"Mano imone\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/transaction/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"transaction",
+								"create"
 							]
 						}
 					},
