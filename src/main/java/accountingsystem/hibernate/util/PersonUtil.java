@@ -96,6 +96,15 @@ public class PersonUtil {
 
     //region Getters
 
+    public Person getPerson(Long id) {
+        for (Person person : getAllPeople()) {
+            if (person.getId() == id) {
+                return person;
+            }
+        }
+        return null;
+    }
+
     public Person getPerson(String email) {
         for (Person person : getAllPeople()) {
             if (person.getEmail().equals(email)) {

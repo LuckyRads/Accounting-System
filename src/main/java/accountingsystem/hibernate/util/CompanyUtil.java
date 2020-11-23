@@ -126,6 +126,15 @@ public class CompanyUtil {
         return null;
     }
 
+    public Company getCompany(Long id) {
+        for (Company company : getAllCompanies()) {
+            if (company.getId() == id) {
+                return company;
+            }
+        }
+        return null;
+    }
+
     public List<Company> getAllCompanies() {
         EntityManager entityManager = getEntityManager();
 

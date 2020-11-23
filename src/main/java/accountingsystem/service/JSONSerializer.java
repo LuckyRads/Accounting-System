@@ -32,6 +32,8 @@ public class JSONSerializer {
         JSONObject object = new JSONObject();
 
         object.put("id", person.getId());
+        object.put("email", person.getEmail());
+        object.put("password", person.getPassword());
         object.put("name", person.getName());
         object.put("surname", person.getSurname());
         object.put("phoneNumber", person.getPhoneNumber());
@@ -44,8 +46,10 @@ public class JSONSerializer {
         JSONObject object = new JSONObject();
 
         object.put("id", company.getId());
+        object.put("email", company.getEmail());
+        object.put("password", company.getPassword());
         object.put("name", company.getName());
-        object.put("managedCategories", company.getResponsiblePerson().toString());
+        object.put("responsiblePerson", company.getResponsiblePerson().toString());
 
         return object;
     }

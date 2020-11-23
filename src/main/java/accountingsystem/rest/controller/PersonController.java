@@ -24,6 +24,12 @@ public class PersonController {
         return JSONSerializer.serializeArray(personUtil.getAllPeople());
     }
 
+    @GetMapping(value = "person/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String getPerson(@PathVariable Long id) throws JSONException {
+        return JSONSerializer.serializeObject(personUtil.getPerson(id)).toString();
+    }
+
     @PostMapping(value = "person/create")
     @ResponseStatus(value = HttpStatus.OK)
     public String createPerson(@RequestBody String request) {

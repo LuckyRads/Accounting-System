@@ -27,6 +27,12 @@ public class CompanyController {
         return JSONSerializer.serializeArray(companyUtil.getAllCompanies());
     }
 
+    @GetMapping(value = "company/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String getCompany(@PathVariable Long id) throws JSONException {
+        return JSONSerializer.serializeObject(companyUtil.getCompany(id)).toString();
+    }
+
     @PostMapping(value = "company/create")
     @ResponseStatus(value = HttpStatus.OK)
     public String createCompany(@RequestBody String request) {
