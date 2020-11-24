@@ -46,7 +46,7 @@ public class CompanyUtil {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
             entityManager.flush();
-            company = entityManager.merge(company);
+            entityManager.merge(company);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -85,7 +85,6 @@ public class CompanyUtil {
             Company company = null;
             try {
                 company = entityManager.getReference(Company.class, id);
-                company.getId();
             } catch (Exception e) {
                 e.printStackTrace();
             }

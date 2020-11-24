@@ -602,7 +602,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 24\r\n}",
+							"raw": "{\r\n    \"id\": 25\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -632,7 +632,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Redaguota transakcija\",\r\n    \"transactionType\": \"INCOME\",\r\n    \"sender\": \"Mano imone edited\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 28\r\n}",
+							"raw": "{\r\n    \"name\": \"Redaguota transakcija\",\r\n    \"transactionType\": \"INCOME\",\r\n    \"sender\": \"Mano imone edited\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -640,7 +640,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/transaction/33",
+							"raw": "http://localhost:8080/accounting-system/transaction/34",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -649,7 +649,7 @@
 							"path": [
 								"accounting-system",
 								"transaction",
-								"33"
+								"34"
 							]
 						}
 					},

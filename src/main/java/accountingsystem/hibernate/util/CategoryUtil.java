@@ -50,7 +50,7 @@ public class CategoryUtil {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
             entityManager.flush();
-            category = entityManager.merge(category);
+            entityManager.merge(category);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,7 +90,6 @@ public class CategoryUtil {
             Category category = null;
             try {
                 category = entityManager.getReference(Category.class, id);
-                category.getId();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -129,7 +128,7 @@ public class CategoryUtil {
             parentCategory.getSubCategories().add(subcategory);
 
             entityManager.persist(subcategory);
-            parentCategory = entityManager.merge(parentCategory);
+            entityManager.merge(parentCategory);
 
             entityManager.getTransaction().commit();
         } catch (Exception e) {

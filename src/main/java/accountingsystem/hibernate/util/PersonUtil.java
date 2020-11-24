@@ -47,7 +47,7 @@ public class PersonUtil {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
             entityManager.flush();
-            person = entityManager.merge(person);
+            entityManager.merge(person);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,7 +86,6 @@ public class PersonUtil {
             Person person = null;
             try {
                 person = entityManager.getReference(Person.class, id);
-                person.getId();
             } catch (Exception e) {
                 e.printStackTrace();
             }

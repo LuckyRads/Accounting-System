@@ -44,7 +44,7 @@ public class AccountingSystemUtil {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
             entityManager.flush();
-            accountingSystem = entityManager.merge(accountingSystem);
+            entityManager.merge(accountingSystem);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

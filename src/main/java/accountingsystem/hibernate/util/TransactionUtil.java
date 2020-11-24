@@ -46,7 +46,7 @@ public class TransactionUtil {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
             entityManager.flush();
-            transaction = entityManager.merge(transaction);
+            entityManager.merge(transaction);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -85,7 +85,6 @@ public class TransactionUtil {
             Transaction transaction = null;
             try {
                 transaction = entityManager.getReference(Transaction.class, id);
-                transaction.getId();
             } catch (Exception e) {
                 e.printStackTrace();
             }
