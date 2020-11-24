@@ -6,7 +6,6 @@ import accountingsystem.hibernate.util.CompanyUtil;
 import accountingsystem.hibernate.util.PersonUtil;
 import accountingsystem.service.JSONSerializer;
 import com.google.gson.Gson;
-import org.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,77 +22,113 @@ public class CompanyController {
 
     @GetMapping(value = "company/companies")
     @ResponseStatus(value = HttpStatus.OK)
-    public String getAllCompanies() throws JSONException {
-        return JSONSerializer.serializeArray(companyUtil.getAllCompanies());
+    public String getAllCompanies() {
+        try {
+            return JSONSerializer.serializeArray(companyUtil.getAllCompanies());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
+        }
     }
 
     @GetMapping(value = "company/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public String getCompany(@PathVariable Long id) throws JSONException {
-        return JSONSerializer.serializeObject(companyUtil.getCompany(id)).toString();
+    public String getCompany(@PathVariable Long id) {
+        try {
+            return JSONSerializer.serializeObject(companyUtil.getCompany(id)).toString();
+        } catch (Exception e) {
+            return "Failed: such company does not exist.";
+        }
     }
 
     @PostMapping(value = "company/create")
     @ResponseStatus(value = HttpStatus.OK)
     public String createCompany(@RequestBody String request) {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        String email = (String) data.get("email");
-        String password = (String) data.get("password");
-        String name = (String) data.get("name");
-        String responsiblePersonEmail = (String) data.get("responsiblePerson");
+            String email = (String) data.get("email");
+            String password = (String) data.get("password");
+            String name = (String) data.get("name");
+            String responsiblePersonEmail = (String) data.get("responsiblePerson");
 
-        Person responsiblePerson = null;
-        if (responsiblePersonEmail != null) {
-            responsiblePerson = personUtil.getPerson(responsiblePersonEmail);
+            if (email == null || password == null || name == null || responsiblePersonEmail == null) {
+                return "Failed: one of the parameters is missing or incorrect.";
+            }
+
+            Person responsiblePerson = personUtil.getPerson(responsiblePersonEmail);
+
+            Company company = new Company(email, password, name, responsiblePerson);
+            companyUtil.create(company);
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
         }
-
-        Company company = new Company(email, password, name, responsiblePerson);
-        companyUtil.create(company);
-
-        return "Success";
     }
 
     @DeleteMapping(value = "company/delete")
     @ResponseStatus(value = HttpStatus.OK)
-    public String deleteCompany(@RequestBody String request) throws Exception {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+    public String deleteCompany(@RequestBody String request) {
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        Long id = Long.parseLong((String) data.get("id"));
-        String email = (String) data.get("email");
+            String id = (String) data.get("id");
 
-        if (id != null) {
-            companyUtil.destroy(id);
-        } else {
-            companyUtil.destroy(email);
+            if (id == null) {
+                return "Failed: id not specified.";
+            }
+
+            try {
+                companyUtil.destroy(Long.parseLong(id));
+            } catch (Exception e) {
+                return "Failed: such company does not exist.";
+            }
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
         }
-
-        return "Success";
     }
 
     @PostMapping(value = "company/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String editPerson(@RequestBody String request, @PathVariable Long id) {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        String email = (String) data.get("email");
-        String password = (String) data.get("password");
-        String name = (String) data.get("name");
-        String responsiblePerson = (String) data.get("responsiblePerson");
+            String email = (String) data.get("email");
+            String password = (String) data.get("password");
+            String name = (String) data.get("name");
+            String responsiblePerson = (String) data.get("responsiblePerson");
 
-        Company company = companyUtil.getCompany(id);
+            if (email == null && password == null && name == null && responsiblePerson == null) {
+                return "Failed: no parameters were specified.";
+            }
 
-        company.setEmail(email);
-        company.setPassword(password);
-        company.setName(name);
-        company.setResponsiblePerson(personUtil.getPerson(responsiblePerson));
+            Company company = companyUtil.getCompany(id);
 
-        companyUtil.edit(company);
+            if (company == null) {
+                return "Failed: such company does not exist.";
+            }
 
-        return "Success";
+            if (email != null) company.setEmail(email);
+            if (password != null) company.setPassword(password);
+            if (name != null) company.setName(name);
+            if (responsiblePerson != null) company.setResponsiblePerson(personUtil.getPerson(responsiblePerson));
+
+            companyUtil.edit(company);
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
+        }
     }
 
 }

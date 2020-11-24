@@ -9,7 +9,7 @@
 			"name": "Person",
 			"item": [
 				{
-					"name": "GET People",
+					"name": "People",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -30,7 +30,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Person by id",
+					"name": "Person",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -51,7 +51,7 @@
 					"response": []
 				},
 				{
-					"name": "POST Create person",
+					"name": "Create person",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -60,7 +60,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"matas@mailas.com\",\r\n    \"password\": \"passwwww\",\r\n    \"name\": \"Matas\",\r\n    \"surname\": \"Mal\",\r\n    \"phoneNumber\": \"+37065874145\"\r\n}",
+							"raw": "{\r\n    \"email\": \"matas@mailas1.com\",\r\n    \"password\": \"passwwww\",\r\n    \"name\": \"Matas\",\r\n    \"surname\": \"Mal\",\r\n    \"phoneNumber\": \"+37065874145\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -84,13 +84,13 @@
 					"response": []
 				},
 				{
-					"name": "DELETE Delete person",
+					"name": "Delete person",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"matas@mailas.com\"\r\n}",
+							"raw": "{\r\n    \"id\": 30\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -114,37 +114,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE Delete person by id",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 18\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/accounting-system/person/delete",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"accounting-system",
-								"person",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST Edit person",
+					"name": "Edit person",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -205,7 +175,7 @@
 			"name": "Company",
 			"item": [
 				{
-					"name": "GET Companies",
+					"name": "Companies",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -226,7 +196,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Company by id",
+					"name": "Company",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -259,7 +229,7 @@
 					"response": []
 				},
 				{
-					"name": "POST Create company",
+					"name": "Create company",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -292,13 +262,13 @@
 					"response": []
 				},
 				{
-					"name": "DELETE Delete company",
+					"name": "Delete company",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"companymano@mailas.com\"\r\n}",
+							"raw": "{\r\n    \"id\": 31\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -322,37 +292,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE Delete company by id",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 21\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/accounting-system/company/delete",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"accounting-system",
-								"company",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST Edit company",
+					"name": "Edit company",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -361,7 +301,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"companymano@mailas.com\",\r\n    \"password\": \"editedPassworddddddd\",\r\n    \"name\": \"Kompanijaaaaaaa\",\r\n    \"responsiblePerson\": \"admin@mail.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"companymano@mailas.com\",\r\n    \"password\": \"editedPassworddddddd111\",\r\n    \"name\": \"Kompanijaaaaaaa\",\r\n    \"responsiblePerson\": \"admin@mail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -391,7 +331,7 @@
 			"name": "Accounting System",
 			"item": [
 				{
-					"name": "GET Accounting System",
+					"name": "Accounting System",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -411,13 +351,13 @@
 					"response": []
 				},
 				{
-					"name": "POST Accounting System edit",
+					"name": "Edit Accounting System",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"company\": \"MANO VGTU\",\r\n    \"dateCreated\": \"2020-11-23\",\r\n    \"version\": \"5.0.0\"\r\n}",
+							"raw": "{\r\n    \"company\": \"MANO VGTU\",\r\n    \"dateCreated\": \"2020-11-24\",\r\n    \"version\": \"5.0.1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -446,7 +386,7 @@
 			"name": "Category",
 			"item": [
 				{
-					"name": "GET Categories",
+					"name": "Categories",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -467,7 +407,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Category by id",
+					"name": "Category",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -488,7 +428,7 @@
 					"response": []
 				},
 				{
-					"name": "POST Create category",
+					"name": "Create category",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -518,13 +458,13 @@
 					"response": []
 				},
 				{
-					"name": "DELETE Delete category by id",
+					"name": "Delete category",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 27\r\n}",
+							"raw": "{87\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -548,7 +488,7 @@
 					"response": []
 				},
 				{
-					"name": "POST Edit category",
+					"name": "Edit category",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -584,7 +524,7 @@
 			"name": "Transaction",
 			"item": [
 				{
-					"name": "GET Transactions",
+					"name": "Transactions",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -605,7 +545,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Transaction by id",
+					"name": "Transaction",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -626,13 +566,13 @@
 					"response": []
 				},
 				{
-					"name": "POST Create transaction",
+					"name": "Create transaction",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"transakcijaaa\",\r\n    \"transactionType\": \"EXPENSE\",\r\n    \"sender\": \"Mano imone\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
+							"raw": "{\r\n    \"name\": \"transakcijaaa11111\",\r\n    \"transactionType\": \"EXPENSE\",\r\n    \"sender\": \"Mano imone\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -656,7 +596,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE Delete transaction by id",
+					"name": "Delete transaction",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -686,13 +626,13 @@
 					"response": []
 				},
 				{
-					"name": "POST Edit transaction",
+					"name": "Edit transaction",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Redaguota transakcija\",\r\n    \"transactionType\": \"INCOME\",\r\n    \"sender\": \"Mano imone edited\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
+							"raw": "{\r\n    \"name\": \"Redaguota transakcija\",\r\n    \"transactionType\": \"INCOME\",\r\n    \"sender\": \"Mano imone edited\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 28\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -700,7 +640,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/transaction/25",
+							"raw": "http://localhost:8080/accounting-system/transaction/33",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -709,7 +649,7 @@
 							"path": [
 								"accounting-system",
 								"transaction",
-								"25"
+								"33"
 							]
 						}
 					},

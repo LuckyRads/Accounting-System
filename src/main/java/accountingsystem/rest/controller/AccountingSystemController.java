@@ -4,7 +4,6 @@ import accountingsystem.hibernate.model.AccountingSystem;
 import accountingsystem.hibernate.util.AccountingSystemUtil;
 import accountingsystem.service.JSONSerializer;
 import com.google.gson.Gson;
-import org.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,29 +20,43 @@ public class AccountingSystemController {
 
     @GetMapping(value = "accounting-system")
     @ResponseStatus(value = HttpStatus.OK)
-    public String getAccountingSystem() throws JSONException {
-        return JSONSerializer.serializeObject(accountingSystemUtil.getAccountingSystem());
+    public String getAccountingSystem() {
+        try {
+            return JSONSerializer.serializeObject(accountingSystemUtil.getAccountingSystem());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
+        }
     }
 
     @PostMapping(value = "accounting-system")
     @ResponseStatus(value = HttpStatus.OK)
     public String editAccountingSystem(@RequestBody String request) {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        String company = (String) data.get("company");
-        LocalDate dateCreated = LocalDate.parse((String) data.get("dateCreated"));
-        String version = (String) data.get("version");
+            String company = (String) data.get("company");
+            String dateCreated = (String) data.get("dateCreated");
+            String version = (String) data.get("version");
 
-        AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
+            if (company == null && dateCreated == null && version == null) {
+                return "Failed: no parameters were specified.";
+            }
 
-        accountingSystem.setCompany(company);
-        accountingSystem.setDateCreated(dateCreated);
-        accountingSystem.setVersion(version);
+            AccountingSystem accountingSystem = accountingSystemUtil.getAccountingSystem();
 
-        accountingSystemUtil.edit(accountingSystem);
+            if (company != null) accountingSystem.setCompany(company);
+            if (dateCreated != null) accountingSystem.setDateCreated(LocalDate.parse(dateCreated));
+            if (version != null) accountingSystem.setVersion(version);
 
-        return "Success";
+            accountingSystemUtil.edit(accountingSystem);
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: Unexpected exception.";
+        }
     }
 
 }

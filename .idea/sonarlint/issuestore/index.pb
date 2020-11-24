@@ -72,3 +72,11 @@ x
 Hsrc/main/java/accountingsystem/controller/RegisterCompanyController.java,7\e\7e2413a489e5e76af95d938b84955b8e11e48878
 h
 8src/main/java/accountingsystem/service/AlertService.java,4\e\4ef7ea983a0251cd8541435560abd69ebe56c0ce
+j
+:src/main/java/accountingsystem/service/JSONSerializer.java,5\5\5570011022154ab98b985e823ada0c259de0066c
+u
+Esrc/main/java/accountingsystem/rest/controller/CompanyController.java,b\1\b127789ecfd7859429641256e5e5a4358405cf58
+y
+Isrc/main/java/accountingsystem/rest/controller/TransactionController.java,f\9\f92c4359e4055144d5c7ded0559a2154974eec8f
+v
+Fsrc/main/java/accountingsystem/rest/controller/CategoryController.java,1\0\10342fc06d5a43e18a19ea27fe037090aa231af6

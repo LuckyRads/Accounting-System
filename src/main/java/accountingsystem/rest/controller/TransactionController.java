@@ -7,7 +7,6 @@ import accountingsystem.hibernate.util.TransactionUtil;
 import accountingsystem.model.TransactionType;
 import accountingsystem.service.JSONSerializer;
 import com.google.gson.Gson;
-import org.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,103 +24,138 @@ public class TransactionController {
 
     @GetMapping(value = "transaction/transactions")
     @ResponseStatus(value = HttpStatus.OK)
-    public String getAllTransactions() throws JSONException {
-        return JSONSerializer.serializeArray(transactionUtil.getAllTransactions());
+    public String getAllTransactions() {
+        try {
+            return JSONSerializer.serializeArray(transactionUtil.getAllTransactions());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
+        }
     }
 
     @GetMapping(value = "transaction/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public String getTransaction(@PathVariable Long id) throws JSONException {
-        return JSONSerializer.serializeObject(transactionUtil.getTransaction(id)).toString();
+    public String getTransaction(@PathVariable Long id) {
+        try {
+            return JSONSerializer.serializeObject(transactionUtil.getTransaction(id)).toString();
+        } catch (Exception e) {
+            return "Failed: no such transaction found.";
+        }
     }
 
     @PostMapping(value = "transaction/create")
     @ResponseStatus(value = HttpStatus.OK)
     public String createTransaction(@RequestBody String request) {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        String name = (String) data.get("name");
+            String name = (String) data.get("name");
+            String transactionTypeString = (String) data.get("transactionType");
+            String sender = (String) data.get("sender");
+            String receiver = (String) data.get("receiver");
+            String amount = (String) data.get("amount");
+            String date = (String) data.get("date");
+            String categoryId = (String) data.get("category");
 
-        String transactionTypeString = (String) data.get("transactionType");
-        TransactionType transactionType = TransactionType.INCOME;
-        if (transactionTypeString.equalsIgnoreCase("EXPENSE")) {
-            transactionType = TransactionType.EXPENSE;
+            if (name == null || transactionTypeString == null || sender == null || receiver == null || amount == null ||
+                    date == null || categoryId == null) {
+                return "Failed: one of the parameters is wrong or missing.";
+            }
+
+            TransactionType transactionType = TransactionType.INCOME;
+            if (transactionTypeString.equalsIgnoreCase("EXPENSE")) {
+                transactionType = TransactionType.EXPENSE;
+            }
+
+            Category category = categoryUtil.getCategory(Long.parseLong(categoryId));
+            if (category == null) {
+                return "Failed: no such category found with the specified id.";
+            }
+
+            Transaction transaction =
+                    new Transaction(name, transactionType, sender, receiver, Double.parseDouble(amount), LocalDate.parse(date), category);
+
+            transactionUtil.create(transaction);
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
         }
-
-        String sender = (String) data.get("sender");
-        String receiver = (String) data.get("receiver");
-        double amount = Double.parseDouble((String) data.get("amount"));
-        LocalDate date = LocalDate.parse((String) data.get("date"));
-        Long categoryId = Long.parseLong((String) data.get("category"));
-
-        Category category = null;
-        if (categoryId != null) {
-            category = categoryUtil.getCategory(categoryId);
-        }
-
-        Transaction transaction = new Transaction(name, transactionType, sender, receiver, amount, date, category);
-        transactionUtil.create(transaction);
-
-        return "Success";
     }
 
     @DeleteMapping(value = "transaction/delete")
     @ResponseStatus(value = HttpStatus.OK)
-    public String deleteTransaction(@RequestBody String request) throws Exception {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+    public String deleteTransaction(@RequestBody String request) {
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        Long id = Long.parseLong((String) data.get("id"));
-        String name = (String) data.get("name");
+            String id = (String) data.get("id");
 
-        if (id != null) {
-            transactionUtil.destroy(id);
-        } else {
-            transactionUtil.destroy(name);
+            try {
+                transactionUtil.destroy(Long.parseLong(id));
+            } catch (Exception e) {
+                return "Failed: no such transaction exist.";
+            }
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
         }
-
-        return "Success";
     }
 
     @PostMapping(value = "transaction/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String editTransaction(@RequestBody String request, @PathVariable Long id) {
-        Gson parser = new Gson();
-        Properties data = parser.fromJson(request, Properties.class);
+        try {
+            Gson parser = new Gson();
+            Properties data = parser.fromJson(request, Properties.class);
 
-        String name = (String) data.get("name");
+            String name = (String) data.get("name");
+            String transactionTypeString = (String) data.get("transactionType");
+            String sender = (String) data.get("sender");
+            String receiver = (String) data.get("receiver");
+            String amount = (String) data.get("amount");
+            String date = (String) data.get("date");
+            String categoryId = (String) data.get("category");
 
-        String transactionTypeString = (String) data.get("transactionType");
-        TransactionType transactionType = TransactionType.INCOME;
-        if (transactionTypeString.equalsIgnoreCase("EXPENSE")) {
-            transactionType = TransactionType.EXPENSE;
+            TransactionType transactionType = TransactionType.INCOME;
+            if (transactionTypeString.equalsIgnoreCase("EXPENSE")) {
+                transactionType = TransactionType.EXPENSE;
+            }
+
+            Category category = null;
+            if (categoryId != null) {
+                category = categoryUtil.getCategory(Long.parseLong(categoryId));
+                if (category == null) {
+                    return "Failed: no such category exists with the specified id.";
+                }
+            }
+
+            Transaction transaction = transactionUtil.getTransaction(id);
+
+            if (transaction == null) {
+                return "Failed: such transaction does not exist.";
+            }
+
+            if (name != null) transaction.setName(name);
+            if (transactionType != null) transaction.setTransactionType(transactionType);
+            if (sender != null) transaction.setSender(sender);
+            if (receiver != null) transaction.setReceiver(receiver);
+            if (amount != null) transaction.setAmount(Double.parseDouble(amount));
+            if (data != null) transaction.setDate(LocalDate.parse(date));
+            if (category != null) transaction.setCategory(category);
+
+            transactionUtil.edit(transaction);
+
+            return "Success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
         }
-
-        String sender = (String) data.get("sender");
-        String receiver = (String) data.get("receiver");
-        double amount = Double.parseDouble((String) data.get("amount"));
-        LocalDate date = LocalDate.parse((String) data.get("date"));
-        Long categoryId = Long.parseLong((String) data.get("category"));
-
-        Category category = null;
-        if (categoryId != null) {
-            category = categoryUtil.getCategory(categoryId);
-        }
-
-        Transaction transaction = transactionUtil.getTransaction(id);
-
-        transaction.setName(name);
-        transaction.setTransactionType(transactionType);
-        transaction.setSender(sender);
-        transaction.setReceiver(receiver);
-        transaction.setAmount(amount);
-        transaction.setDate(date);
-        transaction.setCategory(category);
-
-        transactionUtil.edit(transaction);
-
-        return "Success";
     }
 
 }
