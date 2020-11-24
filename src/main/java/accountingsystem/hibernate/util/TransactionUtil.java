@@ -80,14 +80,17 @@ public class TransactionUtil {
         EntityManager entityManager = null;
 
         try {
-            for (Transaction transaction : getAllTransactions()) {
-                if (transaction.getId() == id) {
-                    entityManager = getEntityManager();
-                    entityManager.getTransaction().begin();
-                    entityManager.remove(entityManager.merge(transaction));
-                    entityManager.getTransaction().commit();
-                }
+            entityManager = getEntityManager();
+            entityManager.getTransaction().begin();
+            Transaction transaction = null;
+            try {
+                transaction = entityManager.getReference(Transaction.class, id);
+                transaction.getId();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+            entityManager.remove(entityManager.merge(transaction));
+            entityManager.getTransaction().commit();
         } finally {
             if (entityManager != null) {
                 entityManager.close();
