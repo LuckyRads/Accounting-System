@@ -122,9 +122,14 @@ public class CategoryController {
 
             String responsiblePeopleString = (String) data.get("responsiblePeople");
             List<Person> responsiblePeople = new ArrayList<>();
-            Arrays.asList(responsiblePeopleString.split(",")).forEach(responsiblePerson -> {
-                responsiblePeople.add(personUtil.getPerson(Long.parseLong(responsiblePerson)));
-            });
+            for (String responsiblePersonId : responsiblePeopleString.split(",")) {
+                Person person = personUtil.getPerson(Long.parseLong(responsiblePersonId));
+                if (person == null) {
+                    return "Failed: one of the responsible people does not exist." +
+                            "Please check if the specified id's are correct";
+                }
+                responsiblePeople.add(person);
+            }
 
             Long parentCategoryId = Long.parseLong((String) data.get("parentCategory"));
 
