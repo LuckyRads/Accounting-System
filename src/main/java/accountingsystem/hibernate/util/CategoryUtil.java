@@ -84,16 +84,27 @@ public class CategoryUtil {
         EntityManager entityManager = null;
 
         try {
-
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
             Category category = null;
             try {
                 category = entityManager.getReference(Category.class, id);
+
+                if (category.getParentCategory() != null) {
+                    Category parentCategory = category.getParentCategory();
+                    parentCategory.getSubCategories().remove(category);
+                    entityManager.merge(parentCategory);
+                }
+                for (Category subCategory : category.getSubCategories()) {
+                    destroy(subCategory.getId());
+                }
+                category.getSubCategories().clear();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            entityManager.remove(entityManager.merge(category));
+            entityManager.merge(category);
+            entityManager.remove(category);
             entityManager.getTransaction().commit();
         } finally {
             if (entityManager != null) {

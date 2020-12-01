@@ -80,3 +80,7 @@ y
 Isrc/main/java/accountingsystem/rest/controller/TransactionController.java,f\9\f92c4359e4055144d5c7ded0559a2154974eec8f
 v
 Fsrc/main/java/accountingsystem/rest/controller/CategoryController.java,1\0\10342fc06d5a43e18a19ea27fe037090aa231af6
+~
+Nsrc/main/java/accountingsystem/rest/controller/AccountingSystemController.java,7\1\714ec6a4e244bd4bf7d10537eefce85075b870fd
+t
+Dsrc/main/java/accountingsystem/rest/controller/PersonController.java,0\4\043e5df8300356a2c0577978d77430777ee3f8d6

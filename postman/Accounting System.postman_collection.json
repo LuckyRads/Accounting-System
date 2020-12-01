@@ -434,7 +434,37 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"testine kategorija\",\r\n    \"description\": \"testavimo kategorijos aprasas\",\r\n    \"responsiblePeople\": \"1,2\",\r\n    \"parentCategory\": 4\r\n}",
+							"raw": "{\r\n    \"name\": \"Kategorija testine ROOT\",\r\n    \"description\": \"description1\",\r\n    \"responsiblePeople\": \"1,2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/category/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kategorija testine SUB\",\r\n    \"description\": \"description2\",\r\n    \"responsiblePeople\": \"1\",\r\n    \"parentCategory\": 35\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -464,7 +494,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{87\r\n}",
+							"raw": "{\r\n    \"id\": 35\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -494,7 +524,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"testine kategorija paredaguota\",\r\n    \"description\": \"testavimo kategorijos aprasas redaguotas\",\r\n    \"responsiblePeople\": \"1\",\r\n    \"parentCategory\": 4\r\n}",
+							"raw": "{\r\n    \"name\": \"testine kategorija paredaguota\",\r\n    \"description\": \"testavimo kategorijos aprasas redaguotas\",\r\n    \"responsiblePeople\": \"1,2\",\r\n    \"parentCategory\": 4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -502,7 +532,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/category/27",
+							"raw": "http://localhost:8080/accounting-system/category/28",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -511,7 +541,7 @@
 							"path": [
 								"accounting-system",
 								"category",
-								"27"
+								"28"
 							]
 						}
 					},
@@ -572,7 +602,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"transakcijaaa11111\",\r\n    \"transactionType\": \"EXPENSE\",\r\n    \"sender\": \"Mano imone\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 4\r\n}",
+							"raw": "{\r\n    \"name\": \"Testine transakcija\",\r\n    \"transactionType\": \"EXPENSE\",\r\n    \"sender\": \"Mano imone\",\r\n    \"receiver\": \"Kita imone\",\r\n    \"amount\": 555.42,\r\n    \"date\": \"2020-11-24\",\r\n    \"category\": 36\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

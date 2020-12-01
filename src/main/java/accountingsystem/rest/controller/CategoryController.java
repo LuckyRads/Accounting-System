@@ -131,11 +131,7 @@ public class CategoryController {
                 responsiblePeople.add(person);
             }
 
-            Long parentCategoryId = Long.parseLong((String) data.get("parentCategory"));
-
-            if (name == null || description == null) {
-                return "Failed: no necessary parameters specified.";
-            }
+            String parentCategoryString = (String) data.get("parentCategory");
 
             Category category = categoryUtil.getCategory(id);
 
@@ -144,8 +140,8 @@ public class CategoryController {
             }
 
             Category parentCategory = category.getParentCategory();
-            if (parentCategoryId != null) {
-                parentCategory = categoryUtil.getCategory(parentCategoryId);
+            if (parentCategoryString != null) {
+                parentCategory = categoryUtil.getCategory(Long.parseLong(parentCategoryString));
                 if (parentCategory == null) {
                     return "Failed: parent category with such id does not exist.";
                 }
