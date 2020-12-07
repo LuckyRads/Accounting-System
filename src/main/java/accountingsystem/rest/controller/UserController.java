@@ -38,11 +38,11 @@ public class UserController {
 
             Person person = personUtil.getPerson(username);
             if (person != null) {
-                return person.getPassword().equals(password) ? "Success" : "Failed: authentication failed";
+                return person.getPassword().equals(password) ? "Success" : "Failed: authentication failed.";
             }
             Company company = companyUtil.getCompany(username);
             if (company != null) {
-                return company.getPassword().equals(password) ? "Success" : "Failed: authentication failed";
+                return company.getPassword().equals(password) ? "Success" : "Failed: authentication failed.";
             }
             return "Failed: authentication failed.";
         } catch (Exception e) {
