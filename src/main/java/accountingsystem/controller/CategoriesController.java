@@ -59,6 +59,21 @@ public class CategoriesController implements Controller {
     @FXML
     private TextField categoryBalance;
 
+    @FXML
+    private TextField fromField;
+
+    @FXML
+    private TextField toField;
+
+    @FXML
+    private ComboBox transactionFilterSelect;
+
+    @FXML
+    private Button filterByAmountBtn;
+
+    @FXML
+    private Button resetFiltersBtn;
+
     private double categoryCalculatedBalance;
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
@@ -117,6 +132,13 @@ public class CategoriesController implements Controller {
         }
     }
 
+    public void populateFilterByAmountList() {
+        transactionFilterSelect.getItems().clear();
+
+        transactionFilterSelect.getItems().add(TransactionType.EXPENSE);
+        transactionFilterSelect.getItems().add(TransactionType.INCOME);
+    }
+
     private void fillDescriptionField() {
         descriptionField.clear();
         if (getSelectedCategory() != null) {
@@ -134,6 +156,7 @@ public class CategoriesController implements Controller {
     public void updateWindow() {
         populateResponsiblePeopleList();
         populateTransactionTable();
+        populateFilterByAmountList();
         fillDescriptionField();
         calculateBalances();
         Stage stage = (Stage) menuBtn.getScene().getWindow();
@@ -285,6 +308,57 @@ public class CategoriesController implements Controller {
         for (Category subcategory : category.getSubCategories()) {
             calculateSubcategoryBalance(subcategory);
         }
+    }
+
+    //endregion
+
+    //region filters
+
+    @FXML
+    public void filterByAmount() {
+        if (transactionFilterSelect.getSelectionModel().getSelectedItem() == null || fromField.getText().isEmpty() ||
+                toField.getText().isEmpty()) {
+            AlertService.showError("Please select filtering type and filtering values.");
+            return;
+        }
+
+        transactionTable.getItems().clear();
+
+        if (getSelectedCategory() != null) {
+            final ObservableList<Transaction> data = FXCollections.observableArrayList();
+
+            transactionNameCol.setCellValueFactory(new PropertyValueFactory("name"));
+            transactionTypeCol.setCellValueFactory(new PropertyValueFactory("transactionType"));
+            senderCol.setCellValueFactory(new PropertyValueFactory("sender"));
+            receiverCol.setCellValueFactory(new PropertyValueFactory("receiver"));
+            amountCol.setCellValueFactory(new PropertyValueFactory("amount"));
+            dateCol.setCellValueFactory(new PropertyValueFactory("date"));
+
+            if (transactionFilterSelect.getSelectionModel().getSelectedItem().equals(TransactionType.EXPENSE)) {
+                getSelectedCategory().getTransactions().forEach(transaction -> {
+                    if (transaction.getTransactionType().equals(TransactionType.EXPENSE) &&
+                            transaction.getAmount() >= Double.parseDouble(fromField.getText()) &&
+                            transaction.getAmount() <= Double.parseDouble(toField.getText())) {
+                        data.add(transaction);
+                    }
+                });
+            } else {
+                getSelectedCategory().getTransactions().forEach(transaction -> {
+                    if (transaction.getTransactionType().equals(TransactionType.INCOME) &&
+                            transaction.getAmount() >= Double.parseDouble(fromField.getText()) &&
+                            transaction.getAmount() <= Double.parseDouble(toField.getText())) {
+                        data.add(transaction);
+                    }
+                });
+            }
+
+            transactionTable.setItems(data);
+        }
+    }
+
+    @FXML
+    public void resetFilters() {
+        populateTransactionTable();
     }
 
     //endregion
