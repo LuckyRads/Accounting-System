@@ -22,6 +22,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 public class CategoriesController implements Controller {
 
@@ -51,6 +52,12 @@ public class CategoriesController implements Controller {
 
     @FXML
     private ListView responsiblePeopleList;
+
+    @FXML
+    private TextField companyBalance;
+
+    @FXML
+    private TextField categoryBalance;
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
@@ -126,6 +133,7 @@ public class CategoriesController implements Controller {
         populateResponsiblePeopleList();
         populateTransactionTable();
         fillDescriptionField();
+        calculateBalances();
         Stage stage = (Stage) menuBtn.getScene().getWindow();
         stage.show();
     }
@@ -224,6 +232,29 @@ public class CategoriesController implements Controller {
         editTransactionController.loadTransaction();
 
         ViewService.newWindow(root, "Edit transaction");
+    }
+
+    //endregion
+
+    //region balanceCalculations
+
+    private void calculateBalances() {
+        companyBalance.setText(Double.toString(calculateCompanyBalance()));
+    }
+
+    private double calculateCompanyBalance() {
+        double balance = 0;
+        List<Transaction> transactions = transactionUtil.getAllTransactions();
+
+        for (Transaction transaction : transactions) {
+            if (transaction.getTransactionType().equals(TransactionType.EXPENSE)) {
+                balance -= transaction.getAmount();
+            } else {
+                balance += transaction.getAmount();
+            }
+        }
+
+        return Math.floor(balance * 100) / 100;
     }
 
     //endregion

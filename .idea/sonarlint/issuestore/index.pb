@@ -84,3 +84,13 @@ Fsrc/main/java/accountingsystem/rest/controller/CategoryController.java,1\0\103
 Nsrc/main/java/accountingsystem/rest/controller/AccountingSystemController.java,7\1\714ec6a4e244bd4bf7d10537eefce85075b870fd
 t
 Dsrc/main/java/accountingsystem/rest/controller/PersonController.java,0\4\043e5df8300356a2c0577978d77430777ee3f8d6
+=
+web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
+C
+web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05
+R
+"web/WEB-INF/applicationContext.xml,6\1\6174480b9b154240404ccf8a06724626b4651972
+R
+"web/WEB-INF/dispatcher-servlet.xml,8\9\897029ebb7eb4f5b339f855fe28a2fca107867a4
+r
+Bsrc/main/java/accountingsystem/rest/controller/UserController.java,7\9\79dc3f8647f529d84e5a70fd1245abe89acfe2f0
