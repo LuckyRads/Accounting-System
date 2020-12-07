@@ -18,6 +18,7 @@
                 <prop key="/accounting-system">accounting-system</prop>
                 <prop key="/category">category</prop>
                 <prop key="/transaction">transaction</prop>
+                <prop key="/user">user</prop>
             </props>
         </property>
     </bean>
@@ -31,5 +32,6 @@
     <bean name="accounting-system" class="accountingsystem.rest.controller.AccountingSystemController"/>
     <bean name="category" class="accountingsystem.rest.controller.CategoryController"/>
     <bean name="transaction" class="accountingsystem.rest.controller.TransactionController"/>
+    <bean name="user" class="accountingsystem.rest.controller.UserController"/>
 
 </beans>

@@ -1,13 +1,13 @@
 
 z
 java:S1192!"^Define a constant instead of duplicating this literal "Failed: unexpected exception." 4 times.(¿³Úz8ü«Ìß.
-e
-java:S1192P"HDefine a constant instead of duplicating this literal "Success" 3 times.(ÛÖØ¹8Ìü‚Ìß.
+O
+java:S1602–",Remove useless curly braces around statement(Û‹æëúÿÿÿÿ8éı”Ìß.
 H
 java:S1602;",Remove useless curly braces around statement(˜õŸ_8Ìü‚Ìß.
+e
+java:S1192P"HDefine a constant instead of duplicating this literal "Success" 3 times.(ÛÖØ¹8Ìü‚Ìß.
 U
 java:S2589œ"7Remove this expression which always evaluates to "true"(ü•Á8½óŸÌß.
 W
 java:S1141d"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8”Å“Ìß.
-O
-java:S1602–",Remove useless curly braces around statement(Û‹æëúÿÿÿÿ8éı”Ìß.
