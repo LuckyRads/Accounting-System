@@ -7,11 +7,12 @@ Year 3 semester 1 of VGTU bachelor studies.
 - Java
 - Maven
 - JavaFX
+- XAMPP (Apache, MySql, Tomcat)
 
 ## Project structure
 - <code>.idea/</code> contains IntelliJ IDEA IDE files
-- <code>doc/</code> contains task files and class diagram
 - <code>src/</code> contains all Java project files
+- <code>postman/</code> contains premade postman collections
 - <code>out/</code> contains build files
 
 ### CLASS DIAGRAM LOCATION: <code>doc/diagram.drawio</code>
