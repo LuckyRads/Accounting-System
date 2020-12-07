@@ -359,6 +359,7 @@ public class CategoriesController implements Controller {
     @FXML
     public void resetFilters() {
         populateTransactionTable();
+        calculateCategoryBalance();
     }
 
     //endregion
