@@ -59,6 +59,8 @@ public class CategoriesController implements Controller {
     @FXML
     private TextField categoryBalance;
 
+    private double categoryCalculatedBalance;
+
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
     PersonUtil personUtil = new PersonUtil(entityManagerFactory);
@@ -240,6 +242,11 @@ public class CategoriesController implements Controller {
 
     private void calculateBalances() {
         companyBalance.setText(Double.toString(calculateCompanyBalance()));
+        if (getSelectedCategory() != null) {
+            categoryBalance.setText(Double.toString(calculateCategoryBalance()));
+        } else {
+            categoryBalance.setText("");
+        }
     }
 
     private double calculateCompanyBalance() {
@@ -255,6 +262,29 @@ public class CategoriesController implements Controller {
         }
 
         return Math.floor(balance * 100) / 100;
+    }
+
+    private double calculateCategoryBalance() {
+        categoryCalculatedBalance = 0;
+        Category selectedCategory = getSelectedCategory();
+
+        calculateSubcategoryBalance(selectedCategory);
+
+        return Math.floor(categoryCalculatedBalance * 100) / 100;
+    }
+
+    private void calculateSubcategoryBalance(Category category) {
+        for (Transaction transaction : category.getTransactions()) {
+            if (transaction.getTransactionType().equals(TransactionType.EXPENSE)) {
+                categoryCalculatedBalance -= transaction.getAmount();
+            } else {
+                categoryCalculatedBalance += transaction.getAmount();
+            }
+        }
+
+        for (Category subcategory : category.getSubCategories()) {
+            calculateSubcategoryBalance(subcategory);
+        }
     }
 
     //endregion
