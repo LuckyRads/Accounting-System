@@ -1,0 +1,15 @@
+
+g	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(åµ¥íıÿÿÿÿ8Û‡°İ.
+r
+java:S2095§"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8Î©“¸ß.
+b	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(¸Úšõ8Û‡°İ.
+
+java:S1130t"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(åµ¥íıÿÿÿÿ8Š²ÒÀİ.
+k
+java:S2095£"HUse try-with-resources or close this "Connection" in a "finally" clause.(Š¹§«ıÿÿÿÿ8Î©“¸ß.
+R
+java:S3740Ì"/Provide the parametrized type for this generic.(Àº·Ùøÿÿÿÿ8Î©“¸ß.
+P
+java:S4925¢"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿ8ƒÈåÀİ.
+‰
+java:S1130@"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸Úšõ8Š²ÒÀİ.

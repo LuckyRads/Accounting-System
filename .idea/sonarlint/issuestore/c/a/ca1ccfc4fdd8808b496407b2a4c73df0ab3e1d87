@@ -1,0 +1,16 @@
+
+t
+java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(µĞŸµûÿÿÿÿ8ı² ®İ.
+>	java:S131Y""Add a default case to this switch.(”ø·8ı² ®İ.
+L
+java:S3740!"/Provide the parametrized type for this generic.(ıÁ¦Ï8ı² ®İ.
+j
+java:S2095Q"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(†š­î8ı² ®İ.
+l
+java:S2095R"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(´¢ß8ı² ®İ.
+W
+java:S1141V"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ı² ®İ.
+8
+java:S3626t"Remove this redundant jump.(ûÁİ…8ı² ®İ.
+k
+java:S1192;"IDefine a constant instead of duplicating this literal "All data" 3 times.(è§òèüÿÿÿÿ8ı² ®İ.
