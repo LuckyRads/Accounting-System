@@ -18,7 +18,7 @@ public class Category implements Serializable {
 
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category", orphanRemoval = true)
     private List<Transaction> transactions;
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "parentCategory")

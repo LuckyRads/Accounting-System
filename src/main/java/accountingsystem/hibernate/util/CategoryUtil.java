@@ -1,6 +1,9 @@
 package accountingsystem.hibernate.util;
 
+import accountingsystem.hibernate.model.AccountingSystem;
 import accountingsystem.hibernate.model.Category;
+import accountingsystem.hibernate.model.Person;
+import accountingsystem.hibernate.model.Transaction;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -113,12 +116,25 @@ public class CategoryUtil {
         }
     }
 
-    public void destroy(Category category) throws Exception {
+    public void destroy(Category cat) throws Exception {
         EntityManager entityManager = null;
 
         try {
             entityManager = getEntityManager();
             entityManager.getTransaction().begin();
+            Category category = entityManager.getReference(Category.class, cat.getId());
+
+            for (Person p : category.getResponsiblePeople()) {
+                p.getManagedCategories().remove(category);
+                entityManager.merge(p);
+            }
+            category.getTransactions().clear();
+            entityManager.merge(category);
+            for (Category c : category.getSubCategories()) {
+                destroy(c);
+            }
+            category.getSubCategories().clear(); entityManager.merge(category);
+
             entityManager.remove(entityManager.merge(category));
             entityManager.getTransaction().commit();
         } finally {
