@@ -412,7 +412,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/category/4",
+							"raw": "http://localhost:8080/accounting-system/category/36",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -421,7 +421,7 @@
 							"path": [
 								"accounting-system",
 								"category",
-								"4"
+								"36"
 							]
 						}
 					},
@@ -494,7 +494,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 35\r\n}",
+							"raw": "{\r\n    \"id\": 36\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -542,6 +542,36 @@
 								"accounting-system",
 								"category",
 								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit category Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"responsiblePeople\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/category/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"category",
+								"36"
 							]
 						}
 					},
@@ -680,6 +710,64 @@
 								"accounting-system",
 								"transaction",
 								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get categories transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/transaction/transactions/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"transaction",
+								"transactions",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Validate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin@mail.com\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounting-system/user/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounting-system",
+								"user",
+								"validate"
 							]
 						}
 					},

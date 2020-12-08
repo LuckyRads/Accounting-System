@@ -158,4 +158,16 @@ public class TransactionController {
         }
     }
 
+    @GetMapping(value = "transaction/transactions/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String getAllCategoriesTransactions(@PathVariable Long id) {
+        try {
+            Category category = categoryUtil.getCategory(id);
+            return JSONSerializer.serializeArray(category.getTransactions());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed: unexpected exception.";
+        }
+    }
+
 }
