@@ -74,7 +74,21 @@ public class CategoriesController implements Controller {
     @FXML
     private Button resetFiltersBtn;
 
+    @FXML
+    private Button filterByDateBtn;
+
+    @FXML
+    private DatePicker fromDateField;
+
+    @FXML
+    private DatePicker toDateField;
+
+    @FXML
+    private TextField filteredBalance;
+
     private double categoryCalculatedBalance;
+
+    private double calculatedFilteredBalance;
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
@@ -310,6 +324,22 @@ public class CategoriesController implements Controller {
         }
     }
 
+    public void calculateFilteredBalance() {
+        calculatedFilteredBalance = 0;
+        ObservableList<TableColumn> columns = transactionTable.getColumns();
+        for (Object row : transactionTable.getItems()) {
+            double amount = amountCol.getCellData((Transaction) row);
+            TransactionType transactionType = transactionTypeCol.getCellData((Transaction) row);
+            if (transactionType.toString().equalsIgnoreCase("EXPENSE")) {
+                calculatedFilteredBalance -= amount;
+            } else {
+                calculatedFilteredBalance += amount;
+            }
+        }
+        calculatedFilteredBalance = Math.floor(calculatedFilteredBalance * 100) / 100;
+        filteredBalance.setText(Double.toString(calculatedFilteredBalance));
+    }
+
     //endregion
 
     //region filters
@@ -353,6 +383,39 @@ public class CategoriesController implements Controller {
             }
 
             transactionTable.setItems(data);
+            calculateFilteredBalance();
+        }
+    }
+
+    @FXML
+    public void filterByDate() {
+        if (fromDateField.valueProperty().get() == null ||
+                toDateField.valueProperty().get() == null) {
+            AlertService.showError("Please select filtering type and filtering values.");
+            return;
+        }
+
+        transactionTable.getItems().clear();
+
+        if (getSelectedCategory() != null) {
+            final ObservableList<Transaction> data = FXCollections.observableArrayList();
+
+            transactionNameCol.setCellValueFactory(new PropertyValueFactory("name"));
+            transactionTypeCol.setCellValueFactory(new PropertyValueFactory("transactionType"));
+            senderCol.setCellValueFactory(new PropertyValueFactory("sender"));
+            receiverCol.setCellValueFactory(new PropertyValueFactory("receiver"));
+            amountCol.setCellValueFactory(new PropertyValueFactory("amount"));
+            dateCol.setCellValueFactory(new PropertyValueFactory("date"));
+
+            getSelectedCategory().getTransactions().forEach(transaction -> {
+                if (transaction.getDate().compareTo(fromDateField.valueProperty().get()) >= 0 &&
+                        transaction.getDate().compareTo(toDateField.valueProperty().get()) <= 0) {
+                    data.add(transaction);
+                }
+            });
+
+            transactionTable.setItems(data);
+            calculateFilteredBalance();
         }
     }
 
@@ -360,6 +423,7 @@ public class CategoriesController implements Controller {
     public void resetFilters() {
         populateTransactionTable();
         calculateCategoryBalance();
+        filteredBalance.setText("");
     }
 
     //endregion
