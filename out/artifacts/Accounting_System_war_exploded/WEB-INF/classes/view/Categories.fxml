@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
@@ -99,12 +100,21 @@
       <Text layoutX="20.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company's balance" />
       <TextField fx:id="categoryBalance" layoutX="134.0" layoutY="415.0" prefHeight="25.0" prefWidth="123.0" />
       <Text layoutX="23.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category's balance" />
-      <TextField fx:id="fromField" layoutX="490.0" layoutY="379.0" prefHeight="25.0" prefWidth="123.0" />
-      <Text layoutX="457.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From" />
-      <TextField fx:id="toField" layoutX="490.0" layoutY="407.0" prefHeight="25.0" prefWidth="123.0" />
-      <Text layoutX="457.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To" />
-      <Button fx:id="filterByAmountBtn" layoutX="619.0" layoutY="407.0" mnemonicParsing="false" onAction="#filterByAmount" text="Filter" />
-      <ComboBox fx:id="transactionFilterSelect" layoutX="619.0" layoutY="379.0" prefWidth="150.0" />
-      <Button fx:id="resetFiltersBtn" layoutX="687.0" layoutY="407.0" mnemonicParsing="false" onAction="#resetFilters" text="Reset filters" />
+      <TextField fx:id="fromField" layoutX="490.0" layoutY="392.0" prefHeight="25.0" prefWidth="123.0" />
+      <Text layoutX="457.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From" />
+      <TextField fx:id="toField" layoutX="490.0" layoutY="420.0" prefHeight="25.0" prefWidth="123.0" />
+      <Text layoutX="457.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To" />
+      <Button fx:id="filterByAmountBtn" layoutX="619.0" layoutY="420.0" mnemonicParsing="false" onAction="#filterByAmount" text="Filter" />
+      <ComboBox fx:id="transactionFilterSelect" layoutX="619.0" layoutY="392.0" prefWidth="150.0" />
+      <Button fx:id="resetFiltersBtn" layoutX="1052.0" layoutY="422.0" mnemonicParsing="false" onAction="#resetFilters" text="Reset filters" />
+      <Text layoutX="782.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From" />
+      <Text layoutX="782.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To" />
+      <Button fx:id="filterByDateBtn" layoutX="997.0" layoutY="423.0" mnemonicParsing="false" onAction="#filterByDate" text="Filter" />
+      <Text layoutX="457.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter by amount" />
+      <Text layoutX="782.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter by date" />
+      <DatePicker fx:id="fromDateField" layoutX="817.0" layoutY="394.0" />
+      <DatePicker fx:id="toDateField" layoutX="817.0" layoutY="423.0" />
+      <TextField fx:id="filteredBalance" layoutX="997.0" layoutY="392.0" prefHeight="25.0" prefWidth="123.0" />
+      <Text layoutX="997.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtered balance" />
    </children>
 </AnchorPane>
