@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2020-12-09T10:01:42.184Z" agent="5.0 (Windows)" etag="qsXzcFKo7AKeSQhiaQbm" version="13.8.3" type="github">
+  <diagram id="GhbrfilZdhjkKfXTE7LR" name="Page-1">
+    <mxGraphModel dx="2062" dy="1123" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-1" value="&lt;div&gt;Buhalterinė apskaitos sistema&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="197" width="740" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-2" value="Darbalaukio aplikacija" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="240" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-3" value="&lt;div&gt;Internetinis serveris&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="240" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-4" value="&lt;div&gt;Mobiliojo telefono aplikacija&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="620" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-5" value="Buhalteris" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="390" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-10" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="4MPI6ZTMeUoxXXszRZOy-5" target="4MPI6ZTMeUoxXXszRZOy-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="440" as="sourcePoint" />
+            <mxPoint x="430" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-11" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="4MPI6ZTMeUoxXXszRZOy-4" target="4MPI6ZTMeUoxXXszRZOy-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="810" y="560" as="sourcePoint" />
+            <mxPoint x="860" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-12" value="&lt;div&gt;Buhalteris&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="645" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4MPI6ZTMeUoxXXszRZOy-13" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="4MPI6ZTMeUoxXXszRZOy-12" target="4MPI6ZTMeUoxXXszRZOy-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="730" as="sourcePoint" />
+            <mxPoint x="630" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
