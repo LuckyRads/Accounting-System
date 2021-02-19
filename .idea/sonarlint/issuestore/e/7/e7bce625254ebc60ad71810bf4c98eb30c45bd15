@@ -1,71 +1,71 @@
 
-R
-java:S3740é"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8ƒÒş–ä.
-M
-java:S3740Œ"/Provide the parametrized type for this generic.(Ä‹Üİ8±á©®İ.
-e
-java:S1192Š"GDefine a constant instead of duplicating this literal "sender" 3 times.(š€è¼8Ù°‘˜ä.
-R
-java:S3740‰"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8±á©®İ.
-M
-java:S3740˜"/Provide the parametrized type for this generic.(ú›úĞ8Ù°‘˜ä.
+L
+java:S3740'"/Provide the parametrized type for this generic.(ÎŒÎ8±á©®İ.
 Y
 java:S1854É";Remove this useless assignment to local variable "columns".(®¸Êİ8Á¹Ê˜ä.
 M
-java:S3740É"/Provide the parametrized type for this generic.(®¸Êİ8î®Â˜ä.
-M
-java:S3740ê"/Provide the parametrized type for this generic.(š€è¼8ƒÒş–ä.
-M
-java:S3740“"/Provide the parametrized type for this generic.(ƒ¢©—8Ù°‘˜ä.
-M
-java:S3740—"/Provide the parametrized type for this generic.(Ä‹Üİ8Ù°‘˜ä.
-…
-java:S1450["hRemove the "calculatedFilteredBalance" field and declare it as a local variable in the relevant methods.(•èï8êŒÔ˜ä.
-R
-java:S3740”"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8Ù°‘˜ä.
-R
-java:S3740ë"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8ƒÒş–ä.
+java:S3740•"/Provide the parametrized type for this generic.(š€è¼8Ù°‘˜ä.
 w
 java:S1192é"ZDefine a constant instead of duplicating this literal "Please select a category." 3 times.(ï„®s8¯Í°³İ.
-M
-java:S3740ì"/Provide the parametrized type for this generic.(Ä‹Üİ8ƒÒş–ä.
-R
-java:S3740£"/Provide the parametrized type for this generic.(Ûœé´ûÿÿÿÿ8±á©®İ.
-L
-java:S3740'"/Provide the parametrized type for this generic.(ÎŒÎ8±á©®İ.
-M
-java:S3740Š"/Provide the parametrized type for this generic.(š€è¼8±á©®İ.
-R
-java:S3740‹"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8±á©®İ.
-M
-java:S3740"/Provide the parametrized type for this generic.(ú›úĞ8±á©®İ.
-M
-java:S3740è"/Provide the parametrized type for this generic.(ƒ¢©—8ƒÒş–ä.
-J
-java:S1612",Replace this lambda with a method reference.(ÿÒÕü8±á©®İ.
-s
-java:S1192‰"PDefine a constant instead of duplicating this literal "transactionType" 3 times.(÷îÃÿÿÿÿÿ8Ù°‘˜ä.
-R
-java:S3740–"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8Ù°‘˜ä.
 L
 java:S3740E"/Provide the parametrized type for this generic.(ßÙë8ƒÒş–ä.
+L
+java:S3740!"/Provide the parametrized type for this generic.(®×î8±á©®İ.
+R
+java:S3740‰"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8±á©®İ.
 M
-java:S3740í"/Provide the parametrized type for this generic.(ú›úĞ8ƒÒş–ä.
+java:S3740É"/Provide the parametrized type for this generic.(®¸Êİ8î®Â˜ä.
 M
-java:S3740•"/Provide the parametrized type for this generic.(š€è¼8Ù°‘˜ä.
-e
-java:S1192Œ"GDefine a constant instead of duplicating this literal "amount" 3 times.(Ä‹Üİ8Ù°‘˜ä.
+java:S3740˜"/Provide the parametrized type for this generic.(ú›úĞ8Ù°‘˜ä.
+J
+java:S1612",Replace this lambda with a method reference.(ÿÒÕü8±á©®İ.
+M
+java:S3740Š"/Provide the parametrized type for this generic.(š€è¼8±á©®İ.
 |
 java:S2293¤"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÇÃÕªûÿÿÿÿ8±á©®İ.
+M
+java:S3740í"/Provide the parametrized type for this generic.(ú›úĞ8ƒÒş–ä.
+R
+java:S3740–"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8Ù°‘˜ä.
+R
+java:S3740£"/Provide the parametrized type for this generic.(Ûœé´ûÿÿÿÿ8±á©®İ.
+e
+java:S1192Š"GDefine a constant instead of duplicating this literal "sender" 3 times.(š€è¼8Ù°‘˜ä.
+s
+java:S1192‰"PDefine a constant instead of duplicating this literal "transactionType" 3 times.(÷îÃÿÿÿÿÿ8Ù°‘˜ä.
+M
+java:S3740Œ"/Provide the parametrized type for this generic.(Ä‹Üİ8±á©®İ.
 p
 java:S3776Ü"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‘çÓÛ8ƒÒş–ä.
 J
 java:S1481É",Remove this unused "columns" local variable.(®¸Êİ8Á¹Ê˜ä.
 M
 java:S3740ˆ"/Provide the parametrized type for this generic.(ƒ¢©—8±á©®İ.
+M
+java:S3740“"/Provide the parametrized type for this generic.(ƒ¢©—8Ù°‘˜ä.
+…
+java:S1450["hRemove the "calculatedFilteredBalance" field and declare it as a local variable in the relevant methods.(•èï8êŒÔ˜ä.
+M
+java:S3740è"/Provide the parametrized type for this generic.(ƒ¢©—8ƒÒş–ä.
+M
+java:S3740"/Provide the parametrized type for this generic.(ú›úĞ8±á©®İ.
+R
+java:S3740”"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8Ù°‘˜ä.
+R
+java:S3740é"/Provide the parametrized type for this generic.(÷îÃÿÿÿÿÿ8ƒÒş–ä.
+R
+java:S3740ë"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8ƒÒş–ä.
 L
 java:S37406"/Provide the parametrized type for this generic.(Š Ê‚8±á©®İ.
+R
+java:S3740‹"/Provide the parametrized type for this generic.(¯ë©àùÿÿÿÿ8±á©®İ.
+M
+java:S3740ì"/Provide the parametrized type for this generic.(Ä‹Üİ8ƒÒş–ä.
 l
 java:S1192‹"IDefine a constant instead of duplicating this literal "receiver" 3 times.(¯ë©àùÿÿÿÿ8Ù°‘˜ä.
-L
-java:S3740!"/Provide the parametrized type for this generic.(®×î8±á©®İ.
+M
+java:S3740ê"/Provide the parametrized type for this generic.(š€è¼8ƒÒş–ä.
+M
+java:S3740—"/Provide the parametrized type for this generic.(Ä‹Üİ8Ù°‘˜ä.
+e
+java:S1192Œ"GDefine a constant instead of duplicating this literal "amount" 3 times.(Ä‹Üİ8Ù°‘˜ä.
