@@ -12,13 +12,14 @@ import javax.persistence.Persistence;
 import java.time.LocalDate;
 import java.util.Properties;
 
-@RestController
+@RestController()
+@RequestMapping(value = "accounting-system")
 public class AccountingSystemController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     AccountingSystemUtil accountingSystemUtil = new AccountingSystemUtil(entityManagerFactory);
 
-    @GetMapping(value = "accounting-system")
+    @GetMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String getAccountingSystem() {
         try {
@@ -29,7 +30,7 @@ public class AccountingSystemController {
         }
     }
 
-    @PostMapping(value = "accounting-system")
+    @PutMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String editAccountingSystem(@RequestBody String request) {
         try {

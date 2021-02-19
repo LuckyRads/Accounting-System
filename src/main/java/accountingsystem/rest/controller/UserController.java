@@ -6,23 +6,21 @@ import accountingsystem.hibernate.util.CompanyUtil;
 import accountingsystem.hibernate.util.PersonUtil;
 import com.google.gson.Gson;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.Properties;
 
 @RestController
+@RequestMapping("user")
 public class UserController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     PersonUtil personUtil = new PersonUtil(entityManagerFactory);
     CompanyUtil companyUtil = new CompanyUtil(entityManagerFactory);
 
-    @PostMapping(value = "user/validate")
+    @PostMapping(value = "/validate")
     @ResponseStatus(value = HttpStatus.OK)
     public String validateUser(@RequestBody String request) {
         try {

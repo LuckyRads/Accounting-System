@@ -16,13 +16,14 @@ import java.time.LocalDate;
 import java.util.Properties;
 
 @RestController
+@RequestMapping("transaction")
 public class TransactionController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     TransactionUtil transactionUtil = new TransactionUtil(entityManagerFactory);
     CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
 
-    @GetMapping(value = "transaction/transactions")
+    @GetMapping(value = "/transactions")
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllTransactions() {
         try {
@@ -33,7 +34,7 @@ public class TransactionController {
         }
     }
 
-    @GetMapping(value = "transaction/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String getTransaction(@PathVariable Long id) {
         try {
@@ -43,7 +44,7 @@ public class TransactionController {
         }
     }
 
-    @PostMapping(value = "transaction/create")
+    @PostMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String createTransaction(@RequestBody String request) {
         try {
@@ -85,7 +86,7 @@ public class TransactionController {
         }
     }
 
-    @DeleteMapping(value = "transaction/delete")
+    @DeleteMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String deleteTransaction(@RequestBody String request) {
         try {
@@ -107,7 +108,7 @@ public class TransactionController {
         }
     }
 
-    @PostMapping(value = "transaction/{id}")
+    @PutMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String editTransaction(@RequestBody String request, @PathVariable Long id) {
         try {
@@ -158,7 +159,7 @@ public class TransactionController {
         }
     }
 
-    @GetMapping(value = "transaction/transactions/{id}")
+    @GetMapping(value = "/transactions/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllCategoriesTransactions(@PathVariable Long id) {
         try {

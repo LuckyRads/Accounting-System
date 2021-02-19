@@ -68,7 +68,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/person/create",
+							"raw": "http://localhost:8080/accounting-system/person",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -76,8 +76,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"person",
-								"create"
+								"person"
 							]
 						}
 					},
@@ -90,7 +89,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 30\r\n}",
+							"raw": "{\r\n    \"id\": 20\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -98,7 +97,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/person/delete",
+							"raw": "http://localhost:8080/accounting-system/person",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -106,8 +105,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"person",
-								"delete"
+								"person"
 							]
 						}
 					},
@@ -119,7 +117,7 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -238,7 +236,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"companymano@mailas.com\",\r\n    \"password\": \"passwwwwordas\",\r\n    \"name\": \"Kompanijaaaaaaa\",\r\n    \"responsiblePerson\": \"matas@mailas.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"companymano@mailass.com\",\r\n    \"password\": \"passwwwwordas\",\r\n    \"name\": \"Kompanijaaaaaaa\",\r\n    \"responsiblePerson\": \"matas@mailas.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -246,7 +244,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/company/create",
+							"raw": "http://localhost:8080/accounting-system/company",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,8 +252,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"company",
-								"create"
+								"company"
 							]
 						}
 					},
@@ -268,7 +265,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 31\r\n}",
+							"raw": "{\r\n    \"id\": 22\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -276,7 +273,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/company/delete",
+							"raw": "http://localhost:8080/accounting-system/company",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -284,8 +281,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"company",
-								"delete"
+								"company"
 							]
 						}
 					},
@@ -297,7 +293,7 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -353,7 +349,7 @@
 				{
 					"name": "Edit Accounting System",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -442,7 +438,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/category/create",
+							"raw": "http://localhost:8080/accounting-system/category",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -450,8 +446,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"category",
-								"create"
+								"category"
 							]
 						}
 					},
@@ -472,7 +467,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/category/create",
+							"raw": "http://localhost:8080/accounting-system/category",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -480,8 +475,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"category",
-								"create"
+								"category"
 							]
 						}
 					},
@@ -502,7 +496,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/category/delete",
+							"raw": "http://localhost:8080/accounting-system/category",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -510,8 +504,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"category",
-								"delete"
+								"category"
 							]
 						}
 					},
@@ -520,7 +513,7 @@
 				{
 					"name": "Edit category",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -640,7 +633,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/transaction/create",
+							"raw": "http://localhost:8080/accounting-system/transaction",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -648,8 +641,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"transaction",
-								"create"
+								"transaction"
 							]
 						}
 					},
@@ -662,7 +654,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 25\r\n}",
+							"raw": "{\r\n    \"id\": 52\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -670,7 +662,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounting-system/transaction/delete",
+							"raw": "http://localhost:8080/accounting-system/transaction",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -678,8 +670,7 @@
 							"port": "8080",
 							"path": [
 								"accounting-system",
-								"transaction",
-								"delete"
+								"transaction"
 							]
 						}
 					},
@@ -688,7 +679,7 @@
 				{
 					"name": "Edit transaction",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",

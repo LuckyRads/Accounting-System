@@ -12,12 +12,13 @@ import javax.persistence.Persistence;
 import java.util.Properties;
 
 @RestController
+@RequestMapping("person")
 public class PersonController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     PersonUtil personUtil = new PersonUtil(entityManagerFactory);
 
-    @GetMapping(value = "person/people")
+    @GetMapping(value = "/people")
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllPeople() {
         try {
@@ -28,7 +29,7 @@ public class PersonController {
         }
     }
 
-    @GetMapping(value = "person/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String getPerson(@PathVariable Long id) {
         try {
@@ -38,7 +39,7 @@ public class PersonController {
         }
     }
 
-    @PostMapping(value = "person/create")
+    @PostMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String createPerson(@RequestBody String request) {
         try {
@@ -65,7 +66,7 @@ public class PersonController {
         }
     }
 
-    @DeleteMapping(value = "person/delete")
+    @DeleteMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String deletePerson(@RequestBody String request) {
         try {
@@ -91,7 +92,7 @@ public class PersonController {
         }
     }
 
-    @PostMapping(value = "person/{id}")
+    @PutMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String editPerson(@RequestBody String request, @PathVariable Long id) {
         try {

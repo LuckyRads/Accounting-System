@@ -17,13 +17,14 @@ import java.util.List;
 import java.util.Properties;
 
 @RestController
+@RequestMapping(value = "category")
 public class CategoryController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     CategoryUtil categoryUtil = new CategoryUtil(entityManagerFactory);
     PersonUtil personUtil = new PersonUtil(entityManagerFactory);
 
-    @GetMapping(value = "category/categories")
+    @GetMapping(value = "/categories")
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllCategories() {
         try {
@@ -34,7 +35,7 @@ public class CategoryController {
         }
     }
 
-    @GetMapping(value = "category/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String getCategory(@PathVariable Long id) {
         try {
@@ -44,7 +45,7 @@ public class CategoryController {
         }
     }
 
-    @PostMapping(value = "category/create")
+    @PostMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String createCategory(@RequestBody String request) {
         try {
@@ -84,7 +85,7 @@ public class CategoryController {
         }
     }
 
-    @DeleteMapping(value = "category/delete")
+    @DeleteMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String deleteCategory(@RequestBody String request) {
         try {
@@ -110,7 +111,7 @@ public class CategoryController {
         }
     }
 
-    @PostMapping(value = "category/{id}")
+    @PutMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String editCategory(@RequestBody String request, @PathVariable Long id) {
         try {

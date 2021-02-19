@@ -14,13 +14,14 @@ import javax.persistence.Persistence;
 import java.util.Properties;
 
 @RestController
+@RequestMapping("company")
 public class CompanyController {
 
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("accountingsystem");
     CompanyUtil companyUtil = new CompanyUtil(entityManagerFactory);
     PersonUtil personUtil = new PersonUtil(entityManagerFactory);
 
-    @GetMapping(value = "company/companies")
+    @GetMapping(value = "/companies")
     @ResponseStatus(value = HttpStatus.OK)
     public String getAllCompanies() {
         try {
@@ -31,7 +32,7 @@ public class CompanyController {
         }
     }
 
-    @GetMapping(value = "company/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public String getCompany(@PathVariable Long id) {
         try {
@@ -41,7 +42,7 @@ public class CompanyController {
         }
     }
 
-    @PostMapping(value = "company/create")
+    @PostMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String createCompany(@RequestBody String request) {
         try {
@@ -69,7 +70,7 @@ public class CompanyController {
         }
     }
 
-    @DeleteMapping(value = "company/delete")
+    @DeleteMapping()
     @ResponseStatus(value = HttpStatus.OK)
     public String deleteCompany(@RequestBody String request) {
         try {
@@ -95,9 +96,9 @@ public class CompanyController {
         }
     }
 
-    @PostMapping(value = "company/{id}")
+    @PutMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public String editPerson(@RequestBody String request, @PathVariable Long id) {
+    public String editCompany(@RequestBody String request, @PathVariable Long id) {
         try {
             Gson parser = new Gson();
             Properties data = parser.fromJson(request, Properties.class);
